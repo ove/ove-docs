@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="5669.292" height="2551.181" viewBox="0, 0, 5669.292, 2551.181">
+  <g id="Layer_1">
+    <path d="M3396,652 L5024,652 L5024,1856 L3396,1856 L3396,652 z" fill="#D95F02"/>
+    <path d="M416.5,652.5 L2044.5,652.5 L2044.5,1856.5 L416.5,1856.5 L416.5,652.5 z" fill-opacity="0" stroke="#000000" stroke-width="4"/>
+    <path d="M742,868 L1718,868 L1718,1592 L742,1592 L742,868 z" fill="#D95F02"/>
+    <text transform="matrix(1, 0, 0, 1, 1744.124, 360.5)">
+      <tspan x="-1521.124" y="-49" font-family="GillSans" font-size="66" fill="#000000">The browser opens </tspan>
+      <tspan x="-978.332" y="-49" font-family="GillSans-SemiBold" font-size="66" fill="#000000">OVE-core</tspan>
+      <tspan x="-690.226" y="-49" font-family="GillSans" font-size="66" fill="#000000">&#160;in a window, with a URL of the form:</tspan>
+      <tspan x="-1521.124" y="20" font-family="Courier" font-size="55" fill="#000000">http://&lt;ove-</tspan>
+      <tspan x="-1125.059" y="20" font-family="Courier-Bold" font-size="55" fill="#000000">core</tspan>
+      <tspan x="-993.038" y="20" font-family="Courier" font-size="55" fill="#000000">-server&gt;/view.html?oveClientId=&lt;spaceId&gt;-&lt;clientId&gt;</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 1653.877, 2282.437)">
+      <tspan x="-1521.124" y="-98.5" font-family="GillSans" font-size="66" fill="#000000">When it receives a message saying a </tspan>
+      <tspan x="-540.888" y="-98.5" font-family="GillSans-SemiBold" font-size="66" fill="#000000">section</tspan>
+      <tspan x="-335.476" y="-98.5" font-family="GillSans" font-size="66" fill="#000000"> has been created, </tspan>
+      <tspan x="162.263" y="-98.5" font-family="GillSans-SemiBold" font-size="66" fill="#000000">OVE-core</tspan>
+      <tspan x="450.369" y="-98.5" font-family="GillSans" font-size="66" fill="#000000">&#160;creates an iframe with the id</tspan>
+      <tspan x="1233.442" y="-98.5" font-family="Courier" font-size="66" fill="#000000"> </tspan>
+      <tspan x="-1521.124" y="-18.5" font-family="Courier" font-size="66" fill="#000000">content-frame-section-&lt;sectionId&gt;</tspan>
+      <tspan x="-214.111" y="-18.5" font-family="GillSans" font-size="66" fill="#000000"> and opens the relevant </tspan>
+      <tspan x="431.967" y="-18.5" font-family="GillSans-SemiBold" font-size="66" fill="#000000">OVE app</tspan>
+      <tspan x="690.972" y="-18.5" font-family="GillSans" font-size="66" fill="#000000">&#160;in it by loading a URL of the </tspan>
+      <tspan x="-1521.124" y="60.5" font-family="GillSans" font-size="66" fill="#000000">form</tspan>
+      <tspan x="-1391.831" y="60.5" font-family="GillSans-SemiBold" font-size="66" fill="#000000">:</tspan>
+      <tspan x="-1521.124" y="129.5" font-family="Courier" font-size="55" fill="#000000">http://&lt;ove-</tspan>
+      <tspan x="-1125.059" y="129.5" font-family="Courier-Bold" font-size="55" fill="#000000">app</tspan>
+      <tspan x="-1026.043" y="129.5" font-family="Courier" font-size="55" fill="#000000">-server&gt;/view.html?oveClientId=&lt;spaceId&gt;-&lt;clientId&gt;.&lt;sectionId&gt;</tspan>
+    </text>
+    <g>
+      <path d="M1204.5,1608.9 L1204.5,2128.5" fill-opacity="0" stroke="#000000" stroke-width="4"/>
+      <path d="M1209.3,1608.9 L1204.5,1596.1 L1199.7,1608.9 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="4" stroke-opacity="1"/>
+    </g>
+    <g>
+      <path d="M1186.5,636.1 L1186.5,426.5" fill-opacity="0" stroke="#000000" stroke-width="4"/>
+      <path d="M1181.7,636.1 L1186.5,648.9 L1191.3,636.1 z" fill="#000000" fill-opacity="1" stroke="#000000" stroke-width="4" stroke-opacity="1"/>
+    </g>
+    <path d="M3396.5,652.5 L5024.5,652.5 L5024.5,1856.5 L3396.5,1856.5 L3396.5,652.5 z" fill-opacity="0" stroke="#000000" stroke-width="4"/>
+    <text transform="matrix(1, 0, 0, 1, 4473.876, 2282.437)">
+      <tspan x="-1113.124" y="-100.5" font-family="GillSans" font-size="66" fill="#000000">The control page is accessed at:</tspan>
+      <tspan x="-1113.124" y="42.5" font-family="Courier" font-size="55" fill="#000000">http://&lt;ove-</tspan>
+      <tspan x="-717.059" y="42.5" font-family="Courier-Bold" font-size="55" fill="#000000">app</tspan>
+      <tspan x="-618.043" y="42.5" font-family="Courier" font-size="55" fill="#000000">-server&gt;/control.html?oveSectionId=&lt;sectionId&gt;</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 1283.006, 120.5)">
+      <tspan x="-216.006" y="33" font-family="GillSans" font-size="100" fill="#000000">View</tspan>
+    </text>
+    <text transform="matrix(1, 0, 0, 1, 4253.994, 177.5)">
+      <tspan x="-256.006" y="-24" font-family="GillSans" font-size="100" fill="#000000">Controller</tspan>
+    </text>
+  </g>
+</svg>
