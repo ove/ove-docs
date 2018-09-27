@@ -118,16 +118,14 @@
       <path d="M1238.165,400.043 L1241.165,407.043 L1244.165,400.043 M1241.165,402.043 L1241.165,407.043 M1236.165,408.043 L1246.165,408.043" fill-opacity="0" stroke="#7570B3" stroke-width="1" stroke-opacity="1"/>
     </g>
     <path d="M1256.833,612.834 C1175.898,598.753 1196.156,306.23 1240.509,334.08" fill-opacity="0" stroke="#7570B3" stroke-width="1"/>
-    <text transform="matrix(1, 0, 0, 1, 491.351, 843)">
-      <tspan x="-408.851" y="-44" font-family="GillSans" font-size="30" fill="#000000">When </tspan>
-      <tspan x="-324.886" y="-44" font-family="GillSans-SemiBold" font-size="30" fill="#000000">OVE-core</tspan>
-      <tspan x="-193.929" y="-44" font-family="GillSans" font-size="30" fill="#000000">&#160;is told to create a section, it creates an iframe, </tspan>
-      <tspan x="-408.851" y="-7" font-family="GillSans" font-size="30" fill="#000000">setting its </tspan>
-      <tspan x="-283.797" y="-7" font-family="Courier" font-size="30" fill="#000000">margin</tspan>
-      <tspan x="-175.779" y="-7" font-family="GillSans" font-size="30" fill="#000000"> to position it correctly, and setting </tspan>
-      <tspan x="-408.851" y="29" font-family="Courier" font-size="30" fill="#000000">window.ove.layout</tspan>
-      <tspan x="-102.801" y="29" font-family="GillSans" font-size="30" fill="#000000"> so that app running in the iframe </tspan>
-      <tspan x="-408.851" y="64" font-family="GillSans" font-size="30" fill="#000000">can determine what to display.</tspan>
+    <text transform="matrix(1, 0, 0, 1, 491.351, 843.5)">
+      <tspan x="-408.851" y="-43.5" font-family="Helvetica" font-size="30" fill="#000000">When </tspan>
+      <tspan x="-322.147" y="-43.5" font-family="Helvetica-Bold" font-size="30" fill="#000000">OVE-core</tspan>
+      <tspan x="-185.433" y="-43.5" font-family="Helvetica" font-size="30" fill="#000000">&#160; is told to create a section, it creates an </tspan>
+      <tspan x="-408.851" y="-7.5" font-family="Helvetica" font-size="30" fill="#000000">iframe, setting its margin to position it correctly, and setting </tspan>
+      <tspan x="-408.851" y="28.5" font-family="Courier" font-size="30" fill="#000000">window.ove.layout</tspan>
+      <tspan x="-102.801" y="28.5" font-family="Helvetica" font-size="30" fill="#000000">&#160;so that app running in the iframe </tspan>
+      <tspan x="-408.851" y="64.5" font-family="Helvetica" font-size="30" fill="#000000">can determine what to display.</tspan>
     </text>
     <g>
       <path d="M1486.98,317.811 L1269.38,317.811" fill-opacity="0" stroke="#000000" stroke-width="2"/>
