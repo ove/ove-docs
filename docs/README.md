@@ -5,11 +5,11 @@
 Open Visualisation Environment is an open-source software stack, designed to be used in large scale visualisation environments like the [Imperial College](http://www.imperial.ac.uk) [Data Science Institute's](http://www.imperial.ac.uk/data-science/) [Data Observatory](http://www.imperial.ac.uk/data-science/data-observatory/).
 It is a rewrite of the [GDO](https://github.com/bkavuncu/GDO/) Framework. 
 
-We welcome collaboration under our [Code of Conduct](https://github.com/dsi-icl/ove/blob/master/CODE_OF_CONDUCT.md)
+We welcome collaboration under our [Code of Conduct](https://github.com/ove/ove-docs/blob/master/CODE_OF_CONDUCT.md)
 
 ---
 
-It is recommended the OVE be used with Chrome, as this is the web browser used for development and in production at the DSI. However, it should also be compatible with other modern web browsers: if you encounter any browser-specific bugs please [report them as an Issue](https://github.com/dsi-icl/ove/issues).
+It is recommended to use OVE with Google Chrome, as this is the web browser used for development and in production at the DSI. However, it should also be compatible with other modern web browsers: if you encounter any browser-specific bugs please [report them as an Issue](https://github.com/ove/ove-apps/issues).
 
 ## Build Instructions
 
@@ -30,7 +30,7 @@ Building ``OVE.Service.ImageTiles`` also requires the [.NET Core command-line to
 
 Setup the lerna environment:
 
-* `git clone https://github.com/dsi-icl/ove`
+* `git clone https://github.com/ove/ove`
 * `cd ove`
 * `lerna bootstrap --hoist`
 
@@ -44,8 +44,10 @@ Build and start runtime:
 
 Run in Chrome:
 
-* Control Page `http://localhost:8081/control.html?layers=0,40`
-* Client Pages `http://localhost:8081/view.html?oveClientId=0` < check Clients.json for info
+* Control Page   `http://localhost:8081/control.html?oveSectionId=0&layers=0`
+* Client pages   `http://localhost:8080/view.html?oveClientId=LocalNine-0` < check Clients.json for info
+* OVE JS library `http://localhost:8080/ove.js`
+* OVE API docs   `http://localhost:8080/api-docs`
 
 ### Stop
 
