@@ -36,7 +36,7 @@ At the top level, the ``README.md`` file explains the purpose and usage of the a
 Within ``src/``, ``config.json`` describes any pre-configured ``states`` that are provided as examples (which may depend on data files in ``src/data``); ``src/index.js`` is the file that is actually run by node.js to create a server instance.
 
 Apps are partitioned into separate a ``control`` and ``view``, with shared parts placed in ``src/client/common/`` (for CSS or JavaScript functions) or ``src/client/constants`` (for JavaScript constants).
-A single ``index.html`` file is shared between the ``control`` and ``view``, but it my render different content in both cases due to the inclusion of different JavaScript files.
+A single ``index.html`` file is shared between the ``control`` and ``view``, but it may render different content in both cases due to the inclusion of different JavaScript files.
 
 The JavaScript and CSS files in ``control/``  are used to render the application's control page; the JavaScript and CSS files in ``view/`` are used to render the page that is displayed when the app is loaded into a section.
 
