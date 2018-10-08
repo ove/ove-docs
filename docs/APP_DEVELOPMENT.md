@@ -44,7 +44,7 @@ The JavaScript and CSS files in ``control/``  are used to render the application
 ## Index.html
 
 Before the ``index.html`` file is served, the placeholders ``__OVEHOST__`` and ``__OVETYPE__`` are replaced (this replacement is specified by the ``registerRoutesForContent`` function defined in [``ove-lib-utils/src/index.js``](https://github.com/ove/ove/blob/5661ed9447c83aaa8ecb4d767172145d876654a3/packages/ove-lib-utils/src/index.js#L125) ).
-``__OVEHOST__`` is replaced by the host-name that was speciefied by the environmental variable set in ``pm2.json``.
+``__OVEHOST__`` is replaced by the host-name that was specified by the environmental variable set in ``pm2.json``.
 ``__OVETYPE__`` is replaced by ``client`` or ``control``.
 
 This mechanism allows the construction of paths for the inclusion of JavaScript or CSS files.
@@ -52,7 +52,7 @@ This mechanism allows the construction of paths for the inclusion of JavaScript 
 
 ## Logging
 
-Messages can be logged by creating a logger object, and then calling the method with the appropropriate level (``error``, ``warn``, ``log``):
+Messages can be logged by creating a logger object, and then calling the method with the appropriate level (``error``, ``warn``, ``log``):
 
 ```` JavaScript
 const log = OVE.Utils.Logger(Constants.APP_NAME, Constants.LOG_LEVEL);
@@ -88,7 +88,7 @@ You can decide what this should contain, given the particular needs of your appl
 To change the state, modify ``window.ove.state.current``.
 
 The current application state can be sent as a WebSocket broadcast by calling ``OVE.Utils.broadcastState()`` (with no arguments).
-This will update the current state on all clients that receive the message; you can register a callback function to be called when this change occurs uisng ``OVE.Utils.setOnStateUpdate(callbackFunctionName)``.
+This will update the current state on all clients that receive the message; you can register a callback function to be called when this change occurs using ``OVE.Utils.setOnStateUpdate(callbackFunctionName)``.
 
 
 ## Helper methods
