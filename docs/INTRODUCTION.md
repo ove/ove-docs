@@ -9,7 +9,7 @@ It does this by implementing a microservices architecture that allows the distri
 
 
 The main components of OVE are  **OVE Core**, which controls sections and the applications running within them and **OVE Core Apps**, which provide a set of useful applications for common tasks such as displaying images, displaying webpages, and drawing graphs.
-**OVE Core Services** provides services to divide large networks or images into tiles, and serve these to the corresponding applications.
+**OVE Services** provides core functionality microservices within OVE such as layout.  **OVE Asset Services** provides services to divide large networks or images into tiles, and serve these to the corresponding applications.
 
 
 ## Concepts
