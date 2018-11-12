@@ -34,7 +34,7 @@ An application typically has the structure:
 At the top level, the `README.md` file explains the purpose and usage of the application in human-readable form, whereas `package.json` provides machine-readable information about the package (name, version, author, license), its dependencies, and build commands.
 
 Within `src/`, `config.json` describes any pre-configured `states` that are provided as examples (which may depend on data files in `src/data`); `src/index.js` is the file that is actually run by node.js to create a server instance.
-The `@ove-lib/appbase` base library exposes an API to interact with the app. If the application exposes additional API methods the `src/swagger-extensions.yaml` is used to describe them.
+The [`@ove-lib/appbase`](https://www.npmjs.com/package/@ove-lib/appbase) base library exposes an API to interact with the app. If the application exposes additional API methods the `src/swagger-extensions.yaml` is used to describe them, so that [Swagger](https://swagger.io/solutions/api-documentation/) can automatically generate documentation.
 
 Applications are partitioned into separate a `control` and `view`, with shared parts placed in `src/client/common/` (for CSS or JavaScript functions) or `src/client/constants` (for JavaScript constants).
 A single `index.html` file is shared between the `control` and `view`, but it renders different content in both cases due to the inclusion of different JavaScript files.
@@ -72,7 +72,7 @@ server.listen(port);
 log.info(Constants.APP_NAME, 'application started, port:', port);
 ```
 
-The `@ove-lib/appbase` base library also exposes `express`, `nodeModules` and `config`. These can be used to register express routes, to expose nodule modules or to access application-specific configuration found in the `config.json` file.
+The [`@ove-lib/appbase`](https://www.npmjs.com/package/@ove-lib/appbase) base library also exposes `express`, `nodeModules` and `config`. These can be used to register express routes, to expose nodule modules or to access application-specific configuration found in the `config.json` file.
 To expose a node module from your application:
 
 ``` JavaScript
@@ -89,7 +89,7 @@ The `swagger-extensions.yaml` is optional and only found in applications exposin
 
 ## Clint-side application initialization
 
-On document load, you should create a new OVE object attached to the window object of the web browser:
+On document load, you should create a new OVE object attached to the `window` object of the web browser:
 
 ``` JavaScript
 window.ove = new OVE(Constants.APP_NAME);
@@ -114,12 +114,12 @@ const initView = function () {
     // perform initialization before OVE loads the viewer.
 }
 const onStateLoaded = function () {
-    // called soon after the state is loaded.
+    // called immediately after the state is loaded.
 }
 OVE.Utils.initView(initView, onStateLoaded);
 ```
 
-`OVE.Utils.initView` accepts a function to perform initialization before OVE initializes the viewer of the app. Unlike the controller, the viewer needs to be pre-initialized. This is to ensure JavaScript libraries are appropriately initialized before the application state is loaded. `OVE.Utils.initView` also accepts a function that gets called soon after the state is loaded to the viewer.
+`OVE.Utils.initView` accepts a function to perform initialization before OVE initializes the viewer of the app. Unlike the controller, the viewer needs to be pre-initialized. This is to ensure JavaScript libraries are appropriately initialized before the application state is loaded. `OVE.Utils.initView` also accepts a function that gets called immediately after the state is loaded to the viewer.
 
 If there are any further initialization that needs to be done after OVE initializes the viewer of the app, `OVE.Utils.initView` also accepts an optional function as its third parameter:
 
@@ -139,7 +139,7 @@ You should also ensure that page elements have been resized appropriately.
 
 ## The OVE object
 
-The OVE object (`window.ove`) provides a number of useful functions and data structures to handle state, to interpret layout and to communicate via WebSockets. It also provides a context (`window.ove.context`) to hold the application's local variables. The `window.ove.context.uuid` provides a unique identifier for each instance of OVE. This can be used to uniquely identify each viewer and controller in the system. The `window.ove.context.hostname` provides the hostname of the ove.js library.
+The OVE object (`window.ove`) provides a number of useful functions and data structures to handle state, to interpret layout and to communicate via WebSockets. It also provides a context (`window.ove.context`) to hold the application's local variables. The `window.ove.context.uuid` property provides a unique identifier for each instance of OVE. This can be used to uniquely identify each viewer and controller in the system. The `window.ove.context.hostname` property provides the hostname of the ove.js library.
 
 ### Handling state
 
@@ -153,21 +153,21 @@ The `window.ove.state` object also provides two other methods `cache` and `load`
 
 The `window.ove.layout` provides information useful to interpret the layout of the clients:
 
-* window.ove.layout.x - Displacement along the x-axis relative to the top-left of the section in pixels
-* window.ove.layout.y - Displacement along the y-axis relative to the top-left of the section in pixels
-* window.ove.layout.w - Width of the client
-* window.ove.layout.h - Height of the client
-* window.ove.layout.section.w - Width of the section (or the total width of the application)
-* window.ove.layout.section.h - Height of the section (or the total height of the application)
-* window.ove.layout.space.w - Width of the space (or the total width of all clients)
-* window.ove.layout.space.h - Height of the space (or the total height of all clients)
-* window.ove.layout.offset.x - Displacement of top-left of the client along the x-axis relative to the top-left of the browser window in pixels
-* window.ove.layout.offset.y - Displacement of top-left of the client along the y-axis relative to the top-left of the browser window in pixels
+* `window.ove.layout.x` - Displacement along the x-axis relative to the top-left of the section in pixels
+* `window.ove.layout.y` - Displacement along the y-axis relative to the top-left of the section in pixels
+* `window.ove.layout.w` - Width of the client
+* `window.ove.layout.h` - Height of the client
+* `window.ove.layout.section.w` - Width of the section (or the total width of the application)
+* `window.ove.layout.section.h` - Height of the section (or the total height of the application)
+* `window.ove.layout.space.w` - Width of the space (or the total width of all clients)
+* `window.ove.layout.space.h` - Height of the space (or the total height of all clients)
+* `window.ove.layout.offset.x` - Displacement of top-left of the client along the x-axis relative to the top-left of the browser window in pixels
+* `window.ove.layout.offset.y` - Displacement of top-left of the client along the y-axis relative to the top-left of the browser window in pixels
 
 While all of this information is available on a fully initialized viewer, the controller only has:
 
-* window.ove.layout.section.w - Width of the section (or the total width of the application)
-* window.ove.layout.section.h - Height of the section (or the total height of the application)
+* `window.ove.layout.section.w` - Width of the section (or the total width of the application)
+* `window.ove.layout.section.h` - Height of the section (or the total height of the application)
 
 ### Communicating via WebSockets
 
@@ -180,7 +180,7 @@ window.ove.socket.on(function (message) {
 window.ove.socket.send(message);
 ```
 
-These methods are particularly useful to trigger remote operations or to expose JavaScript functionality using REST APIs.
+The `message` argument represents a JSON serializable object in both methods. These methods are particularly useful to trigger remote operations or to expose JavaScript functionality using REST APIs.
 
 ## Helper methods
 
