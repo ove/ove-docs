@@ -139,7 +139,7 @@ You should also ensure that page elements have been resized appropriately.
 
 ## The OVE object
 
-The OVE object (`window.ove`) provides a number of useful functions and data structures to handle state, to interpret layout and to communicate via WebSockets. It also provides a context (`window.ove.context`) to hold the application's local variables. The `window.ove.context.uuid` provides a unique identifier for each instance of OVE. This can be used to uniquely identify each viewer and controller in the system.
+The OVE object (`window.ove`) provides a number of useful functions and data structures to handle state, to interpret layout and to communicate via WebSockets. It also provides a context (`window.ove.context`) to hold the application's local variables. The `window.ove.context.uuid` provides a unique identifier for each instance of OVE. This can be used to uniquely identify each viewer and controller in the system. The `window.ove.context.hostname` provides the hostname of the ove.js library.
 
 ### Handling state
 
@@ -153,19 +153,21 @@ The `window.ove.state` object also provides two other methods `cache` and `load`
 
 The `window.ove.layout` provides information useful to interpret the layout of the clients:
 
-1. window.ove.layout.x - Displacement along the x-axis relative to the top-left of the section in pixels
-2. window.ove.layout.y - Displacement along the y-axis relative to the top-left of the section in pixels
-3. window.ove.layout.w - Width of the client
-4. window.ove.layout.h - Height of the client
-5. window.ove.layout.section.w - Width of the section (or the total width of all clients)
-6. window.ove.layout.section.h - Height of the section (or the total height of all clients)
-7. window.ove.layout.offset.x - Displacement of top-left of the client along the x-axis relative to the top-left of the browser window in pixels
-8. window.ove.layout.offset.y - Displacement of top-left of the client along the y-axis relative to the top-left of the browser window in pixels
+* window.ove.layout.x - Displacement along the x-axis relative to the top-left of the section in pixels
+* window.ove.layout.y - Displacement along the y-axis relative to the top-left of the section in pixels
+* window.ove.layout.w - Width of the client
+* window.ove.layout.h - Height of the client
+* window.ove.layout.section.w - Width of the section (or the total width of the application)
+* window.ove.layout.section.h - Height of the section (or the total height of the application)
+* window.ove.layout.space.w - Width of the space (or the total width of all clients)
+* window.ove.layout.space.h - Height of the space (or the total height of all clients)
+* window.ove.layout.offset.x - Displacement of top-left of the client along the x-axis relative to the top-left of the browser window in pixels
+* window.ove.layout.offset.y - Displacement of top-left of the client along the y-axis relative to the top-left of the browser window in pixels
 
 While all of this information is available on a fully initialized viewer, the controller only has:
 
-1. window.ove.layout.section.w - Width of the section (or the total width of all clients)
-2. window.ove.layout.section.h - Height of the section (or the total height of all clients)
+* window.ove.layout.section.w - Width of the section (or the total width of the application)
+* window.ove.layout.section.h - Height of the section (or the total height of the application)
 
 ### Communicating via WebSockets
 
@@ -183,3 +185,13 @@ These methods are particularly useful to trigger remote operations or to expose 
 ## Helper methods
 
 `OVE.Utils` provides a number of useful methods, such as `OVE.Utils.getQueryParam(name, defaultValue)`, `OVE.Utils.getSpace()`, `OVE.Utils.getClient()` and `OVE.Utils.getSectionId()`.
+
+`OVE.Utils.Coordinates.transform(vector, inputType, outputType)` provides a mechanism to convert coordinates of one format to another. The input and output types can be one of `OVE.Utils.Coordinates.SCREEN`, `OVE.Utils.Coordinates.SECTION` or `OVE.Utils.Coordinates.SPACE`:
+
+``` JavaScript
+// Get location of mouse pointer within the space.
+function onMouseEvent(event) {
+    const spaceCoordinates = OVE.Utils.Coordinates.transform(
+        [event.clientX, event.clientY], OVE.Utils.Coordinates.SCREEN, OVE.Utils.Coordinates.SPACE)
+}
+```
