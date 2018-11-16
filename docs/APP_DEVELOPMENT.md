@@ -192,6 +192,6 @@ The `message` argument represents a JSON serializable object in both methods. Th
 // Get location of mouse pointer within the space.
 function onMouseEvent(event) {
     const spaceCoordinates = OVE.Utils.Coordinates.transform(
-        [event.clientX, event.clientY], OVE.Utils.Coordinates.SCREEN, OVE.Utils.Coordinates.SPACE)
+        [event.screenX, event.screenY], OVE.Utils.Coordinates.SCREEN, OVE.Utils.Coordinates.SPACE)
 }
 ```
