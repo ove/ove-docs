@@ -16,7 +16,7 @@ The main components of OVE are  **OVE Core**, which controls sections and the ap
 
 OVE supports multiple ``spaces``. Each ``space`` is associated with one or more monitors, which may be attached to different computers, that together form a single display. This display may be a Large High Resolution Display (the [Data Observatory](https://www.imperial.ac.uk/data-science/data-observatory/) is 2.53m x 6.00m in size and 30,720 x 4,320 in resolution and consists of 64 monitors), but OVE is also suitable for use on much smaller displays.
 
-Within each space, OVE runs on a number of ``clients``, each of which runs in a browser window. Typically each ``client`` is a full-screen browser window running on one monitor, but a single ``client`` can span multiple windows if they are attached to the same computer. The arrangement of ``clients`` is described in the [``Clients.json``](https://github.com/dsi-icl/ove/blob/master/packages/ove-core/src/client/Clients.json) file.
+Within each space, OVE runs on a number of ``clients``, each of which runs in a browser window. Typically each ``client`` is a full-screen browser window running on one monitor, but a single ``client`` can span multiple windows if they are attached to the same computer. The arrangement of ``clients`` is described in the [``Spaces.json``](https://github.com/dsi-icl/ove/blob/master/packages/ove-core/src/client/Spaces.json) file.
 
 ``Sections`` are rectangular regions of a ``space``. Each ``section`` runs a single OVE ``app``. ``Sections`` may span multiple clients and can overlap.
 
