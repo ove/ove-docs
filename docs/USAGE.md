@@ -18,7 +18,7 @@ When designing content to be displayed in an OVE environment, be aware of the [p
 
 ## Launching browsers
 
-On each monitor that makes up the display you will need to launch a browser window, and open the correct URL in each. This has the form: ``http://<ove-hostname>:<ove-port>/view.html?oveClientId=<space>-{id}``
+On each monitor that makes up the display you will need to launch a browser window, and open the correct URL in each. This has the form: ``http://<ove-hostname>:<ove-port>/view.html?oveViewId=<space>-{id}``
 where ``{id}`` is the index of the ``client`` associated with the browser window in the space's definition in ``Spaces.json``.
 
 It is recommended to use Chrome as the browser, because that is what is primarily used for development, testing, and production at the [DSI](https://www.imperial.ac.uk/data-science/).

@@ -45,7 +45,7 @@ Build and start runtime:
 Run in Chrome:
 
 * Control Page   `http://localhost:8081/control.html?oveSectionId=0&layers=0`
-* Client pages   `http://localhost:8080/view.html?oveClientId=LocalNine-0` < check Spaces.json for info
+* Client pages   `http://localhost:8080/view.html?oveViewId=LocalNine-0` < check Spaces.json for info
 * OVE JS library `http://localhost:8080/ove.js`
 * OVE API docs   `http://localhost:8080/api-docs`
 
