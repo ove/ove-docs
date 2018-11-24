@@ -9,7 +9,7 @@ It does this by implementing a microservices architecture that allows the distri
 
 
 The main components of OVE are  **OVE Core**, which controls sections and the applications running within them and **OVE Core Apps**, which provide a set of useful applications for common tasks such as displaying images, displaying webpages, and drawing graphs.
-**OVE Services** provides core functionality microservices within OVE such as layout.  **OVE Asset Services** provides services to divide large networks or images into tiles, and serve these to the corresponding applications.
+**OVE Services** provides core functionality microservices within OVE such as geometry.  **OVE Asset Services** provides services to divide large networks or images into tiles, and serve these to the corresponding applications.
 
 
 ## Concepts
@@ -35,7 +35,7 @@ In addition to these *views*, apps may present a *control* page that can be acce
 ![](images/urls.svg)
 
 
-When the ``iframes`` representing a section are created, its ``margin`` CSS property is used to position it correctly, and the ``window.ove.layout`` object is set so that app running in the ``iframe`` can determine what to display.
+When the ``iframes`` representing a section are created, its ``margin`` CSS property is used to position it correctly, and the ``window.ove.geometry`` object is set so that app running in the ``iframe`` can determine what to display.
 
 
 ![](images/tiling.svg)

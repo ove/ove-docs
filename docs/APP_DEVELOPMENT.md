@@ -139,7 +139,7 @@ You should also ensure that page elements have been resized appropriately.
 
 ## The OVE object
 
-The OVE object (`window.ove`) provides a number of useful functions and data structures to handle state, to interpret layout and to communicate via WebSockets. It also provides a context (`window.ove.context`) to hold the application's local variables. The `window.ove.context.uuid` property provides a unique identifier for each instance of OVE. This can be used to uniquely identify each viewer and controller in the system. The `window.ove.context.hostname` property provides the hostname of the ove.js library.
+The OVE object (`window.ove`) provides a number of useful functions and data structures to handle state, to interpret geometry and to communicate via WebSockets. It also provides a context (`window.ove.context`) to hold the application's local variables. The `window.ove.context.uuid` property provides a unique identifier for each instance of OVE. This can be used to uniquely identify each viewer and controller in the system. The `window.ove.context.hostname` property provides the hostname of the ove.js library.
 
 ### Handling state
 
@@ -149,25 +149,25 @@ The current application state (contents of `window.ove.state.current`) can be se
 
 The `window.ove.state` object also provides two other methods `cache` and `load`, which can be used to cache the application state on the server and load it sometime later. These methods are internally called by the utility methods provided by `OVE.Utils` and therefore their use is limited to a few advanced use-cases.
 
-### Interpreting layout
+### Interpreting geometry
 
-The `window.ove.layout` provides information useful to interpret the layout of the clients:
+The `window.ove.geometry` provides information useful to interpret the geometry of the clients:
 
-* `window.ove.layout.x` - Displacement along the x-axis relative to the top-left of the section in pixels
-* `window.ove.layout.y` - Displacement along the y-axis relative to the top-left of the section in pixels
-* `window.ove.layout.w` - Width of the client
-* `window.ove.layout.h` - Height of the client
-* `window.ove.layout.section.w` - Width of the section (or the total width of the application)
-* `window.ove.layout.section.h` - Height of the section (or the total height of the application)
-* `window.ove.layout.space.w` - Width of the space (or the total width of all clients)
-* `window.ove.layout.space.h` - Height of the space (or the total height of all clients)
-* `window.ove.layout.offset.x` - Displacement of top-left of the client along the x-axis relative to the top-left of the browser window in pixels
-* `window.ove.layout.offset.y` - Displacement of top-left of the client along the y-axis relative to the top-left of the browser window in pixels
+* `window.ove.geometry.x` - Displacement along the x-axis relative to the top-left of the section in pixels
+* `window.ove.geometry.y` - Displacement along the y-axis relative to the top-left of the section in pixels
+* `window.ove.geometry.w` - Width of the client
+* `window.ove.geometry.h` - Height of the client
+* `window.ove.geometry.section.w` - Width of the section (or the total width of the application)
+* `window.ove.geometry.section.h` - Height of the section (or the total height of the application)
+* `window.ove.geometry.space.w` - Width of the space (or the total width of all clients)
+* `window.ove.geometry.space.h` - Height of the space (or the total height of all clients)
+* `window.ove.geometry.offset.x` - Displacement of top-left of the client along the x-axis relative to the top-left of the browser window in pixels
+* `window.ove.geometry.offset.y` - Displacement of top-left of the client along the y-axis relative to the top-left of the browser window in pixels
 
 While all of this information is available on a fully initialized viewer, the controller only has:
 
-* `window.ove.layout.section.w` - Width of the section (or the total width of the application)
-* `window.ove.layout.section.h` - Height of the section (or the total height of the application)
+* `window.ove.geometry.section.w` - Width of the section (or the total width of the application)
+* `window.ove.geometry.section.h` - Height of the section (or the total height of the application)
 
 ### Communicating via WebSockets
 
