@@ -44,7 +44,7 @@
       <tspan x="-618.043" y="45.5" font-family="Courier" font-size="55" fill="#000000">-server&gt;/control.html?oveSectionId=&lt;sectionId&gt;</tspan>
     </text>
     <text transform="matrix(1, 0, 0, 1, 1283.006, 122.5)">
-      <tspan x="-216.006" y="36" font-family="Helvetica-Bold" font-size="100" fill="#000000">View</tspan>
+      <tspan x="-216.006" y="36" font-family="Helvetica-Bold" font-size="100" fill="#000000">Viewer</tspan>
     </text>
     <text transform="matrix(1, 0, 0, 1, 4253.994, 177.5)">
       <tspan x="-256.006" y="-19" font-family="Helvetica-Bold" font-size="100" fill="#000000">Controller</tspan>

@@ -41,7 +41,7 @@
       <tspan x="-278.888" y="-143" font-family="Helvetica-Bold" font-size="70" fill="#000000">OVE client </tspan>
       <tspan x="90.662" y="-143" font-family="Helvetica" font-size="70" fill="#000000">typically </tspan>
       <tspan x="-457.887" y="-59" font-family="Helvetica" font-size="70" fill="#000000">runs in a full-screen browser </tspan>
-      <tspan x="-457.887" y="25" font-family="Helvetica" font-size="70" fill="#000000">window on one monitor.</tspan>
+      <tspan x="-457.887" y="25" font-family="Helvetica" font-size="70" fill="#000000">window on each screen.</tspan>
     </text>
     <text transform="matrix(1, 0, 0, 1, 268.254, 471.057)">
       <tspan x="-143.747" y="-17" font-family="Helvetica-Bold" font-size="70" fill="#000000">(named)</tspan>

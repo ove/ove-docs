@@ -1,63 +1,57 @@
-
 # The Open Visualisation Environment (OVE)
 
 OVE was developed to meet the requirements of controlling the [Data Observatory](https://www.imperial.ac.uk/data-science/data-observatory/) at the [Data Science Institute](https://www.imperial.ac.uk/data-science/) of [Imperial College London](https://www.imperial.ac.uk), but it is not specialized for that purpose.
-It can be used for visual analytics on Large High Resolution Displays, for presentations, or for collaborative groupwork.
 
-It allows a user to control the display of content in web browsers distributed across multiple computers.
-It does this by implementing a microservices architecture that allows the distributed execution of applications using web technologies.
+OVE can be used for visual analytics on Large High Resolution Displays, for presentations, or for collaborative group work. It allows a user to control the display of content in web browsers distributed across multiple computers by implementing a microservices architecture that allows the distributed execution of applications using web technologies.
 
+The main components of OVE are [**OVE Core**](https://github.com/ove/ove), which controls sections and the applications running within them and [**OVE Apps**](https://github.com/ove/ove-apps), which provide a set of useful applications for common tasks such as displaying webpages, images or videos and drawing graphs.
 
-The main components of OVE are  **OVE Core**, which controls sections and the applications running within them and **OVE Core Apps**, which provide a set of useful applications for common tasks such as displaying images, displaying webpages, and drawing graphs.
-**OVE Services** provides core functionality microservices within OVE such as geometry.  **OVE Asset Services** provides services to divide large networks or images into tiles, and serve these to the corresponding applications.
+[**OVE Services**](https://github.com/ove/ove-services) provides core functionality microservices within OVE such as the [Layout Service](https://github.com/ove/ove-services/tree/master/packages/ove-service-layout), which is used to compute absolute positions in pixels from positions expressed relative to a grid or as a percentage of the total space size. [**OVE Asset Services**](https://github.com/ove/ove-asset-services) provides an Asset Manager along with a collection of Asset Processing Services, which are used to upload archives or divide large networks or images into tiles, and serve these to the corresponding applications.
 
+OVE also provides a [graphical editor](https://github.com/ove/ove-editor) and [software development kits](https://github.com/ove/ove-sdks) that can be used to design and develop projects.
 
-## Concepts
+## Basic concepts
 
-OVE supports multiple ``spaces``. Each ``space`` is associated with one or more monitors, which may be attached to different computers, that together form a single display. This display may be a Large High Resolution Display (the [Data Observatory](https://www.imperial.ac.uk/data-science/data-observatory/) is 2.53m x 6.00m in size and 30,720 x 4,320 in resolution and consists of 64 monitors), but OVE is also suitable for use on much smaller displays.
+An OVE `server` installation supports multiple `spaces`. A `space` is a collection of monitors, which may be attached to different computers, that together form a single display. OVE is designed to be used in Large High Resolution Display environments; but, it is also suitable for use on much smaller displays with a single or a few monitors.
 
-In each space, OVE runs within a number of ``clients``. Each ``client`` is a browser window, typically full-screen on a single monitor, but a single ``client`` can span multiple windows if they are attached to the same computer. The arrangement of ``clients`` is described in the [``Spaces.json``](https://github.com/dsi-icl/ove/blob/master/packages/ove-core/src/client/Spaces.json) file.
+In each space, OVE runs within a number of `clients`. An OVE `client` is a browser window and typically runs full-screen on a single `screen`. A `screen` can span a single monitor or can span multiple monitors that are attached to the same computer. The arrangement of `clients` is described in the [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file.
 
-``Sections`` are rectangular regions within an ``oveCanvas``. Each ``section`` runs a single OVE ``app``. ``Sections`` may span multiple clients and can overlap.
+An OVE `application` (or `app`) includes server-side and client-side components. Each [OVE App](https://github.com/ove/ove-apps/packages) confirm to a [common structure](./APP_DEVELOPMENT.md/#application-structure). Each of the [OVE Apps](https://github.com/ove/ove-apps) provide a way to display a distinct form of commonly used content (subject to the limitations described in the [list of pitfalls to avoid](./PITFALLS.md)).
 
-An ``app`` displays something on the display. The official **core** ``apps`` each provide a way to display a distinct form of commonly used content.
-They include an ``HTML app`` that can be used to display any visualization that run as web apps (subject to the limitations described in the [list of pitfalls to avoid](./PITFALLS.md)). 
+Each individual `instance` of an OVE `app` is designed to run within its own `section`. `Sections` may span multiple `clients` and can overlap. `Sections` are rectangular regions within an `oveCanvas`. Each `section` has its own `geometry` which is a combination of its `height`, `width`, and 2D coordinates (`x`, `y`). The `geometry` describes the region on which a `section` is deployed on an `oveCanvas`. An `oveCanvas` can also have `groups` of one or more `sections` and `groups`.
 
+Each individual OVE `app` can have its own `configuration` (or `config`) defined within a [config.json](./APP_DEVELOPMENT.md/#application-structure). The `config` is used to define named `states` other app-specific configuration, which are common to all app `instances`. Each individual `instance` of an OVE `app` can have its own `state` (which can be accessed using APIs exposed by each `app`).
 
-![](images/concepts.svg)
+![basic concepts](images/concepts.svg)
 
+## Runtime environment
 
-## What runs
+Each OVE `client` displays the *view* page of OVE core. When a `section` is created, a corresponding [`iframe`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) is created within each `client` that it is associated with. The *view* of the corresponding `app` is loaded into this `iframe`.
 
-Each OVE ``client`` displays the *view* page of OVE core. When a ``section`` is created, a corresponding [``iframe``](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) is created within each ``client`` that it overlaps, and the *view* of the corresponding app is loaded into this ``iframe``. 
-In addition to these *views*, apps may present a *control* page that can be accessed directly through a web browser; this controller can communicate with the *views* running in ``clients`` using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
+In addition to these *views*, `apps` may present a *control* page that can be accessed directly through a web browser; this controller can communicate with the *views* running in `clients` using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
 
-![](images/urls.svg)
+![urls](images/urls.svg)
 
+When the `iframe` representing a `section` is created, its `margin` CSS property is used to position it correctly, and the `window.ove.geometry` object is set so that each `instance` of an `app` running within each `iframe` can determine what to display.
 
-When the ``iframes`` representing a section are created, its ``margin`` CSS property is used to position it correctly, and the ``window.ove.geometry`` object is set so that app running in the ``iframe`` can determine what to display.
-
-
-![](images/tiling.svg)
-
+![tiling](images/tiling.svg)
 
 ## Communication between components
 
-In these diagrams, requests labelled ``GET`` and ``POST`` are HTTP requests; other messages are sent using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
+In these diagrams, requests labelled `GET` and `POST` are HTTP requests; other messages are sent using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
 
 ### Managing sections
 
-![](images/sequence-diagrams/create-section.svg)
+![create section](images/sequence-diagrams/create-section.svg)
 
-![](images/sequence-diagrams/delete-sections.svg)
+![delete sections](images/sequence-diagrams/delete-sections.svg)
 
-![](images/sequence-diagrams/delete-section.svg)
+![delete section](images/sequence-diagrams/delete-section.svg)
 
 ### Managing state
 
-![](images/sequence-diagrams/create-state.svg)
+![create state](images/sequence-diagrams/create-state.svg)
 
-![](images/sequence-diagrams/load-state.svg)
+![load state](images/sequence-diagrams/load-state.svg)
 
-![](images/sequence-diagrams/update-state.svg)
-
+![cache state](images/sequence-diagrams/update-state.svg)
