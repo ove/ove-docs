@@ -14,7 +14,7 @@ OVE also provides a [graphical editor](https://github.com/ove/ove-editor) and [s
 
 An OVE `server` installation supports multiple `spaces`. A `space` is a collection of monitors, which may be attached to different computers, that together form a single display. OVE is designed to be used in Large High Resolution Display environments; but, it is also suitable for use on much smaller displays with a single or a few monitors.
 
-In each space, OVE runs within a number of `clients`. An OVE `client` is a browser window and typically runs full-screen on a single `screen`. A `screen` can be a single monitor or can span multiple monitors if they were all attached to a single computer. The arrangement of `clients` is described in the [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file.
+In each space, OVE runs within a number of `clients`. An OVE `client` is a browser window and typically runs full-screen on a single `screen`. A `screen` can span a single monitor or can span multiple monitors that are attached to the same computer. The arrangement of `clients` is described in the [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file.
 
 An OVE `application` (or `app`) includes server-side and client-side components. Each [OVE App](https://github.com/ove/ove-apps/packages) confirm to a [common structure](./APP_DEVELOPMENT.md/#application-structure). Each of the [OVE Apps](https://github.com/ove/ove-apps) provide a way to display a distinct form of commonly used content (subject to the limitations described in the [list of pitfalls to avoid](./PITFALLS.md)).
 
