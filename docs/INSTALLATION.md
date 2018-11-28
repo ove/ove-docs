@@ -61,7 +61,7 @@ Once the installation procedure has completed, the successful installation of OV
 To start the Docker runtime run:
 
 ```sh
-SERVICE_VERSION="latest" docker-compose -f docker-compose.assets.yml up -d
+docker-compose -f docker-compose.assets.yml up -d
 ```
 
 To stop the Docker runtime run:
