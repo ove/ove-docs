@@ -85,7 +85,7 @@ docker volume prune
 
 ## Installation by downloading and compiling source code
 
-All OVE projects use a build system based on [Lerna](https://lernajs.io/). [**OVE Asset Services**](https://github.com/ove/ove-asset-services) are based on [.NET Core](https://github.com/dotnet/core). All other OVE projects are based on [Node.js](https://nodejs.org/en/) and are compiled with [Babel](http://babeljs.io/) and deployed on a [PM2](http://pm2.keymetrics.io/) runtime.
+All OVE projects use a build system based on [Lerna](https://lernajs.io/). [**OVE Asset Services**](https://github.com/ove/ove-asset-services) are based on [.NET Core](https://github.com/dotnet/core). All other OVE projects are based on [Node.js](https://nodejs.org/en/), compiled with [Babel](http://babeljs.io/), and deployed on a [PM2](http://pm2.keymetrics.io/) runtime.
 
 ### Prerequisites
 
@@ -96,12 +96,12 @@ All OVE projects use a build system based on [Lerna](https://lernajs.io/). [**OV
 * [PM2](http://pm2.keymetrics.io/) (install with the command: `npm install -global pm2`)
 * [Lerna](https://lernajs.io/) (install with the command: `npm install -global lerna`)
 
-Compiling source code for the Docker runtime also require:
+Compiling source code for the Docker runtime also requires:
 
 * [Docker](https://www.docker.com/get-started)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
-Building [**OVE Asset Services**](https://github.com/ove/ove-asset-services) also require:
+Building [**OVE Asset Services**](https://github.com/ove/ove-asset-services) also requires:
 
 * [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 * [NetVips](https://github.com/kleisauke/net-vips)
