@@ -236,7 +236,7 @@ It is recommended to use OVE with Google Chrome, as this is the web browser used
 
 After installation, OVE will expose several resources that can be accessed through a web browser:
 
-* App Control page   `http://OVE_APP_MAPS_HOST:PORT/control.html?oveSectionId=0`
+* App Control page   `http://OVE_APP_HOST:PORT/control.html?oveSectionId=0`
 * OVE client pages   `http://OVE_CORE_HOST:PORT/view.html?oveViewId=LocalNine-0` (check [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) for more information)
 * OVE JS library     `http://OVE_CORE_HOST:PORT/ove.js`
 * OVE API docs       `http://OVE_CORE_HOST:PORT/api-docs`
