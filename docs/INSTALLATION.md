@@ -42,7 +42,7 @@ Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-serv
 
 ### Starting and stopping OVE
 
-OVE provides separate installers to help users install the necessary components. To install and start OVE on Docker run:
+OVE provides separate installation scripts to help users install the necessary components. To install and start OVE on Docker run:
 
 ```sh
 docker-compose -f docker-compose.ove.yml up -d
@@ -50,7 +50,7 @@ docker-compose -f docker-compose.ove.yml up -d
 
 Replace the `-d` option above with `--no-start` if you want to install OVE but do not want to start it at the end of the installation process.
 
-Once the installation procedure has completed, the successful installation of OVE can be verified by accessing the [OVE Core API Documentation](http://OVE_CORE_HOST:PORT/api-docs) using a web browser.
+Once the installation procedure has completed, the successful installation of OVE can be verified by accessing the OVE Core API Documentation (located at: `http://OVE_CORE_HOST:PORT/api-docs`) using a web browser.
 
 To install and start [**OVE Asset Services**](https://github.com/ove/ove-asset-services) on Docker run:
 
