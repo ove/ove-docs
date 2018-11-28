@@ -67,7 +67,7 @@ docker-compose -f docker-compose.assets.yml up -d
 To stop the Docker runtime run:
 
 ```sh
-SERVICE_VERSION="latest" docker-compose -f docker-compose.assets.yml down
+docker-compose -f docker-compose.assets.yml down
 ```
 
 To clean-up the Docker runtime first stop any active instances and then run:
