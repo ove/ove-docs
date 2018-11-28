@@ -29,7 +29,7 @@ Before installing OVE you must configure the environment variables:
 
 Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-services) you must configure the environment variables:
 
-* `MYSQL_RANDOM_ROOT_PASSWORD` - This variable is mandatory and must always be set to `yes`. This will generate a random initial password for the root user on the [MariaDB](https://mariadb.org/) database.
+* `MYSQL_RANDOM_ROOT_PASSWORD` - This variable is mandatory and we recommend it be set to `yes`. This will generate a random initial password for the root user on the [MariaDB](https://mariadb.org/) database.
 * `MYSQL_DATABASE` - The name of the [MariaDB](https://mariadb.org/) database which defaults to `AssetDatabase`.
 * `MYSQL_USER` - The username used to connect to the MariaDB database which defaults to `assetManager`.
 * `MYSQL_PASSWORD` - The username used to connect to the [MariaDB](https://mariadb.org/) database which defaults to `assetManager`.
