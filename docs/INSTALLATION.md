@@ -96,7 +96,7 @@ All OVE projects use a build system based on [Lerna](https://lernajs.io/). [**OV
 * [PM2](http://pm2.keymetrics.io/): `npm install -global pm2`
 * [Lerna](https://lernajs.io/):  `npm install -global lerna`
 
-Compiling source code for the Docker runtime also require:
+Compiling source code for the Docker runtime also requires:
 
 * [Docker](https://www.docker.com/get-started)
 * [Docker Compose](https://docs.docker.com/compose/install/)
