@@ -188,7 +188,7 @@ pm2 delete pm2.json
 
 ### Compiling source code for a Docker environment
 
-This approach only works for Linux and MacOS environments. The `build.sh` script corresponding to each repository can be found under the top most folder of the cloned or downloaded repository or within a `packages/PACKAGE_NAME` folder corresponding to each package.
+This approach currently works only for Linux and MacOS environments. The `build.sh` script corresponding to each repository can be found under the top most folder of the cloned or downloaded repository or within a `packages/PACKAGE_NAME` folder corresponding to each package.
 
 The `build.sh` script can be executed as:
 
