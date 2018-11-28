@@ -130,7 +130,7 @@ Once the source code has been downloaded OVE can be installed either onto a PM2 
 
 ### Compiling source code for the PM2 runtime using Lerna
 
-Once you have cloned or downloaded the code OVE can be compiled using the [Lerna](https://lernajs.io/) build system:
+Once you have cloned or downloaded the code, OVE can be compiled using the [Lerna](https://lernajs.io/) build system:
 
 ```sh
 cd ove
