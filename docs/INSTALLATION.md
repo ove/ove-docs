@@ -6,7 +6,7 @@ All contributors to OVE are encouraged to download and compile the source code. 
 
 ## Installation by running OVE installers
 
-[**OVE Install**](https://github.com/ove/ove-install/) scripts are designed to install OVE into a [**Docker**](https://www.docker.com/get-started) environment.
+[**OVE Install**](https://github.com/ove/ove-install/) scripts are designed to install OVE into a [Docker](https://www.docker.com/get-started) environment.
 
 ### Prerequisites
 
@@ -18,31 +18,31 @@ All contributors to OVE are encouraged to download and compile the source code. 
 
 The deployment environment needs to be pre-configured before running the OVE installers. This involves setting up ports and environment variables.
 
-The ports are pre-configured to a list of common defaults, but can be changed based on end-user requirements. Each port or port-range is defined as a mapping `HOST:CONTAINER`. Only the host ports can be changed and it is important to note that **container ports must not be changed**.
+The ports are pre-configured to a list of common defaults, but can be changed based on end-user requirements. Each port or port-range is defined as a mapping `HOST_PORT:CONTAINER_PORT`. Only the host ports can be changed, and it is important to note that **container ports must not be changed**.
 
 #### Environment variables
 
-Below are the list of environment variables that can be configured before installing OVE:
+Listed below are the environment variables that can be configured before installing OVE:
 
 * `OVE_HOST` - Hostname (or IP address + port) of OVE core
 * `TUORIS_HOST` - Hostname (or IP address + port) of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of SVG application).
 
-Below are the list of environment variables that can be configured before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-services):
+Listed below are the environment variables that can be configured before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-services):
 
 * `MYSQL_RANDOM_ROOT_PASSWORD` - This variable is mandatory and must always be set to `yes`. This will generate a random initial password for the root user on the [MariaDB](https://mariadb.org/) database.
 * `MYSQL_DATABASE` - The name of the [MariaDB](https://mariadb.org/) database which defaults to `AssetDatabase`.
 * `MYSQL_USER` - The username used to connect to the MariaDB database which defaults to `assetManager`.
 * `MYSQL_PASSWORD` - The username used to connect to the [MariaDB](https://mariadb.org/) database which defaults to `assetManager`.
-* `s3Client__AccessKey` - The access key used to connect to the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [**OVE Asset Manager** documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
-* `s3Client__Secret` - The secret used to connect to the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [**OVE Asset Manager** documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
-* `s3Client__ServiceURL` - The service URL of the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [**OVE Asset Manager** documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
+* `s3Client__AccessKey` - The access key used to connect to the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
+* `s3Client__Secret` - The secret used to connect to the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
+* `s3Client__ServiceURL` - The service URL of the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
 * `ServiceHostUrl` - Hostname (or IP address + port) of the corresponding Asset Management Service.
 * `MariaDB__ConnectionString` - The connection string used by the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager) to connect to [MariaDB](https://mariadb.org/) database. The format of the connection string must always be similar to what is provided, but the port number, database name, username and password must change accordingly if their default values were changed.
 * `AssetManagerHostUrl` - Hostname (or IP address + port) of the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager).
 
 ### Running the Docker Compose builds
 
-OVE provides separate installers to help users precisely install the necessary components. To install the core components of OVE run:
+OVE provides separate installers to help users install the necessary components. To install the core components of OVE run:
 
 ```sh
 SERVICE_VERSION="latest" docker-compose -f docker-compose.ove.yml create
@@ -90,6 +90,11 @@ All OVE projects use a build system based on [Lerna](https://lernajs.io/). [**OV
 * [PM2](http://pm2.keymetrics.io/): `npm install -global pm2`
 * [Lerna](https://lernajs.io/):  `npm install -global lerna`
 
+Compiling source code for the Docker runtime also require:
+
+* [Docker](https://www.docker.com/get-started)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+
 Building [**OVE Asset Services**](https://github.com/ove/ove-asset-services) also require:
 
 * [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)
@@ -104,10 +109,10 @@ The [SVG App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-svg) 
 
 All OVE projects can be downloaded from their GitHub repositories:
 
-* OVE Core: [master](https://github.com/ove/ove) [releases](https://github.com/ove/ove/releases)
-* OVE Apps: [master](https://github.com/ove/ove-apps) [releases](https://github.com/ove/ove-apps/releases)
-* OVE Services: [master](https://github.com/ove/ove-services) [releases](https://github.com/ove/ove-services/releases)
-* OVE Asset Services: [master](https://github.com/ove/ove-asset-services) [releases](https://github.com/ove/ove-asset-services/releases)
+* OVE Core: [master](https://github.com/ove/ove) | [releases](https://github.com/ove/ove/releases)
+* OVE Apps: [master](https://github.com/ove/ove-apps) | [releases](https://github.com/ove/ove-apps/releases)
+* OVE Services: [master](https://github.com/ove/ove-services) | [releases](https://github.com/ove/ove-services/releases)
+* OVE Asset Services: [master](https://github.com/ove/ove-asset-services) | [releases](https://github.com/ove/ove-asset-services/releases)
 
 The `master` branch of each repository contains the latest code, and can also be cloned if you intend to contribute code or fix issues:
 
@@ -129,11 +134,11 @@ lerna run build
 lerna run test
 ```
 
-Instructions above are only provided for the OVE Core repository. The steps to follow are similar for other repositories.
+Instructions above are only provided for the [**OVE Core**](https://github.com/ove/ove) repository. The steps to follow are similar for other repositories.
 
 #### Starting and stopping OVE
 
-The SVG app requires an instance of Tuoris to be available before starting it:
+The SVG app requires an instance of [Tuoris](https://github.com/fvictor/tuoris) to be available before starting it:
 
 ```sh
 pm2 start index.js -f -n "tuoris" -- -p PORT -i 1
@@ -168,7 +173,7 @@ cd ove
 ./build.sh
 ```
 
-Instructions above are only provided for the OVE Core repository. The steps to follow are similar for other repositories.
+Instructions above are only provided for the [**OVE Core**](https://github.com/ove/ove) repository. The steps to follow are similar for other repositories.
 
 #### Starting and stopping OVE
 
@@ -206,7 +211,7 @@ Run in Chrome:
 * OVE JS library     `http://OVE_CORE_HOST:PORT/ove.js`
 * OVE API docs       `http://OVE_CORE_HOST:PORT/api-docs`
 
-By default OVE core, all OVE apps and services run on `localhost`, which should be used as a substitution for `*_HOST` names above. The default `PORT` numbers are:
+By default OVE core, all apps and all services run on `localhost`, which should be used as a substitution for `*_HOST` names above. The default `PORT` numbers are:
 
 * 8080 - OVE Core
 * 8081 - OVE App Maps
