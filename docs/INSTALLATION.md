@@ -85,7 +85,7 @@ docker volume prune
 
 ## Installation by downloading and compiling source code
 
-All OVE projects use a build system based on [Lerna](https://lernajs.io/). [**OVE Asset Services**](https://github.com/ove/ove-asset-services) are based on [.NET Core](https://github.com/dotnet/core). All other OVE projects are based on [Node.js](https://nodejs.org/en/) and are compiled with [Babel](http://babeljs.io/) and deployed on a [PM2](http://pm2.keymetrics.io/) runtime.
+All OVE projects use a build system based on [Lerna](https://lernajs.io/). [**OVE Asset Services**](https://github.com/ove/ove-asset-services) are based on [.NET Core](https://github.com/dotnet/core). All other OVE projects are based on [Node.js](https://nodejs.org/en/), compiled with [Babel](http://babeljs.io/), and deployed on a [PM2](http://pm2.keymetrics.io/) runtime.
 
 ### Prerequisites
 
