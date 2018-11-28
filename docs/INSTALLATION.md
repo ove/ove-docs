@@ -83,7 +83,7 @@ docker system prune
 docker volume prune
 ```
 
-## Installation by downloading and compiling source code
+## Installation from source code
 
 All OVE projects use a build system based on [Lerna](https://lernajs.io/). [**OVE Asset Services**](https://github.com/ove/ove-asset-services) are based on [.NET Core](https://github.com/dotnet/core). All other OVE projects are based on [Node.js](https://nodejs.org/en/), compiled with [Babel](http://babeljs.io/), and deployed on a [PM2](http://pm2.keymetrics.io/) runtime.
 
@@ -128,7 +128,7 @@ git clone https://github.com/ove/ove
 
 Once the source code has been downloaded OVE can be installed either onto a PM2 runtime or a Docker runtime. The two approaches are explained below.
 
-### Compiling source code for the PM2 runtime using Lerna
+### Compiling source code for the PM2 runtime
 
 Once you have cloned or downloaded the code, OVE can be compiled using the [Lerna](https://lernajs.io/) build system:
 
@@ -180,7 +180,7 @@ To clean-up the PM2 environment run:
 pm2 delete pm2.json
 ```
 
-### Compiling source code for the Docker runtime using build.sh scripts
+### Compiling source code for the Docker runtime
 
 This approach only works for Linux and MacOS environments. The `build.sh` script corresponding to each repository can be found under the top most folder of the cloned or downloaded repository or within a `packages/PACKAGE_NAME` folder corresponding to each package.
 
