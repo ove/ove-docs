@@ -54,7 +54,7 @@ If you wish to install OVE without it automatically starting, use the command:
 docker-compose -f docker-compose.ove.yml up --no-start
 ```
 
-Once the installation procedure has completed and OVE has been started, the successful installation of OVE can be verified by accessing the OVE API docs (located at: `http://OVE_CORE_HOST:PORT/api-docs` as explained [Running OVE](#running-ove) section) using a web browser.
+Once the installation procedure has completed and OVE has been started, the successful installation of OVE can be verified by accessing the OVE API docs (located at: `http://OVE_CORE_HOST:PORT/api-docs` as noted in the [Running OVE](#running-ove) section) using a web browser.
 
 To install and start [**OVE Asset Services**](https://github.com/ove/ove-asset-services) on Docker run:
 
@@ -130,9 +130,9 @@ The `master` branch of each repository contains the latest code, and can also be
 git clone https://github.com/ove/ove
 ```
 
-Once the source code has been downloaded OVE can be installed either onto a Node.js runtime running locally or within a Docker environment. The two approaches are explained below.
+Once the source code has been downloaded OVE can be installed either on a local Node.js environment (such as PM2's Node.js environment) or within a Docker environment. The two approaches are explained below.
 
-### Compiling source code for a local Node.js runtime
+### Compiling source code for a local Node.js environment
 
 Once you have cloned or downloaded the code, OVE can be compiled using the [Lerna](https://lernajs.io/) build system:
 
