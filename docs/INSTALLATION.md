@@ -40,34 +40,40 @@ Listed below are the environment variables that can be configured before install
 * `MariaDB__ConnectionString` - The connection string used by the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager) to connect to [MariaDB](https://mariadb.org/) database. The format of the connection string must always be similar to what is provided, but the port number, database name, username and password must change accordingly if their default values were changed.
 * `AssetManagerHostUrl` - Hostname (or IP address + port) of the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager).
 
-### Running the Docker Compose builds
+### Starting and stopping OVE
 
-OVE provides separate installers to help users install the necessary components. To install the core components of OVE run:
-
-```sh
-SERVICE_VERSION="latest" docker-compose -f docker-compose.ove.yml create
-```
-
-To install the [**OVE Asset Services**](https://github.com/ove/ove-asset-services) run:
+OVE provides separate installers to help users install the necessary components. To install and start OVE on Docker run:
 
 ```sh
-SERVICE_VERSION="latest" docker-compose -f docker-compose.assets.yml create
+docker-compose -f docker-compose.ove.yml up -d
 ```
+
+Replace the `-d` option above with `--no-start` if you want to install OVE but do not want to start it at the end of the installation process.
 
 Once the installation procedure has completed, the successful installation of OVE can be verified by accessing the [OVE Core API Documentation](http://OVE_CORE_HOST:PORT/api-docs) on a web browser.
 
-### Starting and stopping OVE
-
-To start the Docker runtime run:
+To install and start [**OVE Asset Services**](https://github.com/ove/ove-asset-services) on Docker run:
 
 ```sh
 docker-compose -f docker-compose.assets.yml up -d
 ```
 
+Once the services have started, you can check their status by running:
+
+```sh
+docker ps
+```
+
+The `ps` command will list containers along with their `CONTAINER_ID`. Then, to check logs of an individual container, run:
+
+```sh
+docker logs <CONTAINER_ID>
+```
+
 To stop the Docker runtime run:
 
 ```sh
-docker-compose -f docker-compose.assets.yml down
+docker-compose -f docker-compose.ove.yml down
 ```
 
 To clean-up the Docker runtime first stop any active instances and then run:
@@ -150,6 +156,18 @@ To start the PM2 environment run:
 OVE_HOST="OVE_CORE_HOST:PORT" TUORIS_HOST="TUORIS_HOST:PORT" pm2 start pm2.json
 ```
 
+Once the services have started, you can check their status by running:
+
+```sh
+pm2 status
+```
+
+Then, to check logs of all services, run:
+
+```sh
+pm2 logs
+```
+
 To stop the PM2 environment run:
 
 ```sh
@@ -185,6 +203,18 @@ To start the Docker runtime run:
 
 ```sh
 SERVICE_VERSION="latest" docker-compose -f docker-compose.yml up -d
+```
+
+Once the services have started, you can check their status by running:
+
+```sh
+docker ps
+```
+
+The `ps` command will list containers along with their `CONTAINER_ID`. Then, to check logs of an individual container, run:
+
+```sh
+docker logs <CONTAINER_ID>
 ```
 
 To stop the Docker runtime run:
