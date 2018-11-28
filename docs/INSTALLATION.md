@@ -22,12 +22,12 @@ The ports are pre-configured to a list of common defaults, but can be changed ba
 
 #### Environment variables
 
-Listed below are the environment variables that can be configured before installing OVE:
+Before installing OVE you must configure the environment variables:
 
-* `OVE_HOST` - Hostname (or IP address + port) of OVE core
-* `TUORIS_HOST` - Hostname (or IP address + port) of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of SVG application).
+* `OVE_HOST` - Hostname (or IP address) + port of OVE core
+* `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of SVG application).
 
-Listed below are the environment variables that can be configured before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-services):
+Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-services) you must configure the environment variables:
 
 * `MYSQL_RANDOM_ROOT_PASSWORD` - This variable is mandatory and must always be set to `yes`. This will generate a random initial password for the root user on the [MariaDB](https://mariadb.org/) database.
 * `MYSQL_DATABASE` - The name of the [MariaDB](https://mariadb.org/) database which defaults to `AssetDatabase`.
@@ -36,9 +36,9 @@ Listed below are the environment variables that can be configured before install
 * `s3Client__AccessKey` - The access key used to connect to the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
 * `s3Client__Secret` - The secret used to connect to the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
 * `s3Client__ServiceURL` - The service URL of the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
-* `ServiceHostUrl` - Hostname (or IP address + port) of the corresponding Asset Management Service.
+* `ServiceHostUrl` - Hostname (or IP address) + port of the corresponding Asset Management Service.
 * `MariaDB__ConnectionString` - The connection string used by the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager) to connect to [MariaDB](https://mariadb.org/) database. The format of the connection string must always be similar to what is provided, but the port number, database name, username and password must change accordingly if their default values were changed.
-* `AssetManagerHostUrl` - Hostname (or IP address + port) of the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager).
+* `AssetManagerHostUrl` - Hostname (or IP address) + port of the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager).
 
 ### Starting and stopping OVE
 
@@ -50,7 +50,7 @@ docker-compose -f docker-compose.ove.yml up -d
 
 Replace the `-d` option above with `--no-start` if you want to install OVE but do not want to start it at the end of the installation process.
 
-Once the installation procedure has completed, the successful installation of OVE can be verified by accessing the [OVE Core API Documentation](http://OVE_CORE_HOST:PORT/api-docs) on a web browser.
+Once the installation procedure has completed, the successful installation of OVE can be verified by accessing the [OVE Core API Documentation](http://OVE_CORE_HOST:PORT/api-docs) using a web browser.
 
 To install and start [**OVE Asset Services**](https://github.com/ove/ove-asset-services) on Docker run:
 
@@ -92,9 +92,9 @@ All OVE projects use a build system based on [Lerna](https://lernajs.io/). [**OV
 * [git](https://git-scm.com/downloads)
 * [Node.js](https://nodejs.org/en/) (v8.0+)
 * [NPM](https://www.npmjs.com/)
-* [NPX](https://www.npmjs.com/package/npx): `npm install -global npx`
-* [PM2](http://pm2.keymetrics.io/): `npm install -global pm2`
-* [Lerna](https://lernajs.io/):  `npm install -global lerna`
+* [NPX](https://www.npmjs.com/package/npx) (install with the command: `npm install -global npx`)
+* [PM2](http://pm2.keymetrics.io/) (install with the command: `npm install -global pm2`)
+* [Lerna](https://lernajs.io/) (install with the command: `npm install -global lerna`)
 
 Compiling source code for the Docker runtime also require:
 
