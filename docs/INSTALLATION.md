@@ -22,12 +22,12 @@ The ports are pre-configured to a list of common defaults, but can be changed ba
 
 #### Environment variables
 
-Before installing OVE you must configure the environment variables:
+Before installing OVE you must configure the environment variables by editing the `docker-compose.ove.yml` file. The environment variables that can be configured are:
 
 * `OVE_HOST` - Hostname (or IP address) + port of OVE core
 * `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of SVG application).
 
-Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-services) you must configure the environment variables:
+Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-services) you must configure the environment variables by editing the `docker-compose.assets.yml` file. The environment variables that can be configured are:
 
 * `MYSQL_RANDOM_ROOT_PASSWORD` - This variable is mandatory and we recommend it be set to `yes`. This will generate a random initial password for the root user on the [MariaDB](https://mariadb.org/) database.
 * `MYSQL_DATABASE` - The name of the [MariaDB](https://mariadb.org/) database which defaults to `AssetDatabase`.
@@ -40,7 +40,7 @@ Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-serv
 * `MariaDB__ConnectionString` - The connection string used by the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager) to connect to [MariaDB](https://mariadb.org/) database. The format of the connection string must always be similar to what is provided, but the port number, database name, username and password must change accordingly if their default values were changed.
 * `AssetManagerHostUrl` - Hostname (or IP address) + port of the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager).
 
-### Starting and stopping OVE
+### Starting and stopping Docker runtime for OVE
 
 OVE provides separate installation scripts to help users install the necessary components. To install and start OVE on Docker run:
 
@@ -48,9 +48,13 @@ OVE provides separate installation scripts to help users install the necessary c
 docker-compose -f docker-compose.ove.yml up -d
 ```
 
-Replace the `-d` option above with `--no-start` if you want to install OVE but do not want to start it at the end of the installation process.
+If you wish to install OVE without it automatically starting, use the command:
 
-Once the installation procedure has completed, the successful installation of OVE can be verified by accessing the OVE Core API Documentation (located at: `http://OVE_CORE_HOST:PORT/api-docs`) using a web browser.
+```sh
+docker-compose -f docker-compose.ove.yml up --no-start
+```
+
+Once the installation procedure has completed and OVE has been started, the successful installation of OVE can be verified by accessing the OVE API docs (located at: `http://OVE_CORE_HOST:PORT/api-docs` as explained [Running OVE](#running-ove) section) using a web browser.
 
 To install and start [**OVE Asset Services**](https://github.com/ove/ove-asset-services) on Docker run:
 
@@ -126,9 +130,9 @@ The `master` branch of each repository contains the latest code, and can also be
 git clone https://github.com/ove/ove
 ```
 
-Once the source code has been downloaded OVE can be installed either onto a PM2 runtime or a Docker runtime. The two approaches are explained below.
+Once the source code has been downloaded OVE can be installed either onto a Node.js runtime running locally or within a Docker environment. The two approaches are explained below.
 
-### Compiling source code for the PM2 runtime
+### Compiling source code for a local Node.js runtime
 
 Once you have cloned or downloaded the code, OVE can be compiled using the [Lerna](https://lernajs.io/) build system:
 
@@ -142,19 +146,21 @@ lerna run test
 
 Instructions above are only provided for the [**OVE Core**](https://github.com/ove/ove) repository. The steps to follow are similar for other repositories.
 
-#### Starting and stopping OVE
+#### Starting and stopping PM2 process manager
 
-The SVG app requires an instance of [Tuoris](https://github.com/fvictor/tuoris) to be available before starting it:
+The SVG app requires an instance of [Tuoris](https://github.com/fvictor/tuoris) to be available before starting it. To start Tuoris run:
 
 ```sh
 pm2 start index.js -f -n "tuoris" -- -p PORT -i 1
 ```
 
-To start the PM2 environment run:
+OVE can then be started within the PM2 environment by running:
 
 ```sh
 OVE_HOST="OVE_CORE_HOST:PORT" TUORIS_HOST="TUORIS_HOST:PORT" pm2 start pm2.json
 ```
+
+By default, OVE core, and all services run on `localhost`, which should be used in place of `OVE_CORE_HOST` and `TUORIS_HOST` names above. The default `PORT` numbers for OVE core and Tuoris are provided in the [Running OVE](#running-ove) section.
 
 Once the services have started, you can check their status by running:
 
@@ -180,7 +186,7 @@ To clean-up the PM2 environment run:
 pm2 delete pm2.json
 ```
 
-### Compiling source code for the Docker runtime
+### Compiling source code for a Docker environment
 
 This approach only works for Linux and MacOS environments. The `build.sh` script corresponding to each repository can be found under the top most folder of the cloned or downloaded repository or within a `packages/PACKAGE_NAME` folder corresponding to each package.
 
@@ -193,7 +199,7 @@ cd ove
 
 Instructions above are only provided for the [**OVE Core**](https://github.com/ove/ove) repository. The steps to follow are similar for other repositories.
 
-#### Starting and stopping OVE
+#### Starting and stopping docker runtime for OVE
 
 Similar to the `build.sh` script, the `docker-compose.yml` file corresponding to each repository can also be found under the top most folder of the cloned or downloaded repository or within a `packages/PACKAGE_NAME` folder corresponding to each package.
 
@@ -239,11 +245,12 @@ For details of how to use OVE, see the [Usage](./USAGE.md) page.
 After installation, OVE will expose several resources that can be accessed through a web browser:
 
 * App Control page   `http://OVE_APP_HOST:PORT/control.html?oveSectionId=0`
-* OVE client pages   `http://OVE_CORE_HOST:PORT/view.html?oveViewId=LocalNine-0` (check [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) for more information)
+* OVE client pages   `http://OVE_CORE_HOST:PORT/view.html?oveViewId=LocalNine-0`
+  * (check [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) for more information)
 * OVE JS library     `http://OVE_CORE_HOST:PORT/ove.js`
 * OVE API docs       `http://OVE_CORE_HOST:PORT/api-docs`
 
-By default OVE core, all apps and all services run on `localhost`, which should be used as a substitution for `*_HOST` names above. The default `PORT` numbers are:
+By default, OVE core, all apps, and all services run on `localhost`, which should be used in place of `OVE_CORE_HOST` and `OVE_APP_HOST` names above. The default `PORT` numbers are:
 
 * 8080 - OVE Core
 * 8081 - OVE App Maps
