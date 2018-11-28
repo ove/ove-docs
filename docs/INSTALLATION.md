@@ -234,7 +234,7 @@ docker volume prune
 
 It is recommended to use OVE with Google Chrome, as this is the web browser used for development and in production at the [Data Science Institute](http://www.imperial.ac.uk/data-science/). However, it should also be compatible with other modern web browsers: if you encounter any browser-specific bugs please [report them as an Issue](https://github.com/ove/ove-apps/issues).
 
-Run in Chrome:
+After installation, OVE will expose several resources that can be accessed through a web browser:
 
 * App Control page   `http://OVE_APP_MAPS_HOST:PORT/control.html?oveSectionId=0`
 * OVE client pages   `http://OVE_CORE_HOST:PORT/view.html?oveViewId=LocalNine-0` (check [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) for more information)
