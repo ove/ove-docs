@@ -101,7 +101,7 @@ Compiling source code for the Docker runtime also requires:
 * [Docker](https://www.docker.com/get-started)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
-Building [**OVE Asset Services**](https://github.com/ove/ove-asset-services) also require:
+Building [**OVE Asset Services**](https://github.com/ove/ove-asset-services) also requires:
 
 * [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 * [NetVips](https://github.com/kleisauke/net-vips)
