@@ -160,7 +160,7 @@ OVE can then be started within the PM2 environment by running:
 OVE_HOST="OVE_CORE_HOST:PORT" TUORIS_HOST="TUORIS_HOST:PORT" pm2 start pm2.json
 ```
 
-By default, OVE core, and all services run on `localhost`, which should be used in place of `OVE_CORE_HOST` and `TUORIS_HOST` names above. The default `PORT` numbers for OVE core and Tuoris are provided in the [Running OVE](#running-ove) section.
+By default, OVE core and all services run on `localhost`, which should be used in place of `OVE_CORE_HOST` and `TUORIS_HOST` names above. The default `PORT` numbers for OVE core and Tuoris are provided in the [Running OVE](#running-ove) section.
 
 Once the services have started, you can check their status by running:
 
