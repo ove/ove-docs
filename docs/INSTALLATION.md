@@ -14,6 +14,10 @@ All contributors to OVE are encouraged to download and compile the source code. 
 * [Docker](https://www.docker.com/get-started)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
+[**OVE Asset Services**](https://github.com/ove/ove-asset-services) also requires:
+
+* [S3](https://aws.amazon.com/s3/) or an [S3-compatible object storage](http://www.s3-client.com/s3-compatible-storage-solutions.html) such as [Minio](https://www.minio.io/)
+
 ### Configuring the environment
 
 The deployment environment needs to be pre-configured before running the OVE installers. This involves setting up ports and environment variables.
@@ -33,9 +37,9 @@ Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-serv
 * `MYSQL_DATABASE` - The name of the [MariaDB](https://mariadb.org/) database which defaults to `AssetDatabase`.
 * `MYSQL_USER` - The username used to connect to the MariaDB database which defaults to `assetManager`.
 * `MYSQL_PASSWORD` - The username used to connect to the [MariaDB](https://mariadb.org/) database which defaults to `assetManager`.
-* `s3Client__AccessKey` - The access key used to connect to the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
-* `s3Client__Secret` - The secret used to connect to the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
-* `s3Client__ServiceURL` - The service URL of the [S3](https://www.nuget.org/packages/Amazon.S3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
+* `s3Client__AccessKey` - The access key used to connect to the [S3](https://aws.amazon.com/s3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
+* `s3Client__Secret` - The secret used to connect to the [S3](https://aws.amazon.com/s3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
+* `s3Client__ServiceURL` - The service URL of the [S3](https://aws.amazon.com/s3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
 * `ServiceHostUrl` - Hostname (or IP address) + port of the corresponding Asset Management Service.
 * `MariaDB__ConnectionString` - The connection string used by the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager) to connect to [MariaDB](https://mariadb.org/) database. The format of the connection string must always be similar to what is provided, but the port number, database name, username and password must change accordingly if their default values were changed.
 * `AssetManagerHostUrl` - Hostname (or IP address) + port of the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager).
@@ -110,6 +114,7 @@ Building [**OVE Asset Services**](https://github.com/ove/ove-asset-services) als
 * [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 * [NetVips](https://github.com/kleisauke/net-vips)
 * [MariaDB](https://mariadb.org/)
+* [S3](https://aws.amazon.com/s3/) or an [S3-compatible object storage](http://www.s3-client.com/s3-compatible-storage-solutions.html) such as [Minio](https://www.minio.io/)
 
 The [SVG App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-svg) requires:
 
