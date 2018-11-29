@@ -2,11 +2,9 @@
 
 There are several steps that must be performed in order to use OVE to control a display.
 
-## Running OVE-core and apps
+## Setting up OVE
 
-You will need to install the [OVE core service](https://github.com/ove/ove) and any [OVE apps](https://github.com/ove/ove-apps) or [OVE Services](https://github.com/ove/ove-services) that you intend to use. Instructions for building and running these can be found in the corresponding README files.
-
-You will need to modify the [pm2.json](https://github.com/ove/ove-apps/blob/master/pm2.json) (or, if you are using windows, the [pm2-windows.json](https://github.com/ove/ove-apps/blob/master/pm2-windows.json)) file for the OVE apps so that the ``OVE_HOST`` contains the  ``hostname:port`` on which the OVE core service is accessible. Note that this URL should be accessible by the computers controlling the monitors, so should not be ``localhost`` unless all monitors are attached to the machine running OVE core.
+Before using OVE, you will need to install [**OVE Core**](https://github.com/ove/ove), any [**OVE Apps**](https://github.com/ove/ove-apps), and any [**OVE Services**](https://github.com/ove/ove-services) that you intend to use. Installation guidelines can be found in the [OVE Installation Guide](./INSTALLATION.md).
 
 You will also need to modify the [``ove/packages/ove-core/src/client/Spaces.json``](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file to define a new ``space`` in OVE core.
 

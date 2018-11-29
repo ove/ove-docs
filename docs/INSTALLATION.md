@@ -170,10 +170,16 @@ The SVG app requires an instance of [Tuoris](https://github.com/fvictor/tuoris) 
 pm2 start index.js -f -n "tuoris" -- -p PORT -i 1
 ```
 
-OVE can then be started using the PM2 process manager by running:
+OVE can then be started using the PM2 process manager. To start OVE on a Linux or MacOS environment run:
 
 ```sh
 OVE_HOST="OVE_CORE_HOST:PORT" TUORIS_HOST="TUORIS_HOST:PORT" pm2 start pm2.json
+```
+
+To start OVE on a Windows environment run:
+
+```sh
+OVE_HOST="OVE_CORE_HOST:PORT" TUORIS_HOST="TUORIS_HOST:PORT" pm2 start pm2-windows.json
 ```
 
 By default, OVE core and all services run on `localhost`, which should be used in place of `OVE_CORE_HOST` and `TUORIS_HOST` names above. The default `PORT` numbers for OVE core and Tuoris are provided in the [Running OVE](#running-ove) section.
@@ -190,16 +196,28 @@ Then, to check logs of all services, run:
 pm2 logs
 ```
 
-To stop OVE processes managed by PM2 run:
+To stop OVE processes managed by PM2 on a Linux or MacOS environment run:
 
 ```sh
 pm2 stop pm2.json
 ```
 
-To clean-up the PM2 environment run:
+To stop OVE processes managed by PM2 on a Windows environment run:
+
+```sh
+pm2 stop pm2-windows.json
+```
+
+To clean-up processes managed by PM2 on a Linux or MacOS environment run:
 
 ```sh
 pm2 delete pm2.json
+```
+
+To clean-up processes managed by PM2 on a Windows environment run:
+
+```sh
+pm2 delete pm2-windows.json
 ```
 
 ### Compiling source code for a Docker environment
