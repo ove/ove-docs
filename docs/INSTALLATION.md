@@ -41,10 +41,20 @@ Before installing OVE you must configure the environment variables by editing th
 
 * `OVE_HOST` - Hostname (or IP address) + port of OVE core
 * `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of SVG application).
+* `OVE_SPACES_JSON` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This accepts a URL for the `Spaces.json` file to be used as a replacement to the default (embedded) [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file available with OVE.
+* `LOG_LEVEL` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This can have values from `0` to `6` and defaults to `5`. The values correspond to:
+  * `0` - FATAL
+  * `1` - ERROR
+  * `2` - WARN (The recommended `LOG_LEVEL` for production deployments)
+  * `3` - INFO
+  * `4` - DEBUG
+  * `5` - TRACE
+  * `6` - TRACE_SERVER (Generates additional server-side `TRACE` logs)
+* `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This accepts a URL of a file containing the [`Map layers Configuration`](https://github.com/ove/ove-apps/blob/master/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [`default Map layers Configuration`](https://github.com/ove/ove-apps/blob/master/packages/ove-app-maps/src/config.json) of the [Maps App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-maps).
 
 Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-services) you must configure the environment variables by editing the `docker-compose.assets.yml` file. The environment variables that can be configured are:
 
-* `MYSQL_RANDOM_ROOT_PASSWORD` - This variable is mandatory and we recommend it be set to `yes`. This will generate a random initial password for the root user on the [MariaDB](https://mariadb.org/) database.
+* `MYSQL_RANDOM_ROOT_PASSWORD` - This variable is mandatory and we recommend it be set to `yes`. This will generate a random initial password for the root user of the [MariaDB](https://mariadb.org/) database.
 * `MYSQL_DATABASE` - The name of the [MariaDB](https://mariadb.org/) database which defaults to `AssetDatabase`.
 * `MYSQL_USER` - The username used to connect to the MariaDB database which defaults to `assetManager`.
 * `MYSQL_PASSWORD` - The username used to connect to the [MariaDB](https://mariadb.org/) database which defaults to `assetManager`.
