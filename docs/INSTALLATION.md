@@ -18,13 +18,24 @@ All contributors to OVE are encouraged to download and compile the source code. 
 
 * [S3](https://aws.amazon.com/s3/) or an [S3-compatible object storage](http://www.s3-client.com/s3-compatible-storage-solutions.html) such as [Minio](https://www.minio.io/)
 
+### Downloading the OVE installers
+
+The `master` branch [**OVE Install**](https://github.com/ove/ove-install/) needs to be cloned in order to download the OVE installers:
+
+```sh
+git clone https://github.com/ove/ove-install
+cd ove-install
+```
+
 ### Configuring the environment
 
-The deployment environment needs to be pre-configured before running the OVE installers. This involves setting up ports and environment variables.
+Once downloaded, details of the deployment environment needs to be pre-configured before running the OVE installers. This involves defining port numbers and environment variables.
 
 The ports are pre-configured to a list of common defaults, but can be changed based on end-user requirements. Each port or port-range is defined as a mapping `HOST_PORT:CONTAINER_PORT`. Only the host ports can be changed, and it is important to note that **container ports must not be changed**.
 
 #### Environment variables
+
+Please note that the references to `Hostname (or IP address)` noted below should not be replaced with `localhost`, or the Docker hostname because these services need to be accessible from the client/browser. Please replace it with the `public hostname` or `IP address` of the `host machine`. For a local installation, the `host machine` refers to your own computer. For a server installation the `host machine` refers to the server on which the Docker environment has been setup. The default `port` numbers for OVE core, Tuoris, and other services are provided in the [Running OVE](#running-ove) section.
 
 Before installing OVE you must configure the environment variables by editing the `docker-compose.ove.yml` file. The environment variables that can be configured are:
 
