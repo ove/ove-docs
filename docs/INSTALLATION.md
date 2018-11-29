@@ -40,7 +40,7 @@ Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-serv
 * `MariaDB__ConnectionString` - The connection string used by the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager) to connect to [MariaDB](https://mariadb.org/) database. The format of the connection string must always be similar to what is provided, but the port number, database name, username and password must change accordingly if their default values were changed.
 * `AssetManagerHostUrl` - Hostname (or IP address) + port of the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager).
 
-### Starting and stopping Docker runtime for OVE
+### Starting and stopping the OVE Docker applications
 
 OVE provides separate installation scripts to help users install the necessary components. To install and start OVE on Docker run:
 
@@ -74,7 +74,7 @@ The `ps` command will list containers along with their `CONTAINER_ID`. Then, to 
 docker logs <CONTAINER_ID>
 ```
 
-To stop the Docker runtime run:
+To stop the Docker application run:
 
 ```sh
 docker-compose -f docker-compose.ove.yml down
@@ -100,7 +100,7 @@ All OVE projects use a build system based on [Lerna](https://lernajs.io/). [**OV
 * [PM2](http://pm2.keymetrics.io/) (install with the command: `npm install -global pm2`)
 * [Lerna](https://lernajs.io/) (install with the command: `npm install -global lerna`)
 
-Compiling source code for the Docker runtime also requires:
+Compiling source code for the Docker environment also requires:
 
 * [Docker](https://www.docker.com/get-started)
 * [Docker Compose](https://docs.docker.com/compose/install/)
@@ -146,7 +146,7 @@ lerna run test
 
 Instructions above are only provided for the [**OVE Core**](https://github.com/ove/ove) repository. The steps to follow are similar for other repositories.
 
-#### Starting and stopping PM2 process manager
+#### Starting and stopping OVE using the PM2 process manager
 
 The SVG app requires an instance of [Tuoris](https://github.com/fvictor/tuoris) to be available before starting it. To start Tuoris run:
 
@@ -174,7 +174,7 @@ Then, to check logs of all services, run:
 pm2 logs
 ```
 
-To stop the PM2 environment run:
+To stop OVE processes managed by PM2 run:
 
 ```sh
 pm2 stop pm2.json
@@ -199,13 +199,13 @@ cd ove
 
 Instructions above are only provided for the [**OVE Core**](https://github.com/ove/ove) repository. The steps to follow are similar for other repositories.
 
-#### Starting and stopping docker runtime for OVE
+#### Starting and stopping the OVE Docker containers
 
 Similar to the `build.sh` script, the `docker-compose.yml` file corresponding to each repository can also be found under the top most folder of the cloned or downloaded repository or within a `packages/PACKAGE_NAME` folder corresponding to each package.
 
 The deployment environment needs to be [pre-configured](#configuring-the-environment) before running these scripts.
 
-To start the Docker runtime run:
+To start each individual docker container run:
 
 ```sh
 SERVICE_VERSION="latest" docker-compose -f docker-compose.yml up -d
@@ -223,7 +223,7 @@ The `ps` command will list containers along with their `CONTAINER_ID`. Then, to 
 docker logs <CONTAINER_ID>
 ```
 
-To stop the Docker runtime run:
+To stop each individual Docker container run:
 
 ```sh
 SERVICE_VERSION="latest" docker-compose -f docker-compose.yml down
