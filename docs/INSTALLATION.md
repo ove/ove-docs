@@ -154,7 +154,7 @@ The SVG app requires an instance of [Tuoris](https://github.com/fvictor/tuoris) 
 pm2 start index.js -f -n "tuoris" -- -p PORT -i 1
 ```
 
-OVE can then be started within the PM2 environment by running:
+OVE can then be started using the PM2 process manager by running:
 
 ```sh
 OVE_HOST="OVE_CORE_HOST:PORT" TUORIS_HOST="TUORIS_HOST:PORT" pm2 start pm2.json
