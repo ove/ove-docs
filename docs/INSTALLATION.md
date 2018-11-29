@@ -50,7 +50,7 @@ Before installing OVE you must configure the environment variables by editing th
   * `4` - DEBUG
   * `5` - TRACE
   * `6` - TRACE_SERVER (Generates additional server-side `TRACE` logs)
-* `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This accepts a URL of a file containing the [`Map layers Configuration`](https://github.com/ove/ove-apps/blob/master/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [`default Map layers Configuration`](https://github.com/ove/ove-apps/blob/master/packages/ove-app-maps/src/config.json) of the [Maps App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-maps).
+* `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This accepts a URL of a file containing the [Map layers Configuration](https://github.com/ove/ove-apps/blob/master/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [default Map layers Configuration](https://github.com/ove/ove-apps/blob/master/packages/ove-app-maps/src/config.json) of the [Maps App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-maps).
 
 Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-services) you must configure the environment variables by editing the `docker-compose.assets.yml` file. The environment variables that can be configured are:
 
