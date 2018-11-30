@@ -15,7 +15,7 @@ You will need to modify the [`Spaces.json`](https://github.com/ove/ove/blob/mast
 
 ## Launching browsers
 
-In order to use OVE, you will need to open the URLs of the `clients` in a web browser. Each URL has the form: `http://OVE_CORE_HOST:PORT/view.html?oveViewId={SPACE}-{ID}`. The values for `OVE_CORE_HOST` and `PORT` must be set as explained in the [OVE Installation Guide](./INSTALLATION.md#running-ove). The value for `SPACE` would be the name of the `space` used, such as `LocalNine`, `LocalFour`, or a name of a new `space` that has been defined in the [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file. The value for `ID` is the index of the `client` associated with the browser window, in the definition of the `space` in [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file.
+In order to use OVE, you will need to open the URL of each `client` in a separate web browser window (or tab). Each URL has the form: `http://OVE_CORE_HOST:PORT/view.html?oveViewId={SPACE}-{ID}`. The values for `OVE_CORE_HOST` and `PORT` must be set as explained in the [OVE Installation Guide](./INSTALLATION.md#running-ove). The value for `SPACE` would be the name of the `space` used, such as `LocalNine`, `LocalFour`, or a name of a new `space` that has been defined in the [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file. The value for `ID` is the index of the `client` associated with the browser window, in the definition of the `space` in [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file.
 
 It is recommended to use OVE with Google Chrome, as this is the web browser used for development and in production at the [Data Science Institute](http://www.imperial.ac.uk/data-science/). However, OVE should also be compatible with other modern web browsers: if you encounter any browser-specific bugs please [report them as an Issue](https://github.com/ove/ove-apps/issues).
 
@@ -30,7 +30,7 @@ http://OVE_CORE_HOST:PORT/view.html?oveViewId=LocalFour-3
 
 However, in a much larger OVE installation with many monitors, opening browser windows may be sufficiently time-consuming for automation to be worthwhile.
 
-In a Windows environment, a [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/powershell-scripting) script can be used to launch full-screen browsers with the correct URLs. In a Linux or MacOS environment, a [Bash](https://linux.die.net/man/1/bash) script can be used to launch full-screen browsers with the correct URLs. In a MacOS environment, [AppleScript](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html) can be used as an alternative to [Bash](https://linux.die.net/man/1/bash).
+On Windows, a [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/powershell-scripting) script can be used to launch full-screen browsers with the correct URLs. On Linux, a [Bash](https://linux.die.net/man/1/bash) script can be used. On MacOS, either [Bash](https://linux.die.net/man/1/bash) or [AppleScript](https://developer.apple.com/library/archive/documentation/AppleScript/Conceptual/AppleScriptLangGuide/introduction/ASLR_intro.html) could be used.
 
 ## Launching OVE Apps
 
@@ -67,7 +67,7 @@ image.set_url("https://farm4.staticflickr.com/3107/2431422903_632ce51b56_o_d.jpg
 
 OVE provides a number of useful APIs that can be used to launch applications and load content. The complete list of APIs provided by [**OVE Core**](https://github.com/ove/ove) is documented at: `http://OVE_CORE_HOST:PORT/api-docs`.
 
-OVE core, all apps, and all services use [Swagger](https://swagger.io/solutions/api-documentation/) to document these APIs, which makes it possible to directly invoke them from within the documentation page (`http://OVE_CORE_HOST:PORT/api-docs`) opened on a web browser. A standalone tool such as [curl](https://curl.haxx.se/docs/manpage.html) can be used as an alternative to the [Swagger](https://swagger.io/solutions/api-documentation/) UI.
+The APIs for OVE core, all apps, and all services are documented using [Swagger](https://swagger.io/solutions/api-documentation/), and it is possible to directly invoke them from within the API documentation page (`http://OVE_CORE_HOST:PORT/api-docs`) using a web browser. Alternatively, a standalone tool such as [curl](https://curl.haxx.se/docs/manpage.html) can be used.
 
 An image can be loaded into the `LocalFour` space using the OVE APIs, by running the following commands using [curl](https://curl.haxx.se/docs/manpage.html).
 
@@ -91,6 +91,6 @@ These commands clear all sections on OVE, and creates a new section with an inst
 
 Once an App has been loaded into an OVE `space` it can be controlled using the corresponding controller, which provides app-specific functionality. For example, the controller of the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images) supports panning and zooming of images that have been loaded. The controller can be loaded into a separate browser window by accessing the URL `http://OVE_APP_IMAGES_HOST:PORT/control.html?oveSectionId=0`.
 
-A common practice when designing projects with interactive visualisations is to create a custom launcher application that is capable of making API calls. Such applications are usually designed to run on web browsers and invoke [**OVE Core**](https://github.com/ove/ove) API using JavaScript code. These applications eliminate the need of manual intervention and automate the launching and controlling of OVE apps, providing a single-click (or single-touch) experience.
+A common practice when designing projects with interactive visualisations is to create a custom launcher application that is capable of making API calls. Such applications are usually designed to run on web browsers and invoke the [**OVE Core**](https://github.com/ove/ove) API using JavaScript code. These applications provide a single-click (or single-touch) experience for launching and controlling OVE apps.
 
 When designing content to be displayed in an OVE environment, please also be aware of the [potential pitfalls](./PITFALLS.md).
