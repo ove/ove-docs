@@ -2,7 +2,7 @@
 
 There are several steps that must be performed in order to use OVE to control a display.
 
-Before using OVE, you will need to install [**OVE Core**](https://github.com/ove/ove), any [**OVE Apps**](https://github.com/ove/ove-apps), and any [**OVE Services**](https://github.com/ove/ove-services) that you intend to use. Installation guidelines can be found in the [OVE Installation Guide](./INSTALLATION.md).
+Before using OVE, you will need to install [**OVE Core**](https://github.com/ove/ove), any [**OVE Apps**](https://github.com/ove/ove-apps), and any [**OVE Services**](https://github.com/ove/ove-services) that you intend to use. Installation guidelines can be found in the [OVE Installation Guide](./INSTALLATION.md). As a part of the installation, you must ensure that the OVE core server, and all OVE apps, are accessible from the computers connected to the monitors that will be used in the display.
 
 ## Setting up OVE
 
@@ -19,7 +19,7 @@ In order to use OVE, you will need to open the URL of each `client` in a separat
 
 It is recommended to use OVE with Google Chrome, as this is the web browser used for development and in production at the [Data Science Institute](http://www.imperial.ac.uk/data-science/). However, OVE should also be compatible with other modern web browsers: if you encounter any browser-specific bugs please [report them as an Issue](https://github.com/ove/ove-apps/issues).
 
-To test OVE functionality, you can simply open four web browser windows (or tabs) with the following URLs to create the `LocalFour` space:
+To test OVE functionality, you can simply open four web browser windows (or tabs) with the following URLs corresponding to the `LocalFour` space:
 
 ```text
 http://OVE_CORE_HOST:PORT/view.html?oveViewId=LocalFour-0
@@ -50,7 +50,9 @@ The [**OVE Editor**](https://github.com/ove/ove-editor) is still work in progres
 
 ### Launching OVE Apps using the Python Client Library
 
-The [Python Client Library](https://github.com/ove/ove-sdks/tree/master/python) (installation instructions available on GitHub repository) is one of the SDKs provided by OVE. To launch the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images) with a sample image, in the `LocalNine` space, run:
+The [Python Client Library](https://github.com/ove/ove-sdks/tree/master/python) is one of the SDKs provided by OVE, which can be installed separately by following the instructions available on its [GitHub repository](https://github.com/ove/ove-sdks/blob/master/python/README.md#installation).
+
+To launch the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images) with a sample image, in the `LocalNine` space, run:
 
 ```python
 from ove.config import local_space as space
@@ -85,7 +87,7 @@ curl --header "Content-Type: application/json" --request DELETE http://OVE_CORE_
 curl --header "Content-Type: application/json" --request POST --data "{\"app\": {\"url\": \"http://OVE_APP_IMAGES_HOST:PORT\", \"states\": {\"load\": {\"tileSources\": \"https://openseadragon.github.io/example-images/highsmith/highsmith.dzi\"}}}, \"space\": \"LocalFour\", \"h\": 500, \"w\": 500, \"y\": 0, \"x\": 0}" http://OVE_CORE_HOST:PORT/section
 ```
 
-These commands clear all sections on OVE, and creates a new section with an instance of the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images) running within it. In this example we are loading an image with a [Deep Zoom](https://docs.microsoft.com/en-us/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc645077(v=vs.95)) file format.
+These commands clear all sections on OVE, and create a new section containing an instance of the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images). In this example we are loading a [Deep Zoom](https://docs.microsoft.com/en-us/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc645077(v=vs.95)) image.
 
 ## Controlling OVE Apps and designing interactive visualisations
 
