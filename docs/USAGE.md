@@ -11,7 +11,7 @@ By default, OVE provides two `spaces`, that are useful for trying out some of th
 * `LocalNine` - This `space` contains nine `clients` arranged in `3 x 3` configuration. Each `client` has a dimension of `1440 x 808` pixels and the total `space` has a dimension of `4320 x 2424` pixels.
 * `LocalFour` - This `space` contains four `clients` arranged in `2 x 2` configuration. Each `client` has a dimension of `1440 x 808` pixels and the total `space` has a dimension of `2880 x 1616` pixels.
 
-You will need to modify the [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file and introduce a new `space` in OVE, before it can be used in a production setting.
+You will need to modify the [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file and introduce a new `space` in OVE, before it can be used.
 
 ## Launching browsers
 
