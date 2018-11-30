@@ -42,6 +42,8 @@ OVE provides three different ways of launching apps into an OVE environment:
 
 The [**OVE Editor**](https://github.com/ove/ove-editor) is designed to be used by the most basic users of OVE. The [**OVE Core**](https://github.com/ove/ove) APIs are intended to be used by the most advanced users of OVE.
 
+Given below are instructions on how to load sample content using the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images). A complete list of all apps and similar instructions on how to use them can be found in the [**OVE Apps**](https://github.com/ove/ove-apps) repository.
+
 ### Launching OVE Apps from the OVE Editor
 
 The [**OVE Editor**](https://github.com/ove/ove-editor) is still work in progress, and is not currently available as an option.
