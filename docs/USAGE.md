@@ -89,7 +89,7 @@ These commands clear all sections on OVE, and creates a new section with an inst
 
 ## Controlling OVE Apps and designing interactive visualisations
 
-Once an App has been loaded into an OVE `space` it can be controlled using the corresponding controller, that provides app-specific functionality. The controller of the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images) supports panning and zooming of images that have been loaded. The controller can be loaded into a separate browser window by accessing the URL `http://OVE_APP_IMAGES_HOST:PORT/control.html?oveSectionId=0`.
+Once an App has been loaded into an OVE `space` it can be controlled using the corresponding controller, which provides app-specific functionality. For example, the controller of the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images) supports panning and zooming of images that have been loaded. The controller can be loaded into a separate browser window by accessing the URL `http://OVE_APP_IMAGES_HOST:PORT/control.html?oveSectionId=0`.
 
 A common practice when designing projects with interactive visualisations is to create a custom launcher application that is capable of making API calls. Such applications are usually designed to run on web browsers and invoke [**OVE Core**](https://github.com/ove/ove) API using JavaScript code. These applications eliminate the need of manual intervention and automate the launching and controlling of OVE apps, providing a single-click (or single-touch) experience.
 
