@@ -33,9 +33,13 @@ Once downloaded, details of the deployment environment needs to be pre-configure
 
 The ports are pre-configured to a list of common defaults, but can be changed based on end-user requirements. Each port or port-range is defined as a mapping `HOST_PORT:CONTAINER_PORT`. Only the host ports can be changed, and it is important to note that **container ports must not be changed**.
 
+#### Resolving port conflicts
+
+It is important to ensure all `HOST_PORT` values defined on the `docker-compose.ove.yml` and `docker-compose.assets.yml` files are not currently in use. If this is not the case, corresponding `HOST_PORT` values need to be changed. For example, if another [MySQL](https://www.mysql.com/) or [MariaDB](https://mariadb.org/) database exists on the host machine, it is most likely that the port `3306` could be in use. In such a situation, the [MariaDB](https://mariadb.org/) `HOST_PORT` needs to be changed on the `docker-compose.assets.yml` file.
+
 #### Environment variables
 
-Please note that the references to `Hostname (or IP address)` noted below should not be replaced with `localhost`, or the Docker hostname because these services need to be accessible from the client/browser. Please replace it with the `public hostname` or `IP address` of the `host machine`. For a local installation, the `host machine` refers to your own computer. For a server installation the `host machine` refers to the server on which the Docker environment has been setup. The default `port` numbers for OVE core, Tuoris, and other services are provided in the [Running OVE](#running-ove) section.
+Please note that the references to `Hostname (or IP address)` noted below should not be replaced with `localhost`, or the Docker hostname because these services need to be accessible from the client/browser. Please replace it with the `public hostname` or `IP address` of the `host machine`. For a local installation, the `host machine` refers to your own computer. For a server installation the `host machine` refers to the server on which the Docker environment has been setup. The default `PORT` numbers for OVE core, Tuoris, and other services are provided in the [Running OVE](#running-ove) section.
 
 Before installing OVE you must configure the environment variables by editing the `docker-compose.ove.yml` file. The environment variables that can be configured are:
 
