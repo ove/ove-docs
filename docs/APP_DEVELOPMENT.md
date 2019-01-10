@@ -180,7 +180,41 @@ window.ove.socket.on(function (message) {
 window.ove.socket.send(message);
 ```
 
-The `message` argument represents a JSON serializable object in both methods. These methods are particularly useful to trigger remote operations or to expose JavaScript functionality using REST APIs.
+The `message` argument represents a JSON serializable object in both methods. These methods are particularly useful to trigger remote operations or to expose JavaScript functionality using REST APIs. They can also be used to develop controllers that support interactive operations such as [**linking and brushing**](https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_1129), across a number of different application instances or types. The tool used for [Debugging Communication via WebSockets](#debugging-communication-via-websockets) is a good example on how to use these methods to develop an external controller.
+
+### Debugging Communication via WebSockets
+
+OVE provides a tool to debug communications via WebSockets. This tool can be accessed either by [downloading it](https://github.com/ove/ove/blob/master/packages/ove-core/tools/debug-socket/index.html) (right-click the **Raw** button and select **Save as**) or by cloning the source code.
+
+```sh
+git clone https://github.com/ove/ove
+cd ove/packages/ove-core/tools/debug-socket
+```
+
+To access the browser-based tool you will also need to start a web-server. This can be done using one of the two approaches shown below.
+
+Node.js:
+
+```sh
+npm install http-server -g
+http-server
+```
+
+Python:
+
+```sh
+python -m SimpleHTTPServer
+```
+
+Please note that you may need to specify a port number if you have chosen to use Python and the port 8000 is already in use.
+
+Once the application is launched it will be available at the any of the URLs printed on the console, if you have chosen to use Node.js or at `http://localhost:8000` (or corresponding port number), if you have chosen to use Python. 
+
+If the tool prompts you to provide `oveHost`, `oveAppId` and `oveSectionId` as query parameters, please modify the URL and provide these parameters.
+
+The `oveHost` parameter takes the form of `OVE_CORE_HOST:PORT`. The `oveAppId` parameter is the identifier of the application you are interested in debugging, such as `maps`, `images` or `html` (which by convention is the name of the application in lower case). The `oveSectionId` is the identifier of the section in which the application is currently deployed in. This identifier is used when accessing the application's control page or when working with OVE APIs to manage sections.
+
+If the tool has been accessed with the correct parameters, you should be seeing a text box along with a `Send` button. The contents of the text box should automatically change when you perform any operation on the application that you are currently debugging. You can modify the contents of the text-box and press the `Send` button to control the application from within the tool.
 
 ## Helper methods
 
