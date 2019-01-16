@@ -216,6 +216,19 @@ The `oveHost` parameter takes the form of `OVE_CORE_HOST:PORT`. The `oveAppName`
 
 If the tool has been accessed with the correct parameters, you should be seeing a text box along with a `Send` button. The contents of the text box should automatically change when you perform any operation on the application that you are currently debugging. You can modify the contents of the text-box and press the `Send` button to control the application from within the tool.
 
+### Communicating within a web browser
+
+The `window.ove.frame` provides two functions `send` and `on` to send and receive messages within a web browser:
+
+``` JavaScript
+window.ove.frame.on(function (message) {
+    // logic to interpret the message
+});
+window.ove.frame.send(message);
+```
+
+The `message` argument represents a JSON serializable object in both methods. If `window.ove.frame.on` has not been set, all messages would be received by `window.ove.socket.on`. These methods can be used to develop controllers that support interactive operations such as [**linking and brushing**](https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_1129), across a number of different application instances or types.
+
 ## Helper methods
 
 `OVE.Utils` provides a number of useful methods, such as `OVE.Utils.getQueryParam(name, defaultValue)`, `OVE.Utils.getSpace()`, `OVE.Utils.getClient()` and `OVE.Utils.getSectionId()`.

@@ -312,6 +312,8 @@ By default, OVE core, all apps, and all services run on `localhost`, which shoul
 * 8089 - OVE App SVG
 * 8090 - OVE App Whiteboard
 * 8091 - OVE App PDF
+* 8092 - OVE App Controller
+* 8093 - OVE App Replicator
 * 8180 - OVE Service Layout
 * 8181 - OVE Asset Manager
 * 8182 - OVE Service Image Tiles
