@@ -184,14 +184,14 @@ The `message` argument represents a JSON serializable object in both methods. Th
 
 ### Debugging Communication via WebSockets
 
-OVE provides a tool to debug communications via WebSockets. This tool can be accessed either by [downloading it](https://github.com/ove/ove/blob/master/packages/ove-core/tools/debug-socket/index.html) (right-click the **Raw** button and select **Save as**) or by cloning the source code.
+OVE provides a tool to debug communications via WebSockets. This tool can be obtained either by [downloading it](https://raw.githubusercontent.com/ove/ove/master/packages/ove-core/tools/debug-socket/index.html) (right-click this link and select **Save as**) or by cloning the source code.
 
 ```sh
 git clone https://github.com/ove/ove
 cd ove/packages/ove-core/tools/debug-socket
 ```
 
-To access the browser-based tool you will also need to start a web-server. This can be done using one of the two approaches shown below.
+To access the browser-based tool you will also need to start a web-server. This can be done using one of the approaches shown below.
 
 Node.js:
 
@@ -200,13 +200,19 @@ npm install http-server -g
 http-server
 ```
 
-Python:
+Python 2:
 
 ```sh
-python -m SimpleHTTPServer
+python -m SimpleHTTPServer 9999
 ```
 
-Please note that you may need to specify a port number if you have chosen to use Python and the port 8000 is already in use.
+Python 3:
+
+```sh
+python3 -m http.server 9999
+```
+
+Please note that you may need to specify a port number if you have chosen to use Python and the default of port 8000 is already in use (the examples above specify 9999 as the port to use).
 
 Once the application is launched it will be available at the any of the URLs printed on the console, if you have chosen to use Node.js or at `http://localhost:8000` (or corresponding port number), if you have chosen to use Python. 
 
@@ -214,7 +220,7 @@ If the tool prompts you to provide `oveHost`, `oveAppName` and `oveSectionId` as
 
 The `oveHost` parameter takes the form of `OVE_CORE_HOST:PORT`. The `oveAppName` parameter is the name of the application you are interested in debugging, such as `maps`, `images` or `html` (which by convention is always in lower case). The name of the application can also be obtained via the `http://OVE_APP_HOST:PORT/name` API. The `oveSectionId` is the identifier of the section in which the application is currently deployed in. This identifier is used when accessing the application's control page or when working with OVE APIs to manage sections.
 
-If the tool has been accessed with the correct parameters, you should be seeing a text box along with a `Send` button. The contents of the text box should automatically change when you perform any operation on the application that you are currently debugging. You can modify the contents of the text-box and press the `Send` button to control the application from within the tool.
+If the tool has been accessed with the correct parameters, you should see a text box along with a `Send` button. The contents of the text box should automatically change when you perform any operation on the application that you are currently debugging. You can modify the contents of the text-box and press the `Send` button to control the application from within the tool.
 
 ### Communicating within a web browser
 
