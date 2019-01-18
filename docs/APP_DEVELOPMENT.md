@@ -184,14 +184,14 @@ The `message` argument represents a JSON serializable object in both methods. Th
 
 ### Debugging Communication via WebSockets
 
-OVE provides a tool to debug communications via WebSockets. This tool can be accessed either by [downloading it](https://raw.githubusercontent.com/ove/ove/master/packages/ove-core/tools/debug-socket/index.html) (right-click this link and select **Save as**) or by cloning the source code.
+OVE provides a tool to debug communications via WebSockets. This tool can be obtained either by [downloading it](https://raw.githubusercontent.com/ove/ove/master/packages/ove-core/tools/debug-socket/index.html) (right-click this link and select **Save as**) or by cloning the source code.
 
 ```sh
 git clone https://github.com/ove/ove
 cd ove/packages/ove-core/tools/debug-socket
 ```
 
-To access the browser-based tool you will also need to start a web-server. This can be done using one of the two approaches shown below.
+To access the browser-based tool you will also need to start a web-server. This can be done using one of the approaches shown below.
 
 Node.js:
 
