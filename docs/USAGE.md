@@ -42,7 +42,7 @@ OVE provides three different ways of launching apps into an OVE environment:
 
 The [**OVE Editor**](https://github.com/ove/ove-editor) is designed to be used by the most basic users of OVE. The [**OVE Core**](https://github.com/ove/ove) APIs are intended to be used by the most advanced users of OVE.
 
-Given below are instructions on how to load sample content using the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images). A complete list of all apps and similar instructions on how to use them can be found in the [**OVE Apps**](https://github.com/ove/ove-apps) repository.
+Given below are instructions on how to load sample content using the [Images App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images). A complete list of all apps and similar instructions on how to use them can be found in the [**OVE Apps**](https://github.com/ove/ove-apps) repository.
 
 ### Launching OVE Apps from the OVE Editor
 
@@ -52,7 +52,7 @@ The [**OVE Editor**](https://github.com/ove/ove-editor) is still work in progres
 
 The [Python Client Library](https://github.com/ove/ove-sdks/tree/master/python) is one of the SDKs provided by OVE, which can be installed separately by following the instructions available on its [GitHub repository](https://github.com/ove/ove-sdks/blob/master/python/README.md#installation).
 
-To launch the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images) with a sample image, in the `LocalNine` space, run:
+To launch the [Images App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images) with a sample image, in the `LocalNine` space, run:
 
 ```python
 from ove.config import local_space as space
@@ -87,11 +87,13 @@ curl --header "Content-Type: application/json" --request DELETE http://OVE_CORE_
 curl --header "Content-Type: application/json" --request POST --data "{\"app\": {\"url\": \"http://OVE_APP_IMAGES_HOST:PORT\", \"states\": {\"load\": {\"tileSources\": \"https://openseadragon.github.io/example-images/highsmith/highsmith.dzi\"}}}, \"space\": \"LocalFour\", \"h\": 500, \"w\": 500, \"y\": 0, \"x\": 0}" http://OVE_CORE_HOST:PORT/section
 ```
 
-These commands clear all sections on OVE, and create a new section containing an instance of the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images). In this example we are loading a [Deep Zoom](https://docs.microsoft.com/en-us/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc645077(v=vs.95)) image.
+These commands clear all sections on OVE, and create a new section containing an instance of the [Images App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images). In this example we are loading a [Deep Zoom](https://docs.microsoft.com/en-us/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc645077(v=vs.95)) image.
+
+The OVE core APIs can be used for various other purposes such as grouping sections together, transforming section dimensions by translating and scaling, or for moving sections from one space to another. APIs exposed by OVE apps can be used to set, update or flush application state and to obtain differences between states or to transform from one state to another using pan and zoom operations. A catalogue of all available APIs for OVE core and all active apps is available at `http://OVE_CORE_HOST:PORT`.
 
 ## Controlling OVE Apps and designing interactive visualisations
 
-Once an App has been loaded into an OVE `space` it can be controlled using the corresponding controller, which provides app-specific functionality. For example, the controller of the [Image App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images) supports panning and zooming of images that have been loaded. The controller can be loaded into a separate browser window by accessing the URL `http://OVE_APP_IMAGES_HOST:PORT/control.html?oveSectionId=0`.
+Once an App has been loaded into an OVE `space` it can be controlled using the corresponding controller, which provides app-specific functionality. For example, the controller of the [Images App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-images) supports panning and zooming of images that have been loaded. The controller can be loaded into a separate browser window by accessing the URL `http://OVE_APP_IMAGES_HOST:PORT/control.html?oveSectionId=0`.
 
 A common practice when designing projects with interactive visualisations is to create a custom launcher application that is capable of making API calls. Such applications are usually designed to run on web browsers and invoke the [**OVE Core**](https://github.com/ove/ove) API using JavaScript code. These applications provide a single-click (or single-touch) experience for launching and controlling OVE apps.
 

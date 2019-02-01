@@ -178,7 +178,7 @@ Instructions above are only provided for the [**OVE Core**](https://github.com/o
 
 #### Starting and stopping OVE using the PM2 process manager
 
-The SVG app requires an instance of [Tuoris](https://github.com/fvictor/tuoris) to be available before starting it. To start Tuoris run:
+The [SVG App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-svg) requires an instance of [Tuoris](https://github.com/fvictor/tuoris) to be available before starting it. To start Tuoris run:
 
 ```sh
 pm2 start index.js -f -n "tuoris" -- -p PORT -i 1
@@ -314,11 +314,14 @@ By default, OVE core, all apps, and all services run on `localhost`, which shoul
 * 8091 - OVE App PDF
 * 8092 - OVE App Controller
 * 8093 - OVE App Replicator
+* 8094 - OVE App WebRTC
 * 8180 - OVE Service Layout
 * 8181 - OVE Asset Manager
 * 8182 - OVE Service Image Tiles
+* 8190 - OVE Service Persistence (In-Memory)
 
 The default `PORT` numbers of OVE dependencies are:
 
 * 7080 - Tuoris
 * 3306 - MariaDB
+* 4443 - OpenVidu

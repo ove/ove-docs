@@ -1,7 +1,7 @@
 # Developing OVE applications
 
 OVE provides a number of applications to display commonly-used types of content, such as HTML, tiled images, audio and video files, maps, networks, and charts.
-The HTML application is particularly flexible, and allows the hosting of general HTML/JavaScript web applications.
+The [HTML App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-html) is particularly flexible, and allows the hosting of general HTML/JavaScript web applications.
 However, if existing applications do not meet your needs then you can write a new OVE app.
 
 [`@ove-lib/appbase`](https://www.npmjs.com/package/@ove-lib/appbase) provides a base library on which OVE applications can be built.
@@ -214,7 +214,7 @@ python3 -m http.server 9999
 
 Please note that you may need to specify a port number if you have chosen to use Python and the default of port 8000 is already in use (the examples above specify 9999 as the port to use).
 
-Once the application is launched it will be available at the any of the URLs printed on the console, if you have chosen to use Node.js or at `http://localhost:8000` (or corresponding port number), if you have chosen to use Python. 
+Once the application is launched it will be available at the any of the URLs printed on the console, if you have chosen to use Node.js or at `http://localhost:8000` (or corresponding port number), if you have chosen to use Python.
 
 If the tool prompts you to provide `oveHost`, `oveAppName` and `oveSectionId` as query parameters, please modify the URL and provide these parameters.
 
@@ -230,10 +230,27 @@ The `window.ove.frame` provides two functions `send` and `on` to send and receiv
 window.ove.frame.on(function (message) {
     // logic to interpret the message
 });
-window.ove.frame.send(message);
+window.ove.frame.send(target, message, appId);
 ```
 
-The `message` argument represents a JSON serializable object in both methods. If `window.ove.frame.on` has not been set, all messages would be received by `window.ove.socket.on`. These methods can be used to develop controllers that support interactive operations such as [**linking and brushing**](https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_1129), across a number of different application instances or types.
+The `message` argument represents a JSON serializable object in both methods. The `target` argument can be one of `Constants.Frame.PEER` or `Constants.Frame.CHILD`, and the optional `appId` argument identifies the target application. If `window.ove.frame.on` has not been set, all messages would be received by `window.ove.socket.on`. These methods can be used to develop controllers that support interactive operations such as [**linking and brushing**](https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_1129), across a number of different application instances or types.
+
+## Embedding OVE within an existing web application
+
+Each OVE `client` can be deployed in its own iFrame and embedded into an existing web application. This approach has been used in the [Whiteboard App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-whiteboard) and the [Replicator App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-replicator). OVE also supports a number of useful properties that can be passed into the iFrame of each `client`. The `filters` property accepts an `includeOnly` or `exclude` child-property that can be used to specifically include or exclude sections from being displayed within a `client`. Each OVE `client` has a dark grey background, which can be set to `none` using the `transparentBackground` property. The `load` property can be set to forcefully reload the contents of a `client`.
+
+These properties can be passed into all `client` iFrames as a message sent to the `core` application, as noted below:
+
+``` JavaScript
+window.ove.frame.send(
+    Constants.Frame.CHILD,
+    {
+        load: true,
+        transparentBackground: true,
+        filters: { includeOnly: [0, 1] }
+    },
+    'core');
+```
 
 ## Helper methods
 
