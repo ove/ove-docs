@@ -163,11 +163,25 @@ You should also ensure that page elements have been resized appropriately.
 `OVE.Utils` provides two methods for automatically resizing a `<div>` element.
 `OVE.Utils.resizeController(contentDivName)` scales the element with `id` `contentDivName`  to fit inside both the client and window, whilst maintaining the aspect ratio of the section/content; `OVE.Utils.resizeViewer(contentDivName)` resizes the element with `id` `contentDivName` to the size of the corresponding section (which may span multiple clients), and then translated based on the client's coordinates.
 
-### The OVE object
+### Client-side Helper methods
+
+`OVE.Utils` provides a number of useful methods, such as `OVE.Utils.getQueryParam(name, defaultValue)`, `OVE.Utils.getURLQueryParam()`, `OVE.Utils.getSpace()`, `OVE.Utils.getClient()`, `OVE.Utils.getViewId()` and `OVE.Utils.getSectionId()`.
+
+`OVE.Utils.Coordinates.transform(vector, inputType, outputType)` provides a mechanism to convert coordinates of one format to another. The input and output types can be one of `OVE.Utils.Coordinates.SCREEN`, `OVE.Utils.Coordinates.SECTION` or `OVE.Utils.Coordinates.SPACE`:
+
+```js
+// Get location of mouse pointer within the space.
+function onMouseEvent(event) {
+    const spaceCoordinates = OVE.Utils.Coordinates.transform(
+        [event.screenX, event.screenY], OVE.Utils.Coordinates.SCREEN, OVE.Utils.Coordinates.SPACE)
+}
+```
+
+## The OVE object
 
 The OVE object (`window.ove`) provides a number of useful functions and data structures to handle state, to interpret geometry and to communicate via WebSockets. It also provides a context (`window.ove.context`) to hold the application's local variables. The `window.ove.context.uuid` property provides a unique identifier for each instance of OVE. This can be used to uniquely identify each viewer and controller in the system. The `window.ove.context.hostname` property provides the hostname of the ove.js library.
 
-#### Handling state
+### Handling state
 
 The `window.ove.state` object provides a `window.ove.state.current` data structure to hold the current application state. You can decide what this should contain, given the particular needs of your application.
 
@@ -175,7 +189,7 @@ The current application state (contents of `window.ove.state.current`) can be se
 
 The `window.ove.state` object also provides two other methods `cache` and `load`, which can be used to cache the application state on the server and load it sometime later. These methods are internally called by the utility methods provided by `OVE.Utils` and therefore their use is limited to a few advanced use-cases.
 
-#### Interpreting geometry
+### Interpreting geometry
 
 The `window.ove.geometry` provides information useful to interpret the geometry of the clients:
 
@@ -195,7 +209,7 @@ While all of this information is available on a fully initialized viewer, the co
 * `window.ove.geometry.section.w` - Width of the section (or the total width of the application)
 * `window.ove.geometry.section.h` - Height of the section (or the total height of the application)
 
-#### Communicating via WebSockets
+### Communicating via WebSockets
 
 The `window.ove.socket` provides two functions `send` and `on` to send and receive messages using WebSockets:
 
@@ -208,7 +222,7 @@ window.ove.socket.send(message);
 
 The `message` argument represents a JSON serializable object in both methods. These methods are particularly useful to trigger remote operations or to expose JavaScript functionality using REST APIs. They can also be used to develop controllers that support interactive operations such as [**linking and brushing**](https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_1129), across a number of different application instances or types. The tool used for [Debugging Communication via WebSockets](#debugging-communication-via-websockets) is a good example on how to use these methods to develop an external controller.
 
-#### Debugging Communication via WebSockets
+### Debugging Communication via WebSockets
 
 OVE provides a tool to debug communications via WebSockets. This tool can be obtained either by [downloading it](https://raw.githubusercontent.com/ove/ove/master/packages/ove-core/tools/debug-socket/index.html) (right-click this link and select **Save as**) or by cloning the source code.
 
@@ -248,7 +262,7 @@ The `oveHost` parameter takes the form of `OVE_CORE_HOST:PORT`. The `oveAppName`
 
 If the tool has been accessed with the correct parameters, you should see a text box along with a `Send` button. The contents of the text box should automatically change when you perform any operation on the application that you are currently debugging. You can modify the contents of the text-box and press the `Send` button to control the application from within the tool.
 
-#### Communicating within a web browser
+### Communicating within a web browser
 
 The `window.ove.frame` provides two functions `send` and `on` to send and receive messages within a web browser:
 
@@ -260,20 +274,6 @@ window.ove.frame.send(target, message, appId);
 ```
 
 The `message` argument represents a JSON serializable object in both methods. The `target` argument can be one of `Constants.Frame.PEER` or `Constants.Frame.CHILD`, and the optional `appId` argument identifies the target application. If `window.ove.frame.on` has not been set, all messages would be received by `window.ove.socket.on`. These methods can be used to develop controllers that support interactive operations such as [**linking and brushing**](https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_1129), across a number of different application instances or types.
-
-### Client-side Helper methods
-
-`OVE.Utils` provides a number of useful methods, such as `OVE.Utils.getQueryParam(name, defaultValue)`, `OVE.Utils.getURLQueryParam()`, `OVE.Utils.getSpace()`, `OVE.Utils.getClient()`, `OVE.Utils.getViewId()` and `OVE.Utils.getSectionId()`.
-
-`OVE.Utils.Coordinates.transform(vector, inputType, outputType)` provides a mechanism to convert coordinates of one format to another. The input and output types can be one of `OVE.Utils.Coordinates.SCREEN`, `OVE.Utils.Coordinates.SECTION` or `OVE.Utils.Coordinates.SPACE`:
-
-```js
-// Get location of mouse pointer within the space.
-function onMouseEvent(event) {
-    const spaceCoordinates = OVE.Utils.Coordinates.transform(
-        [event.screenX, event.screenY], OVE.Utils.Coordinates.SCREEN, OVE.Utils.Coordinates.SPACE)
-}
-```
 
 ## Embedding OVE within an existing web application
 
