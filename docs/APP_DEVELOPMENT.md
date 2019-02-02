@@ -106,7 +106,7 @@ const getSocket = function () {
         // If the socket is closed, we try to refresh it.
         setTimeout(getSocket, Constants.SOCKET_REFRESH_DELAY);
     });
-    ws = Utils.getSafeSocket(socket)
+    ws = Utils.getSafeSocket(socket);
 };
 getSocket();
 
@@ -173,7 +173,7 @@ You should also ensure that page elements have been resized appropriately.
 // Get location of mouse pointer within the space.
 function onMouseEvent(event) {
     const spaceCoordinates = OVE.Utils.Coordinates.transform(
-        [event.screenX, event.screenY], OVE.Utils.Coordinates.SCREEN, OVE.Utils.Coordinates.SPACE)
+        [event.screenX, event.screenY], OVE.Utils.Coordinates.SCREEN, OVE.Utils.Coordinates.SPACE);
 }
 ```
 

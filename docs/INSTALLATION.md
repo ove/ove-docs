@@ -39,12 +39,14 @@ It is important to ensure all `HOST_PORT` values defined on the `docker-compose.
 
 #### Environment variables
 
-Please note that the references to `Hostname (or IP address)` noted below should not be replaced with `localhost`, or the Docker hostname because these services need to be accessible from the client/browser. Please replace it with the `public hostname` or `IP address` of the `host machine`. For a local installation, the `host machine` refers to your own computer. For a server installation the `host machine` refers to the server on which the Docker environment has been setup. The default `PORT` numbers for OVE core, Tuoris, and other services are provided in the [Running OVE](#running-ove) section.
+Please note that the references to `Hostname (or IP address)` noted below should not be replaced with `localhost`, or the Docker hostname because these services need to be accessible from the client/browser. Please replace it with the `public hostname` or `IP address` of the `host machine`. For a local installation, the `host machine` refers to your own computer. For a server installation the `host machine` refers to the server on which the Docker environment has been setup. The default `PORT` numbers for OVE core, [Tuoris](https://github.com/fvictor/tuoris), [OpenVidu](https://openvidu.io/), and other services are provided in the [Running OVE](#running-ove) section.
 
 Before installing OVE you must configure the environment variables by editing the `docker-compose.ove.yml` file. The environment variables that can be configured are:
 
 * `OVE_HOST` - Hostname (or IP address) + port of OVE core
-* `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of SVG application).
+* `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of [SVG App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-svg)).
+* `OPENVIDU_HOST` - Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-webrtc)).
+* `OPENVIDU_SECRET` - The [OpenVidu](https://openvidu.io/) secret.
 * `OVE_SPACES_JSON` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This accepts a URL for the `Spaces.json` file to be used as a replacement to the default (embedded) [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file available with OVE.
 * `LOG_LEVEL` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This can have values from `0` to `6` and defaults to `5`. The values correspond to:
   * `0` - FATAL
@@ -83,7 +85,7 @@ If you wish to install OVE without it automatically starting, use the command:
 docker-compose -f docker-compose.ove.yml up --no-start
 ```
 
-Once the installation procedure has completed and OVE has been started, the successful installation of OVE can be verified by accessing the OVE API docs (located at: `http://OVE_CORE_HOST:PORT/api-docs` as noted in the [Running OVE](#running-ove) section) using a web browser.
+Once the installation procedure has completed and OVE has been started, the successful installation of OVE can be verified by accessing the OVE home page (located at: `http://OVE_CORE_HOST:PORT` as noted in the [Running OVE](#running-ove) section) using a web browser.
 
 To install and start [**OVE Asset Services**](https://github.com/ove/ove-asset-services) on Docker run:
 
@@ -145,6 +147,10 @@ The [SVG App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-svg) 
 
 * [Tuoris](https://github.com/fvictor/tuoris) (installation instructions available on GitHub repository)
 
+The [WebRTC App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-webrtc) requires:
+
+* [OpenVidu](https://openvidu.io/)
+
 ### Downloading source code
 
 All OVE projects can be downloaded from their GitHub repositories:
@@ -178,25 +184,31 @@ Instructions above are only provided for the [**OVE Core**](https://github.com/o
 
 #### Starting and stopping OVE using the PM2 process manager
 
-The [SVG App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-svg) requires an instance of [Tuoris](https://github.com/fvictor/tuoris) to be available before starting it. To start Tuoris run:
+The [SVG App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-svg) requires an instance of [Tuoris](https://github.com/fvictor/tuoris) to be available before starting it. To start [Tuoris](https://github.com/fvictor/tuoris) run:
 
 ```sh
 pm2 start index.js -f -n "tuoris" -- -p PORT -i 1
 ```
 
+The [WebRTC App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-webrtc) requires an instance of [OpenVidu](https://openvidu.io/) to be available before starting it. To start [OpenVidu](https://openvidu.io/) run:
+
+```sh
+docker run -p 4443:4443 --rm -e openvidu.secret=MY_SECRET openvidu/openvidu-server-kms:2.7.0
+```
+
 OVE can then be started using the PM2 process manager. To start OVE on a Linux or MacOS environment run:
 
 ```sh
-OVE_HOST="OVE_CORE_HOST:PORT" TUORIS_HOST="TUORIS_HOST:PORT" pm2 start pm2.json
+OVE_HOST="OVE_CORE_HOST:PORT" TUORIS_HOST="TUORIS_HOST:PORT" OPENVIDU_HOST="OPENVIDU_HOST:PORT" pm2 start pm2.json
 ```
 
 To start OVE on a Windows environment run:
 
 ```sh
-OVE_HOST="OVE_CORE_HOST:PORT" TUORIS_HOST="TUORIS_HOST:PORT" pm2 start pm2-windows.json
+OVE_HOST="OVE_CORE_HOST:PORT" TUORIS_HOST="TUORIS_HOST:PORT" OPENVIDU_HOST="OPENVIDU_HOST:PORT" pm2 start pm2-windows.json
 ```
 
-By default, OVE core and all services run on `localhost`, which should be used in place of `OVE_CORE_HOST` and `TUORIS_HOST` names above. The default `PORT` numbers for OVE core and Tuoris are provided in the [Running OVE](#running-ove) section.
+By default, OVE core and all services run on `localhost`, which should be used in place of `OVE_CORE_HOST` and `TUORIS_HOST` names above. The default `PORT` numbers for OVE core, [Tuoris](https://github.com/fvictor/tuoris) and [OpenVidu](https://openvidu.io/) are provided in the [Running OVE](#running-ove) section.
 
 Once the services have started, you can check their status by running:
 
@@ -292,7 +304,8 @@ For details of how to use OVE, see the [Usage](./USAGE.md) page.
 
 After installation, OVE will expose several resources that can be accessed through a web browser:
 
-* App Control page   `http://OVE_APP_HOST:PORT/control.html?oveSectionId=0`
+* OVE home page      `http://OVE_CORE_HOST:PORT`
+* App control page   `http://OVE_APP_HOST:PORT/control.html?oveSectionId=0`
 * OVE client pages   `http://OVE_CORE_HOST:PORT/view.html?oveViewId=LocalNine-0`
   * (check [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) for more information)
 * OVE JS library     `http://OVE_CORE_HOST:PORT/ove.js`
@@ -322,6 +335,6 @@ By default, OVE core, all apps, and all services run on `localhost`, which shoul
 
 The default `PORT` numbers of OVE dependencies are:
 
-* 7080 - Tuoris
-* 3306 - MariaDB
-* 4443 - OpenVidu
+* 7080 - [Tuoris](https://github.com/fvictor/tuoris)
+* 3306 - [MariaDB](https://mariadb.org/)
+* 4443 - [OpenVidu](https://openvidu.io/)
