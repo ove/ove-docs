@@ -12,7 +12,7 @@ Please note that all docker files expect that you have [downloaded the source co
 - The [SVG App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-svg) requires an instance of [Tuoris](../ovehub/ove-external-tuoris) to be available before starting it.
 - The [WebRTC App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-webrtc) requires an instance of [OpenVidu](../openvidu/openvidu-server-kms) to be available before starting it.
 
-# Installing and running OVE
+# Installing and running OVE Apps
 
 Run the following command to start OVE Apps:
 
@@ -28,7 +28,7 @@ After the application starts, follow the [guide on launching OVE Apps](https://d
   [the project documentation](https://dsi.gitbook.io/ove)
 
 - **Where to report issues**:<br/>
-  read [all available issues](https://data-science.doc.ic.ac.uk/ove/) and then report at [https://github.com/ove/ove-apps/issues](https://github.com/ove/ove-apps/issues)
+  read [all open issues](https://data-science.doc.ic.ac.uk/ove/) and then report at [https://github.com/ove/ove-apps/issues](https://github.com/ove/ove-apps/issues)
 
 - **Where to find the source code**:<br/>
   visit [https://github.com/ove/ove-apps](https://github.com/ove/ove-apps)
@@ -49,4 +49,4 @@ OVE Apps are a collection of applications designed to run within [OVE](https://g
 
 # License
 
-View [license information](https://github.com/ove/ove/blob/master/LICENSE) for the software contained in this image.
+View [license information](https://github.com/ove/ove-apps/blob/master/LICENSE) for the software contained in this image.
