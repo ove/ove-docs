@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Open Visualisation Environment](docs/README.md)
+* [Open Visualisation Environment](README.md)
 * [Basic Concepts](docs/BASIC_CONCEPTS.md)
 * [Installing OVE](docs/INSTALLATION.md)
 * [Using OVE](docs/USAGE.md)
