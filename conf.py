@@ -45,7 +45,7 @@ project = u'Open Visualisation Framework'
 copyright = u'2018, Data Science Institute'
 author = u'Senaka Fernando'
 
-github_doc_root = 'https://github.com/ove/ove-docs/tree/master/docs/'
+github_doc_root = 'https://github.com/ove/ove-docs/tree/master/'
 
 pygments_style = 'sphinx'
 
