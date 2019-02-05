@@ -1,0 +1,3 @@
+[submodule "ove-apps"]
+	path = ove-apps
+	url = https://github.com/ove/ove-apps
