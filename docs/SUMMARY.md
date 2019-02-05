@@ -4,5 +4,6 @@
 * [Basic Concepts](BASIC_CONCEPTS.md)
 * [Installing OVE](INSTALLATION.md)
 * [Using OVE](USAGE.md)
+* [OVE Apps](../ove-apps/README.md)
 * [Potential Pitfalls when using OVE](PITFALLS.md)
 * [Developing apps for OVE](APP_DEVELOPMENT.md)
