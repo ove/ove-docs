@@ -2,7 +2,7 @@
 
 There are several steps that must be performed in order to use OVE to control a display.
 
-Before using OVE, you will need to install [**OVE Core**](https://github.com/ove/ove), any [**OVE Apps**](https://github.com/ove/ove-apps), and any [**OVE Services**](https://github.com/ove/ove-services) that you intend to use. Installation guidelines can be found in the [OVE Installation Guide](./INSTALLATION.md). As a part of the installation, you must ensure that the OVE core server, and all OVE apps, are accessible from the computers connected to the monitors that will be used in the display.
+Before using OVE, you will need to install [**OVE Core**](https://github.com/ove/ove), any [**OVE Apps**](https://github.com/ove/ove-apps), and any [**OVE Services**](https://github.com/ove/ove-services) that you intend to use. Installation guidelines can be found in the [OVE Installation Guide](INSTALLATION.md). As a part of the installation, you must ensure that the OVE core server, and all OVE apps, are accessible from the computers connected to the monitors that will be used in the display.
 
 ## Setting up OVE
 
@@ -15,7 +15,7 @@ You will need to modify the [`Spaces.json`](https://github.com/ove/ove/blob/mast
 
 ## Launching browsers
 
-In order to use OVE, you will need to open the URL of each `client` in a separate web browser window (or tab). Each URL has the form: `http://OVE_CORE_HOST:PORT/view.html?oveViewId={SPACE}-{ID}`. The values for `OVE_CORE_HOST` and `PORT` must be set as explained in the [OVE Installation Guide](./INSTALLATION.md#running-ove). The value for `SPACE` would be the name of the `space` used, such as `LocalNine`, `LocalFour`, or a name of a new `space` that has been defined in the [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file. The value for `ID` is the index of the `client` associated with the browser window, in the definition of the `space` in [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file.
+In order to use OVE, you will need to open the URL of each `client` in a separate web browser window (or tab). Each URL has the form: `http://OVE_CORE_HOST:PORT/view.html?oveViewId={SPACE}-{ID}`. The values for `OVE_CORE_HOST` and `PORT` must be set as explained in the [OVE Installation Guide](INSTALLATION.md#running-ove). The value for `SPACE` would be the name of the `space` used, such as `LocalNine`, `LocalFour`, or a name of a new `space` that has been defined in the [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file. The value for `ID` is the index of the `client` associated with the browser window, in the definition of the `space` in [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file.
 
 It is recommended to use OVE with Google Chrome, as this is the web browser used for development and in production at the [Data Science Institute](http://www.imperial.ac.uk/data-science/). However, OVE should also be compatible with other modern web browsers: if you encounter any browser-specific bugs please [report them as an Issue](https://github.com/ove/ove-apps/issues).
 
@@ -97,4 +97,4 @@ Once an App has been loaded into an OVE `space` it can be controlled using the c
 
 A common practice when designing projects with interactive visualisations is to create a custom launcher application that is capable of making API calls. Such applications are usually designed to run on web browsers and invoke the [**OVE Core**](https://github.com/ove/ove) API using JavaScript code. These applications provide a single-click (or single-touch) experience for launching and controlling OVE apps.
 
-When designing content to be displayed in an OVE environment, please also be aware of the [potential pitfalls](./PITFALLS.md).
+When designing content to be displayed in an OVE environment, please also be aware of the [potential pitfalls](PITFALLS.md).
