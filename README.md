@@ -9,4 +9,3 @@ The main components of OVE are [**OVE Core**](https://github.com/ove/ove), which
 [**OVE Services**](https://github.com/ove/ove-services) provides core functionality microservices within OVE such as the [Layout Service](https://github.com/ove/ove-services/tree/master/packages/ove-service-layout), which is used to compute absolute positions in pixels from positions expressed relative to a grid or as a percentage of the total space size. [**OVE Asset Services**](https://github.com/ove/ove-asset-services) provides an Asset Manager along with a collection of Asset Processing Services, which are used to upload archives or divide large networks or images into tiles, and serve these to the corresponding applications.
 
 OVE also provides a [graphical editor](https://github.com/ove/ove-editor) and [software development kits](https://github.com/ove/ove-sdks) that can be used to design and develop projects.
-

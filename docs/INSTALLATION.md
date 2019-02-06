@@ -14,10 +14,6 @@ All contributors to OVE are encouraged to download and compile the source code. 
 * [Docker](https://www.docker.com/get-started)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
-[**OVE Asset Services**](https://github.com/ove/ove-asset-services) also requires:
-
-* [S3](https://aws.amazon.com/s3/) or an [S3-compatible object storage](http://www.s3-client.com/s3-compatible-storage-solutions.html) such as [Minio](https://www.minio.io/)
-
 ### Downloading the OVE installers
 
 The `master` branch [**OVE Install**](https://github.com/ove/ove-install/) needs to be cloned in order to download the OVE installers:
@@ -35,7 +31,7 @@ The ports are pre-configured to a list of common defaults, but can be changed ba
 
 #### Resolving port conflicts
 
-It is important to ensure all `HOST_PORT` values defined on the `docker-compose.ove.yml` and `docker-compose.assets.yml` files are not currently in use. If this is not the case, corresponding `HOST_PORT` values need to be changed. For example, if another [MySQL](https://www.mysql.com/) or [MariaDB](https://mariadb.org/) database exists on the host machine, it is most likely that the port `3306` could be in use. In such a situation, the [MariaDB](https://mariadb.org/) `HOST_PORT` needs to be changed on the `docker-compose.assets.yml` file.
+It is important to ensure all `HOST_PORT` values defined on the `docker-compose.ove.yml` file is not currently in use. If this is not the case, corresponding `HOST_PORT` values need to be changed. For example, if another [Tuoris](https://github.com/fvictor/tuoris) instance exists on the host machine, it is most likely that the port `7080` could be in use. In such a situation, the [Tuoris](https://github.com/fvictor/tuoris) `HOST_PORT` needs to be changed on the `docker-compose.ove.yml` file.
 
 #### Environment variables
 
@@ -58,19 +54,6 @@ Before installing OVE you must configure the environment variables by editing th
   * `6` - TRACE_SERVER (Generates additional server-side `TRACE` logs)
 * `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This accepts a URL of a file containing the [Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [default Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) of the [Maps App](../ove-apps/packages/ove-app-maps/README.md).
 
-Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-services) you must configure the environment variables by editing the `docker-compose.assets.yml` file. The environment variables that can be configured are:
-
-* `MYSQL_RANDOM_ROOT_PASSWORD` - This variable is mandatory and we recommend it be set to `yes`. This will generate a random initial password for the root user of the [MariaDB](https://mariadb.org/) database.
-* `MYSQL_DATABASE` - The name of the [MariaDB](https://mariadb.org/) database which defaults to `AssetDatabase`.
-* `MYSQL_USER` - The username used to connect to the MariaDB database which defaults to `assetManager`.
-* `MYSQL_PASSWORD` - The username used to connect to the [MariaDB](https://mariadb.org/) database which defaults to `assetManager`.
-* `s3Client__AccessKey` - The access key used to connect to the [S3](https://aws.amazon.com/s3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
-* `s3Client__Secret` - The secret used to connect to the [S3](https://aws.amazon.com/s3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
-* `s3Client__ServiceURL` - The service URL of the [S3](https://aws.amazon.com/s3/) compliant object storage as described in the [Asset Manager documentation](https://github.com/ove/ove-asset-services/blob/master/packages/ove-asset-manager/README.md#configuration).
-* `ServiceHostUrl` - Hostname (or IP address) + port of the corresponding Asset Processing Service. This needs to be set individually for each Asset Processing Service, such as the `OVE Asset Manager` or the `OVE Service Image Tiles`.
-* `MariaDB__ConnectionString` - The connection string used by the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager) to connect to [MariaDB](https://mariadb.org/) database. If you have changed the values of the environment variables `MYSQL_DATABASE`, `MYSQL_USER`, or `MYSQL_PASSWORD` from their defaults, you will need to replace the values for `Database`, `User`, or `Password` specified in this string with their modified values.
-* `AssetManagerHostUrl` - Hostname (or IP address) + port of the [Asset Manager](https://github.com/ove/ove-asset-services/tree/master/packages/ove-asset-manager).
-
 ### Starting and stopping the OVE Docker applications
 
 OVE provides separate installation scripts to help users install the necessary components. To install and start OVE on Docker run:
@@ -86,12 +69,6 @@ docker-compose -f docker-compose.ove.yml up --no-start
 ```
 
 Once the installation procedure has completed and OVE has been started, the successful installation of OVE can be verified by accessing the OVE home page (located at: `http://OVE_CORE_HOST:PORT` as noted in the [Running OVE](#running-ove) section) using a web browser.
-
-To install and start [**OVE Asset Services**](https://github.com/ove/ove-asset-services) on Docker run:
-
-```sh
-docker-compose -f docker-compose.assets.yml up -d
-```
 
 Once the services have started, you can check their status by running:
 
@@ -120,7 +97,7 @@ docker volume prune
 
 ## Installation from source code
 
-All OVE projects use a build system based on [Lerna](https://lernajs.io/). [**OVE Asset Services**](https://github.com/ove/ove-asset-services) are based on [.NET Core](https://github.com/dotnet/core). All other OVE projects are based on [Node.js](https://nodejs.org/en/), compiled with [Babel](http://babeljs.io/), and deployed on a [PM2](http://pm2.keymetrics.io/) runtime.
+All OVE projects use a build system based on [Lerna](https://lernajs.io/). Most OVE projects are based on [Node.js](https://nodejs.org/en/), compiled with [Babel](http://babeljs.io/), and deployed on a [PM2](http://pm2.keymetrics.io/) runtime. Some OVE projects are based on [Python](https://www.python.org/).
 
 ### Prerequisites
 
@@ -135,13 +112,6 @@ Compiling source code for the Docker environment also requires:
 
 * [Docker](https://www.docker.com/get-started)
 * [Docker Compose](https://docs.docker.com/compose/install/)
-
-Building [**OVE Asset Services**](https://github.com/ove/ove-asset-services) also requires:
-
-* [.NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1)
-* [NetVips](https://github.com/kleisauke/net-vips)
-* [MariaDB](https://mariadb.org/)
-* [S3](https://aws.amazon.com/s3/) or an [S3-compatible object storage](http://www.s3-client.com/s3-compatible-storage-solutions.html) such as [Minio](https://www.minio.io/)
 
 The [SVG App](../ove-apps/packages/ove-app-svg/README.md) requires:
 
@@ -329,12 +299,9 @@ By default, OVE core, all apps, and all services run on `localhost`, which shoul
 * 8093 - OVE App Replicator
 * 8094 - OVE App WebRTC
 * 8180 - OVE Service Layout
-* 8181 - OVE Asset Manager
-* 8182 - OVE Service Image Tiles
 * 8190 - OVE Service Persistence (In-Memory)
 
 The default `PORT` numbers of OVE dependencies are:
 
 * 7080 - [Tuoris](https://github.com/fvictor/tuoris)
-* 3306 - [MariaDB](https://mariadb.org/)
 * 4443 - [OpenVidu](https://openvidu.io/)
