@@ -29,3 +29,10 @@
    ove-apps/packages/ove-app-webrtc/README
    ove-apps/packages/ove-app-whiteboard/README
 
+.. toctree::
+   :maxdepth: 5
+   :caption: Reference
+
+   ove-apps/packages/ove-app-html/docs/LIB_DISTRIBUTED
+   ove-apps/packages/ove-app-html/docs/UTIL_BACKGROUND
+   ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON

@@ -39,7 +39,7 @@ language = None
 
 default_role = None
 
-master_doc = 'SUMMARY'
+master_doc = 'toctrees'
 
 project = u'Open Visualisation Framework'
 copyright = u'2018, Data Science Institute'
