@@ -1,7 +1,7 @@
-# Developing OVE applications
+# Developing OVE Applications
 
 OVE provides a number of applications to display commonly-used types of content, such as HTML, tiled images, audio and video files, maps, networks, and charts.
-The [HTML App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-html) is particularly flexible, and allows the hosting of general HTML/JavaScript web applications.
+The [HTML App](../ove-apps/packages/ove-app-html/README.md) is particularly flexible, and allows the hosting of general HTML/JavaScript web applications.
 However, if existing applications do not meet your needs then you can write a new OVE app.
 
 [`@ove-lib/appbase`](https://www.npmjs.com/package/@ove-lib/appbase) provides a base library on which OVE applications can be built.
@@ -277,7 +277,7 @@ The `message` argument represents a JSON serializable object in both methods. Th
 
 ## Embedding OVE within an existing web application
 
-Each OVE `client` can be deployed in its own iFrame and embedded into an existing web application. This approach has been used in the [Whiteboard App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-whiteboard) and the [Replicator App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-replicator). OVE also supports a number of useful properties that can be passed into the iFrame of each `client`. The `filters` property accepts an `includeOnly` or `exclude` child-property that can be used to specifically include or exclude sections from being displayed within a `client`. Each OVE `client` has a dark grey background, which can be set to `none` using the `transparentBackground` property. The `load` property can be set to forcefully reload the contents of a `client`.
+Each OVE `client` can be deployed in its own iFrame and embedded into an existing web application. This approach has been used in the [Whiteboard App](../ove-apps/packages/ove-app-whiteboard/README.md) and the [Replicator App](../ove-apps/packages/ove-app-replicator/README.md). OVE also supports a number of useful properties that can be passed into the iFrame of each `client`. The `filters` property accepts an `includeOnly` or `exclude` child-property that can be used to specifically include or exclude sections from being displayed within a `client`. Each OVE `client` has a dark grey background, which can be set to `none` using the `transparentBackground` property. The `load` property can be set to forcefully reload the contents of a `client`.
 
 These properties can be passed into all `client` iFrames as a message sent to the `core` application, as noted below:
 

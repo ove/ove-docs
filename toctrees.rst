@@ -6,7 +6,6 @@
    docs/BASIC_CONCEPTS
    docs/INSTALLATION
    docs/USAGE
-   ove-apps/README
    docs/PITFALLS
    docs/APP_DEVELOPMENT
 
@@ -14,6 +13,7 @@
    :maxdepth: 5
    :caption: OVE Applications
 
+   Introduction <ove-apps/README>
    ove-apps/packages/ove-app-alignment/README
    ove-apps/packages/ove-app-audio/README
    ove-apps/packages/ove-app-charts/README

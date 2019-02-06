@@ -44,8 +44,8 @@ Please note that the references to `Hostname (or IP address)` noted below should
 Before installing OVE you must configure the environment variables by editing the `docker-compose.ove.yml` file. The environment variables that can be configured are:
 
 * `OVE_HOST` - Hostname (or IP address) + port of OVE core
-* `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of [SVG App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-svg)).
-* `OPENVIDU_HOST` - Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-webrtc)).
+* `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of [SVG App](../ove-apps/packages/ove-app-svg/README.md)).
+* `OPENVIDU_HOST` - Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md)).
 * `OPENVIDU_SECRET` - The [OpenVidu](https://openvidu.io/) secret.
 * `OVE_SPACES_JSON` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This accepts a URL for the `Spaces.json` file to be used as a replacement to the default (embedded) [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file available with OVE.
 * `LOG_LEVEL` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This can have values from `0` to `6` and defaults to `5`. The values correspond to:
@@ -56,7 +56,7 @@ Before installing OVE you must configure the environment variables by editing th
   * `4` - DEBUG
   * `5` - TRACE
   * `6` - TRACE_SERVER (Generates additional server-side `TRACE` logs)
-* `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This accepts a URL of a file containing the [Map layers Configuration](https://github.com/ove/ove-apps/blob/master/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [default Map layers Configuration](https://github.com/ove/ove-apps/blob/master/packages/ove-app-maps/src/config.json) of the [Maps App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-maps).
+* `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This accepts a URL of a file containing the [Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [default Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) of the [Maps App](../ove-apps/packages/ove-app-maps/README.md).
 
 Before installing [**OVE Asset Services**](https://github.com/ove/ove-asset-services) you must configure the environment variables by editing the `docker-compose.assets.yml` file. The environment variables that can be configured are:
 
@@ -143,11 +143,11 @@ Building [**OVE Asset Services**](https://github.com/ove/ove-asset-services) als
 * [MariaDB](https://mariadb.org/)
 * [S3](https://aws.amazon.com/s3/) or an [S3-compatible object storage](http://www.s3-client.com/s3-compatible-storage-solutions.html) such as [Minio](https://www.minio.io/)
 
-The [SVG App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-svg) requires:
+The [SVG App](../ove-apps/packages/ove-app-svg/README.md) requires:
 
 * [Tuoris](https://github.com/fvictor/tuoris) (installation instructions available on GitHub repository)
 
-The [WebRTC App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-webrtc) requires:
+The [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md) requires:
 
 * [OpenVidu](https://openvidu.io/)
 
@@ -184,13 +184,13 @@ Instructions above are only provided for the [**OVE Core**](https://github.com/o
 
 #### Starting and stopping OVE using the PM2 process manager
 
-The [SVG App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-svg) requires an instance of [Tuoris](https://github.com/fvictor/tuoris) to be available before starting it. To start [Tuoris](https://github.com/fvictor/tuoris) run:
+The [SVG App](../ove-apps/packages/ove-app-svg/README.md) requires an instance of [Tuoris](https://github.com/fvictor/tuoris) to be available before starting it. To start [Tuoris](https://github.com/fvictor/tuoris) run:
 
 ```sh
 pm2 start index.js -f -n "tuoris" -- -p PORT -i 1
 ```
 
-The [WebRTC App](https://github.com/ove/ove-apps/tree/master/packages/ove-app-webrtc) requires an instance of [OpenVidu](https://openvidu.io/) to be available before starting it. To start [OpenVidu](https://openvidu.io/) run:
+The [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md) requires an instance of [OpenVidu](https://openvidu.io/) to be available before starting it. To start [OpenVidu](https://openvidu.io/) run:
 
 ```sh
 docker run -p 4443:4443 --rm -e openvidu.secret=MY_SECRET openvidu/openvidu-server-kms:2.7.0
