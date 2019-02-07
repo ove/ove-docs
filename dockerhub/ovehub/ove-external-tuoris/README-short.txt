@@ -1,0 +1,1 @@
+A middleware for SVG distributed visualization in scalable resolution tiled display walls

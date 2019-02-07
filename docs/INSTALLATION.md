@@ -31,20 +31,20 @@ The ports are pre-configured to a list of common defaults, but can be changed ba
 
 #### Resolving port conflicts
 
-It is important to ensure all `HOST_PORT` values defined on the `docker-compose.ove.yml` file is not currently in use. If this is not the case, corresponding `HOST_PORT` values need to be changed. For example, if another [Tuoris](https://github.com/fvictor/tuoris) instance exists on the host machine, it is most likely that the port `7080` could be in use. In such a situation, the [Tuoris](https://github.com/fvictor/tuoris) `HOST_PORT` needs to be changed on the `docker-compose.ove.yml` file.
+It is important to ensure all `HOST_PORT` values defined on the `docker-compose.setup.ove.yml` file is not currently in use. If this is not the case, corresponding `HOST_PORT` values need to be changed. For example, if another [Tuoris](https://github.com/fvictor/tuoris) instance exists on the host machine, it is most likely that the port `7080` could be in use. In such a situation, the [Tuoris](https://github.com/fvictor/tuoris) `HOST_PORT` needs to be changed on the `docker-compose.setup.ove.yml` file.
 
 #### Environment variables
 
 Please note that the references to `Hostname (or IP address)` noted below should not be replaced with `localhost`, or the Docker hostname because these services need to be accessible from the client/browser. Please replace it with the `public hostname` or `IP address` of the `host machine`. For a local installation, the `host machine` refers to your own computer. For a server installation the `host machine` refers to the server on which the Docker environment has been setup. The default `PORT` numbers for OVE core, [Tuoris](https://github.com/fvictor/tuoris), [OpenVidu](https://openvidu.io/), and other services are provided in the [Running OVE](#running-ove) section.
 
-Before installing OVE you must configure the environment variables by editing the `docker-compose.ove.yml` file. The environment variables that can be configured are:
+Before installing OVE you must configure the environment variables by editing the `docker-compose.setup.ove.yml` file. The environment variables that can be configured are:
 
 * `OVE_HOST` - Hostname (or IP address) + port of OVE core
 * `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of [SVG App](../ove-apps/packages/ove-app-svg/README.md)).
 * `OPENVIDU_HOST` - Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md)).
 * `OPENVIDU_SECRET` - The [OpenVidu](https://openvidu.io/) secret.
-* `OVE_SPACES_JSON` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This accepts a URL for the `Spaces.json` file to be used as a replacement to the default (embedded) [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file available with OVE.
-* `LOG_LEVEL` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This can have values from `0` to `6` and defaults to `5`. The values correspond to:
+* `OVE_SPACES_JSON` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts a URL for the `Spaces.json` file to be used as a replacement to the default (embedded) [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file available with OVE.
+* `LOG_LEVEL` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This can have values from `0` to `6` and defaults to `5`. The values correspond to:
   * `0` - FATAL
   * `1` - ERROR
   * `2` - WARN (The recommended `LOG_LEVEL` for production deployments)
@@ -52,20 +52,20 @@ Before installing OVE you must configure the environment variables by editing th
   * `4` - DEBUG
   * `5` - TRACE
   * `6` - TRACE_SERVER (Generates additional server-side `TRACE` logs)
-* `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.ove.yml` by default. This accepts a URL of a file containing the [Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [default Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) of the [Maps App](../ove-apps/packages/ove-app-maps/README.md).
+* `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts a URL of a file containing the [Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [default Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) of the [Maps App](../ove-apps/packages/ove-app-maps/README.md).
 
 ### Starting and stopping the OVE Docker applications
 
 OVE provides separate installation scripts to help users install the necessary components. To install and start OVE on Docker run:
 
 ```sh
-docker-compose -f docker-compose.ove.yml up -d
+docker-compose -f docker-compose.setup.ove.yml up -d
 ```
 
 If you wish to install OVE without it automatically starting, use the command:
 
 ```sh
-docker-compose -f docker-compose.ove.yml up --no-start
+docker-compose -f docker-compose.setup.ove.yml up --no-start
 ```
 
 Once the installation procedure has completed and OVE has been started, the successful installation of OVE can be verified by accessing the OVE home page (located at: `http://OVE_CORE_HOST:PORT` as noted in the [Running OVE](#running-ove) section) using a web browser.
@@ -85,7 +85,7 @@ docker logs <CONTAINER_ID>
 To stop the Docker application run:
 
 ```sh
-docker-compose -f docker-compose.ove.yml down
+docker-compose -f docker-compose.setup.ove.yml down
 ```
 
 To clean-up the Docker runtime first stop any active instances and then run:
