@@ -16,7 +16,7 @@ Run the following command to start OVE Layout Service:
 docker run -it --rm -p 8180:8180 --name ovehub-ove-service-layout ovehub/ove-service-layout:stable
 ```
 
-After the service starts, follow the [guide on using OVE](https://ove.readthedocs.io/en/latest/docs/USAGE.html).
+After the service starts, follow the [guide on using OVE](https://ove.readthedocs.io/en/stable/docs/USAGE.html).
 
 # Quick reference
 

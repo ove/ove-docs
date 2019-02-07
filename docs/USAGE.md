@@ -2,11 +2,11 @@
 
 There are several steps that must be performed in order to use OVE to control a display.
 
-Before using OVE, you will need to install [**OVE Core**](https://github.com/ove/ove), any [**OVE Apps**](../ove-apps/README.md), and any [**OVE Services**](../ove-services/README.md) that you intend to use. Installation guidelines can be found in the [OVE Installation Guide](INSTALLATION.md). As a part of the installation, you must ensure that the OVE core server, and all OVE apps, are accessible from the computers connected to the monitors that will be used in the display.
+Before using OVE, you will need to install [**OVE Core**](https://github.com/ove/ove), any [**OVE Apps**](../ove-apps/README.html), and any [**OVE Services**](../ove-services/README.html) that you intend to use. Installation guidelines can be found in the [OVE Installation Guide](INSTALLATION.md). As a part of the installation, you must ensure that the OVE core server, and all OVE apps, are accessible from the computers connected to the monitors that will be used in the display.
 
 ## Setting up OVE
 
-By default, OVE provides two `spaces`, that are useful for trying out some of the [**OVE Apps**](../ove-apps/README.md) with sample content. These are:
+By default, OVE provides two `spaces`, that are useful for trying out some of the [**OVE Apps**](../ove-apps/README.html) with sample content. These are:
 
 * `LocalNine` - This `space` contains nine `clients` arranged in `3 x 3` configuration. Each `client` has a dimension of `1440 x 808` pixels and the total `space` has a dimension of `4320 x 2424` pixels.
 * `LocalFour` - This `space` contains four `clients` arranged in `2 x 2` configuration. Each `client` has a dimension of `1440 x 808` pixels and the total `space` has a dimension of `2880 x 1616` pixels.
@@ -42,7 +42,7 @@ OVE provides three different ways of launching apps into an OVE environment:
 
 The [**OVE Editor**](https://github.com/ove/ove-editor) is designed to be used by the most basic users of OVE. The [**OVE Core**](https://github.com/ove/ove) APIs are intended to be used by the most advanced users of OVE.
 
-Given below are instructions on how to load sample content using the [Images App](../ove-apps/packages/ove-app-images/README.md). A complete list of all apps and similar instructions on how to use them can be found in the [**OVE Apps**](../ove-apps/README.md) repository.
+Given below are instructions on how to load sample content using the [Images App](../ove-apps/packages/ove-app-images/README.md). A complete list of all apps and similar instructions on how to use them can be found in the [**OVE Apps**](../ove-apps/README.html) repository.
 
 ### Launching OVE Apps from the OVE Editor
 

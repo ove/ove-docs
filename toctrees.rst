@@ -1,6 +1,6 @@
 .. toctree::
    :maxdepth: 5
-   :caption: Table of Contents
+   :caption: Overview
 
    README
    docs/BASIC_CONCEPTS

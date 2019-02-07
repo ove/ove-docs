@@ -17,7 +17,7 @@ Run the following command to start OVE In-Memory Persistence Service:
 docker run -it --rm -p 8190:8190 --name ovehub-ove-service-persistence-inmemory ovehub/ove-service-persistence-inmemory:stable
 ```
 
-After the application starts, follow the [guide on high availability of server-side application components](https://ove.readthedocs.io/en/latest/docs/BASIC_CONCEPTS.html#high-availability-of-server-side-application-components).
+After the application starts, follow the [guide on high availability of server-side application components](https://ove.readthedocs.io/en/stable/docs/BASIC_CONCEPTS.html#high-availability-of-server-side-application-components).
 
 # Quick reference
 

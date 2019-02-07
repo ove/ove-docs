@@ -31,7 +31,9 @@ extensions = [
     'sphinx.ext.mathjax',
 ]
 
-templates_path = ['_templates']
+templates_path = ['docs/_templates']
+
+html_static_path = ['docs/_static']
 
 exclude_patterns = ['_build']
 
@@ -53,10 +55,9 @@ todo_include_todos = False
 
 html_theme = 'sphinx_rtd_theme'
 
-html_static_path = ['_static']
-
 # app setup hook
 def setup(app):
+    app.add_javascript('js/github_url.js')
     app.add_config_value('recommonmark_config', {
         'url_resolver': lambda url: github_doc_root + url,
         'auto_toc_tree_section': 'Table of contents',
