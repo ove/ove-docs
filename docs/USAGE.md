@@ -2,7 +2,7 @@
 
 There are several steps that must be performed in order to use OVE to control a display.
 
-Before using OVE, you will need to install [**OVE Core**](https://github.com/ove/ove), any [**OVE Apps**](../ove-apps/README.md), and any [**OVE Services**](https://github.com/ove/ove-services) that you intend to use. Installation guidelines can be found in the [OVE Installation Guide](INSTALLATION.md). As a part of the installation, you must ensure that the OVE core server, and all OVE apps, are accessible from the computers connected to the monitors that will be used in the display.
+Before using OVE, you will need to install [**OVE Core**](https://github.com/ove/ove), any [**OVE Apps**](../ove-apps/README.md), and any [**OVE Services**](../ove-services/README.md) that you intend to use. Installation guidelines can be found in the [OVE Installation Guide](INSTALLATION.md). As a part of the installation, you must ensure that the OVE core server, and all OVE apps, are accessible from the computers connected to the monitors that will be used in the display.
 
 ## Setting up OVE
 

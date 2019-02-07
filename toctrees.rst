@@ -31,6 +31,13 @@
 
 .. toctree::
    :maxdepth: 5
+   :caption: OVE Services
+
+   Introduction <ove-services/README>
+   ove-services/packages/ove-service-persistence-inmemory/README
+
+.. toctree::
+   :maxdepth: 5
    :caption: Reference
 
    ove-apps/packages/ove-app-html/docs/LIB_DISTRIBUTED
