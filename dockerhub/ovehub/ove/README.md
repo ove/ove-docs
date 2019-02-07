@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 
-Please note that all docker files expect that you have [downloaded the source code](https://dsi.gitbook.io/ove/installation#downloading-source-code) corresponding to each specific version.
+Please note that all docker files expect that you have [downloaded the source code](https://ove.readthedocs.io/en/stable/docs/INSTALLATION.html#downloading-source-code) corresponding to each specific version.
 
 - [`latest-unstable`, (*Dockerfile*)](https://github.com/ove/ove/blob/master/Dockerfile)
 - [`0.3.0`, `stable`, (*0.3.0/Dockerfile*)](https://github.com/ove/ove/blob/v0.3.0/Dockerfile)
@@ -14,12 +14,12 @@ Run the following command to start OVE:
 docker run -it --rm -p 8080:8080 --name ovehub-ove ovehub/ove:stable
 ```
 
-After the application starts, navigate to [http://localhost:8080](http://localhost:8080) using a web browser. For detailed information on how to install OVE please refer the [Installation Guide](https://dsi.gitbook.io/ove/installation#installation-by-running-ove-installers).
+After the application starts, navigate to [http://localhost:8080](http://localhost:8080) using a web browser. For detailed information on how to install OVE please refer the [Installation Guide](https://ove.readthedocs.io/en/stable/docs/INSTALLATION.html#installation-by-running-ove-installers).
 
 # Quick reference
 
 - **Where to find more information**:<br/>
-  [the project documentation](https://dsi.gitbook.io/ove)
+  [the project documentation](https://ove.readthedocs.io/en/stable/)
 
 - **Where to report issues**:<br/>
   read [all open issues](https://data-science.doc.ic.ac.uk/ove/) and then report at [https://github.com/ove/ove/issues](https://github.com/ove/ove/issues)

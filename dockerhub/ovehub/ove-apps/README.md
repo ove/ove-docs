@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 
-Please note that all docker files expect that you have [downloaded the source code](https://dsi.gitbook.io/ove/installation#downloading-source-code) corresponding to each specific version.
+Please note that all docker files expect that you have [downloaded the source code](https://ove.readthedocs.io/en/stable/docs/INSTALLATION.html#downloading-source-code) corresponding to each specific version.
 
 - [`latest-unstable`, (*Dockerfile*)](https://github.com/ove/ove-apps/blob/master/Dockerfile)
 - [`0.3.0`, `stable`, (*0.3.0/Dockerfile*)](https://github.com/ove/ove-apps/blob/v0.3.0/Dockerfile)
@@ -20,12 +20,12 @@ Run the following command to start OVE Apps:
 docker run -it --rm -p 8081-8094:8081-8094 -e OVE_HOST=localhost:8080 -e TUORIS_HOST=localhost:7080 -e OPENVIDU_HOST=localhost:4443 --name ovehub-ove-apps ovehub/ove-apps:stable
 ```
 
-After the application starts, follow the [guide on launching OVE Apps](https://dsi.gitbook.io/ove/usage#launching-ove-apps).
+After the application starts, follow the [guide on launching OVE Apps](https://ove.readthedocs.io/en/stable/docs/USAGE.html#launching-ove-apps).
 
 # Quick reference
 
 - **Where to find more information**:<br/>
-  [the project documentation](https://dsi.gitbook.io/ove)
+  [the project documentation](https://ove.readthedocs.io/en/stable/)
 
 - **Where to report issues**:<br/>
   read [all open issues](https://data-science.doc.ic.ac.uk/ove/) and then report at [https://github.com/ove/ove-apps/issues](https://github.com/ove/ove-apps/issues)

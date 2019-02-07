@@ -2,7 +2,7 @@
    :maxdepth: 5
    :caption: Table of Contents
 
-   docs/README
+   README
    docs/BASIC_CONCEPTS
    docs/INSTALLATION
    docs/USAGE
