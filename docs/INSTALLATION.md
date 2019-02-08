@@ -52,6 +52,8 @@ Before installing OVE you must configure the environment variables by editing th
   * `4` - DEBUG
   * `5` - TRACE
   * `6` - TRACE_SERVER (Generates additional server-side `TRACE` logs)
+* `OVE_PERSISTENCE_SYNC_INTERVAL` - The interval (in milliseconds) for synchronising an instance with a registered persistence service. This optional variable can be set individually for OVE core and for all OVE applications.
+* `OVE_<APP_NAME_IN_UPPERCASE>_CONFIG_JSON` - The path to an application-specific `config.json` file. This optional variable is useful when application-specific configuration files are provided at alternative locations on a filesystem (such as when [using Docker secrets](https://docs.docker.com/engine/swarm/secrets/)). `<APP_NAME_IN_UPPERCASE>` must be replaced with the name of the application in upper-case. For example, the corresponding environment variable for the [Networks App](../ove-apps/packages/ove-app-networks/README.md) would be `OVE_NETWORKS_CONFIG_JSON`.
 * `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts a URL of a file containing the [Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [default Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) of the [Maps App](../ove-apps/packages/ove-app-maps/README.md).
 
 ### Starting and stopping the OVE Docker applications
