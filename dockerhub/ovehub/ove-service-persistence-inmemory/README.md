@@ -3,7 +3,7 @@
 Please note that all docker files expect that you have [downloaded the source code](https://ove.readthedocs.io/en/stable/docs/INSTALLATION.html#downloading-source-code) corresponding to each specific version.
 
 - [`latest-unstable`, (*Dockerfile*)](https://github.com/ove/ove-services/blob/master/packages/ove-service-persistence-inmemory/Dockerfile)
-- [`0.1.0`, `stable`, (*0.1.0/Dockerfile*)](https://github.com/ove/ove-services/blob/v0.3.0/packages/ove-service-persistence-inmemory/Dockerfile)
+- [`0.1.0`, `stable`, (*0.1.0/Dockerfile*)](https://github.com/ove/ove-services/blob/v0.1.0/packages/ove-service-persistence-inmemory/Dockerfile)
 
 # Pre-requisites
 
