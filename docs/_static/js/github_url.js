@@ -9,7 +9,7 @@ $(document).ready(_ => {
             let branch = url.substring('https://github.com/ove/ove-docs/blob/'.length);
             branch = branch.substring(0, branch.indexOf('/'))
             url = url.replace('https://github.com/ove/ove-docs/blob/' + branch + '/' + e, 
-                'https://github.com/ove/' + e + '/blob/' + branch);
+                'https://github.com/ove/' + e + '/blob/master');
         });
         $('.fa-github').attr('href', url);
     }
