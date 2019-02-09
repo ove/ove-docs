@@ -10,34 +10,59 @@ All contributors to OVE are encouraged to download and compile the source code. 
 
 ### Prerequisites
 
-* [git](https://git-scm.com/downloads)
 * [Docker](https://www.docker.com/get-started)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
+Building installers for non-supported platforms also requires:
+
+* [git](https://git-scm.com/downloads)
+* [Python](https://www.python.org/)
+
 ### Downloading the OVE installers
 
-The `master` branch [**OVE Install**](https://github.com/ove/ove-install/) needs to be cloned in order to download the OVE installers:
+The [**OVE Install**](https://github.com/ove/ove-install/) scripts are available for Linux, Mac (OS X) and Windows operating systems either as a Python 3 or a Python 2 executable application:
+
+* [linux-python3-v0.3.1-setup](https://github.com/ove/ove-install/releases/download/0.3.1/linux-python3-v0.3.1-setup)
+* [linux-python2-v0.3.1-setup](https://github.com/ove/ove-install/releases/download/0.3.1/linux-python2-v0.3.1-setup)
+* [osx-python3-v0.3.1-setup](https://github.com/ove/ove-install/releases/download/0.3.1/osx-python3-v0.3.1-setup)
+* [osx-python2-v0.3.1-setup](https://github.com/ove/ove-install/releases/download/0.3.1/osx-python2-v0.3.1-setup)
+* [windows-python3-v0.3.1-setup](https://github.com/ove/ove-install/releases/download/0.3.1/windows-python3-v0.3.1-setup)
+* [windows-python2-v0.3.1-setup](https://github.com/ove/ove-install/releases/download/0.3.1/windows-python2-v0.3.1-setup)
+
+### Building installers for non-supported platforms
+
+[**OVE Install**](https://github.com/ove/ove-install/) provides tools for building the `setup` script for non-supported platforms. The `master` branch of [**OVE Install**](https://github.com/ove/ove-install/) needs to be cloned in order to proceed:
 
 ```sh
 git clone https://github.com/ove/ove-install
 cd ove-install
 ```
 
-### Configuring the environment
+Refer the [guidelines on developing/building a single setup file](https://github.com/ove/ove-install/blob/master/README.md#developingbuilding-a-single-setup-file) for detailed setup instructions.
 
-Once downloaded, details of the deployment environment needs to be pre-configured before running the OVE installers. This involves defining port numbers and environment variables.
+### Running the installers
+
+Once downloaded, the installation script may not be executable on Linux and Mac operating systems. As a resolution, run the following command:
+
+```sh
+chmod u+x *-setup
+```
+
+Running the executable will start the step-by-step installation process. This will configure the details of the deployment environment such as hostname, port numbers and environment variables.
 
 The ports are pre-configured to a list of common defaults, but can be changed based on end-user requirements. Each port or port-range is defined as a mapping `HOST_PORT:CONTAINER_PORT`. Only the host ports can be changed, and it is important to note that **container ports must not be changed**.
 
+Each installer is capable of installing the current stable, latest unstable or a previous stable version.
+
 #### Resolving port conflicts
 
-It is important to ensure all `HOST_PORT` values defined on the `docker-compose.setup.ove.yml` file is not currently in use. If this is not the case, corresponding `HOST_PORT` values need to be changed. For example, if another [Tuoris](https://github.com/fvictor/tuoris) instance exists on the host machine, it is most likely that the port `7080` could be in use. In such a situation, the [Tuoris](https://github.com/fvictor/tuoris) `HOST_PORT` needs to be changed on the `docker-compose.setup.ove.yml` file.
+Once the `docker-compose.setup.ove.yml` file is generated, it is important to ensure all `HOST_PORT` values defined on the `docker-compose.setup.ove.yml` file are not currently in use. If this is not the case, corresponding `HOST_PORT` values need to be changed. For example, if another [Tuoris](https://github.com/fvictor/tuoris) instance exists on the host machine, it is most likely that the port `7080` could be in use. In such a situation, the [Tuoris](https://github.com/fvictor/tuoris) `HOST_PORT` needs to be changed on the `docker-compose.setup.ove.yml` file.
 
 #### Environment variables
 
 Please note that the references to `Hostname (or IP address)` noted below should not be replaced with `localhost`, or the Docker hostname because these services need to be accessible from the client/browser. Please replace it with the `public hostname` or `IP address` of the `host machine`. For a local installation, the `host machine` refers to your own computer. For a server installation the `host machine` refers to the server on which the Docker environment has been setup. The default `PORT` numbers for OVE core, [Tuoris](https://github.com/fvictor/tuoris), [OpenVidu](https://openvidu.io/), and other services are provided in the [Running OVE](#running-ove) section.
 
-Before installing OVE you must configure the environment variables by editing the `docker-compose.setup.ove.yml` file. The environment variables that can be configured are:
+Before starting up OVE you must configure the environment variables either by providing them during the installation process or by editing the generated `docker-compose.setup.ove.yml` file. The environment variables that can be configured are:
 
 * `OVE_HOST` - Hostname (or IP address) + port of OVE core
 * `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of [SVG App](../ove-apps/packages/ove-app-svg/README.md)).
@@ -52,9 +77,45 @@ Before installing OVE you must configure the environment variables by editing th
   * `4` - DEBUG
   * `5` - TRACE
   * `6` - TRACE_SERVER (Generates additional server-side `TRACE` logs)
-* `OVE_PERSISTENCE_SYNC_INTERVAL` - The interval (in milliseconds) for synchronising an instance with a registered persistence service. This optional variable can be set individually for OVE core and for all OVE applications.
-* `OVE_<APP_NAME_IN_UPPERCASE>_CONFIG_JSON` - The path to an application-specific `config.json` file. This optional variable is useful when application-specific configuration files are provided at alternative locations on a filesystem (such as when [using Docker secrets](https://docs.docker.com/engine/swarm/secrets/)). `<APP_NAME_IN_UPPERCASE>` must be replaced with the name of the application in upper-case. For example, the corresponding environment variable for the [Networks App](../ove-apps/packages/ove-app-networks/README.md) would be `OVE_NETWORKS_CONFIG_JSON`.
+* `OVE_PERSISTENCE_SYNC_INTERVAL` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts an interval (in milliseconds) for synchronising an instance of OVE or of an OVE application with a registered persistence service. This optional variable can be set individually for OVE core and for all OVE applications.
+* `OVE_<APP_NAME_IN_UPPERCASE>_CONFIG_JSON` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts a path to an application-specific `config.json` file. This optional variable is useful when application-specific configuration files are provided at alternative locations on a filesystem (such as when [using Docker secrets](https://docs.docker.com/engine/swarm/secrets/)). `<APP_NAME_IN_UPPERCASE>` must be replaced with the name of the application in upper-case. For example, the corresponding environment variable for the [Networks App](../ove-apps/packages/ove-app-networks/README.md) would be `OVE_NETWORKS_CONFIG_JSON`.
 * `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts a URL of a file containing the [Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [default Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) of the [Maps App](../ove-apps/packages/ove-app-maps/README.md).
+
+#### Using your own certificates for OpenVidu
+
+[OpenVidu](https://openvidu.io/) is a prerequisite for using the [WebRTC App](https://ove.readthedocs.io/en/stable/ove-apps/packages/ove-app-webrtc/README.html). [OpenVidu](https://openvidu.io/) uses secure WebSockets and uses certificates. And, unless you provide your own certificate, it will use a self-signed certificate which will become inconvenient when loading the [WebRTC App](https://ove.readthedocs.io/en/stable/ove-apps/packages/ove-app-webrtc/README.html) on multiple web browsers.
+
+You can run [OpenVidu](https://openvidu.io/) with your own certificate by first creating new [Java Key Store](https://docs.oracle.com/en/java/javase/11/tools/keytool.html#GUID-5990A2E4-78E3-47B7-AE75-6D1826259549__GUID-911FFF69-6916-4C69-8A93-66A13E4A239C) following [the OpenVidu guide on using your own certificate](https://openvidu.io/docs/deployment/deploying-ubuntu/#using-your-own-certificate). This will subsequently require the following changes in the auto generated `docker-compose.setup.ove.yml` file:
+
+```yaml
+version: '3.1'
+services:
+  ...
+
+  openvidu-openvidu-server-kms:
+    image: openvidu/openvidu-server-kms:2.8.0
+    ports:
+    - "4443:4443"
+    environment:
+      openvidu.secret: "MY_SECRET"
+      server.ssl.key-store: /run/secrets/openvidu.jks
+      server.ssl.key-store-password: "openvidu"
+      server.ssl.key-alias: "openvidu"
+    secrets:
+      - openvidu.jks
+
+  ...
+
+secrets:
+  openvidu.jks:
+    file: openvidu.jks
+```
+
+To add a trusted CA certificate (`trusted_ca.cer`) to your [Java Key Store](https://docs.oracle.com/en/java/javase/11/tools/keytool.html#GUID-5990A2E4-78E3-47B7-AE75-6D1826259549__GUID-911FFF69-6916-4C69-8A93-66A13E4A239C), run:
+
+```sh
+keytool -import -v -trustcacerts -alias root -file trusted_ca.cer -keystore openvidu.jks -keypass openvidu
+ ```
 
 ### Starting and stopping the OVE Docker applications
 
