@@ -7,7 +7,7 @@ $(document).ready(_ => {
         const subModules = ['ove-apps', 'ove-services'];
         subModules.forEach(e => {
             let branch = url.substring('https://github.com/ove/ove-docs/blob/'.length);
-            branch = branch.substring(0, branch.indexOf('/'))
+            branch = branch.substring(0, branch.indexOf('/'));
             url = url.replace('https://github.com/ove/ove-docs/blob/' + branch + '/' + e, 
                 'https://github.com/ove/' + e + '/blob/master');
         });

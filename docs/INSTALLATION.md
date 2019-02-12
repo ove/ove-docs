@@ -67,7 +67,9 @@ Before starting up OVE you must configure the environment variables either by pr
 * `OVE_HOST` - Hostname (or IP address) + port of OVE core
 * `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of [SVG App](../ove-apps/packages/ove-app-svg/README.md)).
 * `OPENVIDU_HOST` - Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md)).
-* `OPENVIDU_SECRET` - The [OpenVidu](https://openvidu.io/) secret.
+* `openvidu.publicurl` - `https://` + Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md)).
+* `OPENVIDU_SECRET` - The [OpenVidu](https://openvidu.io/) secret. Must match `openvidu.secret` configured below.
+* `openvidu.secret` - The [OpenVidu](https://openvidu.io/) secret. Must match `OPENVIDU_SECRET` configured above.
 * `OVE_SPACES_JSON` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts a URL for the `Spaces.json` file to be used as a replacement to the default (embedded) [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file available with OVE.
 * `LOG_LEVEL` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This can have values from `0` to `6` and defaults to `5`. The values correspond to:
   * `0` - FATAL
@@ -80,6 +82,8 @@ Before starting up OVE you must configure the environment variables either by pr
 * `OVE_PERSISTENCE_SYNC_INTERVAL` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts an interval (in milliseconds) for synchronising an instance of OVE or of an OVE application with a registered persistence service. This optional variable can be set individually for OVE core and for all OVE applications.
 * `OVE_<APP_NAME_IN_UPPERCASE>_CONFIG_JSON` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts a path to an application-specific `config.json` file. This optional variable is useful when application-specific configuration files are provided at alternative locations on a filesystem (such as when [using Docker secrets](https://docs.docker.com/engine/swarm/secrets/)). `<APP_NAME_IN_UPPERCASE>` must be replaced with the name of the application in upper-case. For example, the corresponding environment variable for the [Networks App](../ove-apps/packages/ove-app-networks/README.md) would be `OVE_NETWORKS_CONFIG_JSON`.
 * `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts a URL of a file containing the [Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [default Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) of the [Maps App](../ove-apps/packages/ove-app-maps/README.md).
+
+The [OpenVidu](https://openvidu.io/) server also accepts several other optional environment variables that are not defined in the `docker-compose.setup.ove.yml` by default. These are explained in the documentation on [OpenVidu server configuration parameters](https://openvidu.io/docs/reference-docs/openvidu-server-params/).
 
 #### Using your own certificates for OpenVidu
 
@@ -98,6 +102,7 @@ services:
     - "4443:4443"
     environment:
       openvidu.secret: "MY_SECRET"
+      openvidu.publicurl: "https://<Hostname (or IP address)>:4443"
       server.ssl.key-store: /run/secrets/openvidu.jks
       server.ssl.key-store-password: "openvidu"
       server.ssl.key-alias: "openvidu"
