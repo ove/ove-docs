@@ -85,7 +85,7 @@ Before starting up OVE you must configure the environment variables either by pr
 
 The [OpenVidu](https://openvidu.io/) server also accepts several other optional environment variables that are not defined in the `docker-compose.setup.ove.yml` by default. These are explained in the documentation on [OpenVidu server configuration parameters](https://openvidu.io/docs/reference-docs/openvidu-server-params/).
 
-#### Using your own certificates for OpenVidu
+#### Using your own certificates for [OpenVidu](https://openvidu.io/)
 
 [OpenVidu](https://openvidu.io/) is a prerequisite for using the [WebRTC App](https://ove.readthedocs.io/en/stable/ove-apps/packages/ove-app-webrtc/README.html). [OpenVidu](https://openvidu.io/) uses secure WebSockets and uses certificates. And, unless you provide your own certificate, it will use a self-signed certificate which will become inconvenient when loading the [WebRTC App](https://ove.readthedocs.io/en/stable/ove-apps/packages/ove-app-webrtc/README.html) on multiple web browsers.
 
@@ -231,7 +231,7 @@ pm2 start index.js -f -n "tuoris" -- -p PORT -i 1
 The [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md) requires an instance of [OpenVidu](https://openvidu.io/) to be available before starting it. To start [OpenVidu](https://openvidu.io/) run:
 
 ```sh
-docker run -p 4443:4443 --rm -e openvidu.secret=MY_SECRET openvidu/openvidu-server-kms:2.7.0
+docker run -p 4443:4443 --rm -e openvidu.secret=MY_SECRET openvidu/openvidu-server-kms:latest
 ```
 
 OVE can then be started using the PM2 process manager. To start OVE on a Linux or MacOS environment run:
@@ -286,7 +286,7 @@ pm2 delete pm2-windows.json
 
 ### Compiling source code for a Docker environment
 
-This approach currently works only for Linux and MacOS environments. The `build.sh` script corresponding to each repository can be found under the top most folder of the cloned or downloaded repository or within a `packages/PACKAGE_NAME` folder corresponding to each package.
+This approach currently works only for Linux and MacOS environments. The `build.sh` script corresponding to each repository can be found under the top most directory of the cloned or downloaded repository or within a `packages/PACKAGE_NAME` directory corresponding to each package.
 
 The `build.sh` script can be executed as:
 
@@ -299,7 +299,7 @@ Instructions above are only provided for the [**OVE Core**](https://github.com/o
 
 #### Starting and stopping the OVE Docker containers
 
-Similar to the `build.sh` script, the `docker-compose.yml` file corresponding to each repository can also be found under the top most folder of the cloned or downloaded repository or within a `packages/PACKAGE_NAME` folder corresponding to each package.
+Similar to the `build.sh` script, the `docker-compose.yml` file corresponding to each repository can also be found under the top most directory of the cloned or downloaded repository or within a `packages/PACKAGE_NAME` directory corresponding to each package.
 
 The deployment environment needs to be [pre-configured](#configuring-the-environment) before running these scripts.
 
@@ -333,6 +333,45 @@ To clean-up the Docker runtime first stop any active instances and then run:
 docker system prune
 docker volume prune
 ```
+
+## Starting up optional dependencies
+
+Some OVE apps would require additional dependencies to be installed or pre-configured before you use them.
+
+### Starting up an [OpenVidu](https://openvidu.io/) client
+
+The The [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md) requires an [OpenVidu](https://openvidu.io/) client in order for you to video conference or share your screen. The most convenient option would be to use an existing [OpenVidu Tutorial client](https://openvidu.io/docs/tutorials/openvidu-library-react/) which can then be customised to suit your needs. Browsers may not let you stream video on a non-local host with an HTTP client trying to access an API over HTTPS and create a secure WebSocket connection. This limitation can be overcome by running an HTTPS client. For example, if you are using the [OpenVidu Library React Tutorial client](https://openvidu.io/docs/tutorials/openvidu-library-react/), you can run it as:
+
+```sh
+HTTPS=true npm start
+```
+
+Optionally, you could also use PM2 as:
+
+```sh
+HTTPS=true pm2 start npm -n "openvidu" -- start
+```
+
+Then, to check logs of the [OpenVidu](https://openvidu.io/) client process, run:
+
+```sh
+pm2 logs openvidu
+```
+
+To stop the [OpenVidu](https://openvidu.io/) client process, run:
+
+```sh
+pm2 stop openvidu
+```
+
+If you are [using your own certificates for OpenVidu](#using-your-own-certificates-for-openvidu), you may also need to replace the server-side certificates of your [OpenVidu](https://openvidu.io/) client. If you are using the [OpenVidu Library React Tutorial client](https://openvidu.io/docs/tutorials/openvidu-library-react/), you will first need to export a `server.pem` file from your [Java Key Store](https://docs.oracle.com/en/java/javase/11/tools/keytool.html#GUID-5990A2E4-78E3-47B7-AE75-6D1826259549__GUID-911FFF69-6916-4C69-8A93-66A13E4A239C).
+
+```sh
+keytool -importkeystore -srckeystore openvidu.jks -destkeystore p12keystore.p12 -srcstoretype jks -deststoretype pkcs12
+openssl pkcs12 -in p12keystore.p12 -out server.pem
+```
+
+You then need to copy the generated `server.pem` file to `node_modules/webpack-dev-server/ssl` found inside `openvidu-tutorials/openvidu-library-react`. The `node_modules/webpack-dev-server/ssl` directory will not exist until you have run `npm install` inside `openvidu-tutorials/openvidu-library-react`, as explained in the [tutorial](https://openvidu.io/docs/tutorials/openvidu-library-react/).
 
 ## Running OVE
 
