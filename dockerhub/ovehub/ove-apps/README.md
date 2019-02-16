@@ -11,7 +11,7 @@ Please note that all docker files expect that you have [downloaded the source co
 
 - All OVE Apps require an instance of [OVE](../ovehub/ove) to be available before starting them.
 - The [SVG App](https://ove.readthedocs.io/en/stable/ove-apps/packages/ove-app-svg/README.html) requires an instance of [Tuoris](../ovehub/ove-external-tuoris) to be available before starting it.
-- The [WebRTC App](https://ove.readthedocs.io/en/stable/ove-apps/packages/ove-app-webrtc/README.html) requires an instance of [OpenVidu](../openvidu/openvidu-server-kms) to be available before starting it.
+- The [WebRTC App](https://ove.readthedocs.io/en/stable/ove-apps/packages/ove-app-webrtc/README.html) requires an instance of [OpenVidu](../openvidu/openvidu-call) to be available before starting it.
 
 # Installing and running OVE Apps
 
