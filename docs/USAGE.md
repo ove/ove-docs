@@ -76,14 +76,14 @@ An image can be loaded into the `LocalFour` space using the OVE APIs, by running
 Linux/Mac:
 
 ```sh
-curl --header "Content-Type: application/json" --request DELETE http://OVE_CORE_HOST:PORT/section
+curl --header "Content-Type: application/json" --request DELETE http://OVE_CORE_HOST:PORT/sections
 curl --header "Content-Type: application/json" --request POST --data '{"app": {"url": "http://OVE_APP_IMAGES_HOST:PORT","states": {"load": {"tileSources": "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"}}}, "space": "LocalFour", "h": 500, "w": 500, "y": 0, "x": 0}' http://OVE_CORE_HOST:PORT/section
 ```
 
 Windows:
 
 ```sh
-curl --header "Content-Type: application/json" --request DELETE http://OVE_CORE_HOST:PORT/section
+curl --header "Content-Type: application/json" --request DELETE http://OVE_CORE_HOST:PORT/sections
 curl --header "Content-Type: application/json" --request POST --data "{\"app\": {\"url\": \"http://OVE_APP_IMAGES_HOST:PORT\", \"states\": {\"load\": {\"tileSources\": \"https://openseadragon.github.io/example-images/highsmith/highsmith.dzi\"}}}, \"space\": \"LocalFour\", \"h\": 500, \"w\": 500, \"y\": 0, \"x\": 0}" http://OVE_CORE_HOST:PORT/section
 ```
 
