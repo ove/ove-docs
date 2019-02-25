@@ -15,7 +15,7 @@ You will need to modify the [`Spaces.json`](https://github.com/ove/ove/blob/mast
 
 ## Launching browsers
 
-In order to use OVE, you will need to open the URL of each `client` in a separate web browser window (or tab). Each URL has the form: `http://OVE_CORE_HOST:PORT/view.html?oveViewId={SPACE}-{ID}`. The values for `OVE_CORE_HOST` and `PORT` must be set as explained in the [OVE Installation Guide](INSTALLATION.md). The value for `SPACE` would be the name of the `space` used, such as `LocalNine`, `LocalFour`, or a name of a new `space` that has been defined in the [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file. The value for `ID` is the index of the `client` associated with the browser window, in the definition of the `space` in [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file. Not providing the `oveViewId` or providing the `oveViewId` in an invalid format would result in OVE printing either the `Name of space not provided` or the `Client id not provided` warning on the browser console.
+In order to use OVE, you will need to open the URL of each `client` in a separate web browser window (or tab). Each URL has the form: `http://OVE_CORE_HOST:PORT/view.html?oveViewId={SPACE}-{ID}`. These URLs can also be found on the `http://OVE_CORE_HOST:PORT` page. The values for `OVE_CORE_HOST` and `PORT` must be set as explained in the [OVE Installation Guide](INSTALLATION.md). The value for `SPACE` would be the name of the `space` used, such as `LocalNine`, `LocalFour`, or a name of a new `space` that has been defined in the [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file. The value for `ID` is the index of the `client` associated with the browser window, in the definition of the `space` in [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file. Not providing the `oveViewId` or providing the `oveViewId` in an invalid format would result in OVE printing either the `Name of space not provided` or the `Client id not provided` warning on the browser console.
 
 It is recommended to use OVE with Google Chrome, as this is the web browser used for development and in production at the [Data Science Institute](http://www.imperial.ac.uk/data-science/). However, OVE should also be compatible with other modern web browsers: if you encounter any browser-specific bugs please [report them as an Issue](https://github.com/ove/ove-apps/issues).
 
@@ -36,17 +36,17 @@ On Windows, a [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting
 
 OVE provides three different ways of launching apps into an OVE environment:
 
-* Using [**OVE Editor**](https://github.com/ove/ove-editor)
+* Using [**OVE UI**](https://github.com/ove/ove-ui)
 * Using [**OVE SDKs**](https://github.com/ove/ove-sdks)
 * Using [**OVE Core**](https://github.com/ove/ove) APIs
 
-The [**OVE Editor**](https://github.com/ove/ove-editor) is designed to be used by the most basic users of OVE. The [**OVE Core**](https://github.com/ove/ove) APIs are intended to be used by the most advanced users of OVE.
+The [**OVE UI**](https://github.com/ove/ove-ui) is designed to be used by the most basic users of OVE. The [**OVE Core**](https://github.com/ove/ove) APIs are intended to be used by the most advanced users of OVE.
 
 Given below are instructions on how to load sample content using the [Images App](../ove-apps/packages/ove-app-images/README.md). A complete list of all apps and similar instructions on how to use them can be found in the [**OVE Apps**](../ove-apps/README.html) repository.
 
-### Launching OVE Apps from the OVE Editor
+### Launching OVE Apps using OVE UI
 
-The [**OVE Editor**](https://github.com/ove/ove-editor) is still work in progress, and is not currently available as an option.
+The [**OVE UI**](https://github.com/ove/ove-ui) is still work in progress.
 
 ### Launching OVE Apps using the Python Client Library
 
