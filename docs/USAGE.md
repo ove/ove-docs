@@ -46,15 +46,15 @@ Given below are instructions on how to load sample content using the [Images App
 
 ### Launching OVE Apps using OVE UI
 
-The [Loader UI](../ove-ui/packages/ove-ui-loader/README.md) can be used to launch applications into an OVE environment. The step-by-step process involves:
+The [Launcher UI](../ove-ui/packages/ove-ui-launcher/README.md) can be used to launch applications into an OVE environment. The step-by-step process involves:
 
-1. Choosing the type of application to load
+1. Choosing the type of application to launch
 2. Selecting space and providing geometry details
 3. Configuring initial application state
 4. Reviewing state configuration and operation details (where you can choose to delete existing sections or show the app-specific controller)
-5. Loading a new application instance
+5. Launching a new application instance
 
-The confirmation step provides a link to [Preview](../ove-ui/packages/ove-ui-preview/README.md) the space as well as a link to the app-specific usage documentation. The [Loader UI](../ove-ui/packages/ove-ui-loader/README.md) can be loaded into a browser window by accessing the URL `http://OVE_UI_LOADER_HOST:PORT`. The user interface provides easy-to-follow instructions and validates user input. For those who wish to upload many apps at once, the [Loader UI](../ove-ui/packages/ove-ui-loader/README.md) also provides operating system specific [curl](https://curl.haxx.se/docs/manpage.html) commands.
+The confirmation step provides a link to [Preview](../ove-ui/packages/ove-ui-preview/README.md) the space as well as a link to the app-specific usage documentation. The [Launcher UI](../ove-ui/packages/ove-ui-launcher/README.md) can be loaded into a browser window by accessing the URL `http://OVE_UI_LAUNCHER_HOST:PORT`. The user interface provides easy-to-follow instructions and validates user input. For those who wish to upload many apps at once, the [Launcher UI](../ove-ui/packages/ove-ui-launcher/README.md) also provides operating system specific [curl](https://curl.haxx.se/docs/manpage.html) commands.
 
 ### Launching OVE Apps using the Python Client Library
 
@@ -101,7 +101,7 @@ The OVE core APIs can be used for various other purposes such as grouping sectio
 
 ## Controlling OVE Apps and designing interactive visualisations
 
-Once an App has been loaded into an OVE `space` it can be controlled using the corresponding controller, which provides app-specific functionality. For example, the controller of the [Images App](../ove-apps/packages/ove-app-images/README.md) supports panning and zooming of images that have been loaded. The controller can be loaded into a separate browser window by accessing the URL `http://OVE_APP_IMAGES_HOST:PORT/control.html?oveSectionId=0`. Not providing the `oveSectionId` would result in OVE printing the `Section id not provided` warning on the browser console.
+Once an App has been launched in an OVE `space` it can be controlled using the corresponding controller, which provides app-specific functionality. For example, the controller of the [Images App](../ove-apps/packages/ove-app-images/README.md) supports panning and zooming of images that have been loaded. The controller can be loaded into a separate browser window by accessing the URL `http://OVE_APP_IMAGES_HOST:PORT/control.html?oveSectionId=0`. Not providing the `oveSectionId` would result in OVE printing the `Section id not provided` warning on the browser console.
 
 A common practice when designing projects with interactive visualisations is to create a custom launcher application that is capable of making API calls. Such applications are usually designed to run on web browsers and invoke the [**OVE Core**](https://github.com/ove/ove) API using JavaScript code. These applications provide a single-click (or single-touch) experience for launching and controlling OVE apps.
 

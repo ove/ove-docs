@@ -369,7 +369,7 @@ By default, OVE core, all apps, and all services run on `localhost`, which shoul
 * 8094 - OVE App WebRTC
 * 8180 - OVE Service Layout
 * 8190 - OVE Service Persistence (In-Memory)
-* 8281 - OVE UI Loader
+* 8281 - OVE UI Launcher
 * 8282 - OVE UI Preview
 
 The default `PORT` numbers of OVE dependencies are:
