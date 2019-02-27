@@ -38,10 +38,10 @@
 
 .. toctree::
    :maxdepth: 5
-   :caption: OVE UIs
+   :caption: OVE UI
 
    Introduction <ove-ui/README>
-   ove-ui/packages/ove-ui-loader/README
+   ove-ui/packages/ove-ui-launcher/README
    ove-ui/packages/ove-ui-preview/README
 
 .. toctree::
