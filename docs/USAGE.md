@@ -2,7 +2,7 @@
 
 There are several steps that must be performed in order to use OVE to control a display.
 
-Before using OVE, you will need to install [**OVE Core**](https://github.com/ove/ove), any [**OVE Apps**](../ove-apps/README.html), and any [**OVE Services**](../ove-services/README.html) that you intend to use. Installation guidelines can be found in the [OVE Installation Guide](INSTALLATION.md). As a part of the installation, you must ensure that the OVE core server, and all OVE apps, are accessible from the computers connected to the monitors that will be used in the display.
+Before using OVE, you will need to install [**OVE Core**](https://github.com/ove/ove), any [**OVE Apps**](../ove-apps/README.html), and any [**OVE Services**](../ove-services/README.html) that you intend to use. [**OVE UIs**](../ove-ui/README.html) and [**OVE SDKs**](https://github.com/ove/ove-sdks) may or may not be installed based on your requirements, as all core components provide REST APIs that cover all functionalities provided by these components. Installation guidelines can be found in the [OVE Installation Guide](INSTALLATION.md). As a part of the installation, you must ensure that the OVE core server, and all OVE apps, are accessible from the computers connected to the monitors that will be used in the display.
 
 ## Setting up OVE
 
@@ -46,7 +46,15 @@ Given below are instructions on how to load sample content using the [Images App
 
 ### Launching OVE Apps using OVE UI
 
-The [**OVE UI**](https://github.com/ove/ove-ui) is still work in progress.
+The [Loader UI](../ove-ui/packages/ove-ui-loader/README.md) can be used to launch applications into an OVE environment. The step-by-step process involves:
+
+1. Choosing the type of application to load
+2. Selecting space and providing geometry details
+3. Configuring initial application state
+4. Reviewing state configuration and operation details (where you can choose to delete existing sections or show the app-specific controller)
+5. Loading a new application instance
+
+The confirmation step provides a link to [Preview](../ove-ui/packages/ove-ui-preview/README.md) the space as well as a link to the app-specific usage documentation. The [Loader UI](../ove-ui/packages/ove-ui-loader/README.md) can be loaded into a browser window by accessing the URL `http://OVE_UI_LOADER_HOST:PORT`. The user interface provides easy-to-follow instructions and validates user input. For those who wish to upload many apps at once, the [Loader UI](../ove-ui/packages/ove-ui-loader/README.md) also provides operating system specific [curl](https://curl.haxx.se/docs/manpage.html) commands.
 
 ### Launching OVE Apps using the Python Client Library
 

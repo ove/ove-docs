@@ -38,6 +38,14 @@
 
 .. toctree::
    :maxdepth: 5
+   :caption: OVE UIs
+
+   Introduction <ove-ui/README>
+   ove-ui/packages/ove-ui-loader/README
+   ove-ui/packages/ove-ui-preview/README
+
+.. toctree::
+   :maxdepth: 5
    :caption: Reference
 
    ove-apps/packages/ove-app-html/docs/LIB_DISTRIBUTED

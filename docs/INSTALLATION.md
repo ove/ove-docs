@@ -196,6 +196,7 @@ All OVE projects can be downloaded from their GitHub repositories:
 * OVE Core: [master](https://github.com/ove/ove) | [releases](https://github.com/ove/ove/releases)
 * OVE Apps: [master](https://github.com/ove/ove-apps) | [releases](https://github.com/ove/ove-apps/releases)
 * OVE Services: [master](https://github.com/ove/ove-services) | [releases](https://github.com/ove/ove-services/releases)
+* OVE UIs: [master](https://github.com/ove/ove-ui) | [releases](https://github.com/ove/ove-ui/releases)
 * OVE Asset Services: [master](https://github.com/ove/ove-asset-services) | [releases](https://github.com/ove/ove-asset-services/releases)
 
 The `master` branch of each repository contains the latest code, and can also be cloned if you intend to contribute code or fix issues:
@@ -368,6 +369,8 @@ By default, OVE core, all apps, and all services run on `localhost`, which shoul
 * 8094 - OVE App WebRTC
 * 8180 - OVE Service Layout
 * 8190 - OVE Service Persistence (In-Memory)
+* 8281 - OVE UI Loader
+* 8282 - OVE UI Preview
 
 The default `PORT` numbers of OVE dependencies are:
 
