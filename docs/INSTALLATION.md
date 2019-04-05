@@ -172,8 +172,7 @@ All OVE projects use a build system based on [Lerna](https://lernajs.io/). Most 
 ### Prerequisites
 
 * [git](https://git-scm.com/downloads)
-* [Node.js](https://nodejs.org/en/) (v8.0+)
-* [NPM](https://www.npmjs.com/)
+* [Node.js](https://nodejs.org/en/) (v8.0+) ([NPM](https://www.npmjs.com/) is also required, but is included with the Node.js installer)
 * [NPX](https://www.npmjs.com/package/npx) (install with the command: `npm install -global npx`)
 * [PM2](http://pm2.keymetrics.io/) (install with the command: `npm install -global pm2`)
 * [Lerna](https://lernajs.io/) (install with the command: `npm install -global lerna`)
