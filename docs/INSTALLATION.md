@@ -13,6 +13,8 @@ All contributors to OVE are encouraged to download and compile the source code. 
 * [Docker](https://www.docker.com/get-started)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
+Docker is available in two versions: a free Community Edition (CE), and an Enterprise Edition (EE) that includes commercial support. The Community Edition should be sufficient for most users of OVE, and can be installed by following the instructions for [Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/install/), [Docker Desktop for Mac](https://docs.docker.com/docker-for-mac/install/) or [Docker CE for Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/). If you are using a version of Windows or Mac OS that does not meet the requirements listed for the Docker Desktop installer (either because it is too old, or because it is the Home edition of Windows, rather than Pro, Enterprise or Education), you should instead install the legacy [Docker Toolbox](https://docs.docker.com/toolbox/overview/).
+
 Building installers for non-supported platforms also requires:
 
 * [git](https://git-scm.com/downloads)
