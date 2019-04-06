@@ -352,7 +352,7 @@ After installation, OVE will expose several resources that can be accessed throu
 * OVE API docs       `http://OVE_CORE_HOST:PORT/api-docs`
 
 By default, OVE core, all apps, and all services run on `localhost`, which should be used in place of `OVE_CORE_HOST` and `OVE_APP_HOST` names above.
-Note that if you are using Docker on Windows, the docker container might be given a different IP address to the machine on which it is running; in this case, the hostname `localhost` will not work, and you should instead use the IP address printed by the command `docker-machine ip`.
+Note that the docker container might be given a different IP address to the machine on which it is running; in this case, the hostname `localhost` will not work, and you should instead use the IP address printed by the command `docker-machine ip`.
 
 The default `PORT` numbers are:
 
