@@ -3,7 +3,8 @@
 Please note that all docker files expect that you have [downloaded the source code](https://ove.readthedocs.io/en/stable/docs/INSTALLATION.html#downloading-source-code) corresponding to each specific version.
 
 - [`latest-unstable`, (*Dockerfile*)](https://github.com/ove/ove/blob/master/Dockerfile)
-- [`0.3.3`, `stable`, (*0.3.3/Dockerfile*)](https://github.com/ove/ove/blob/v0.3.3/Dockerfile)
+- [`0.4.0`, `stable`, (*0.4.0/Dockerfile*)](https://github.com/ove/ove/blob/v0.4.0/Dockerfile)
+- [`0.3.3`, (*0.3.3/Dockerfile*)](https://github.com/ove/ove/blob/v0.3.3/Dockerfile)
 - [`0.3.2`, (*0.3.2/Dockerfile*)](https://github.com/ove/ove/blob/v0.3.2/Dockerfile)
 - [`0.3.1`, (*0.3.1/Dockerfile*)](https://github.com/ove/ove/blob/v0.3.1/Dockerfile)
 - [`0.3.0`, (*0.3.0/Dockerfile*)](https://github.com/ove/ove/blob/v0.3.0/Dockerfile)
