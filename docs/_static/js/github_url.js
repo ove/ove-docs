@@ -25,6 +25,14 @@ $(document).ready(_ => {
             }
         });
     });
+    const version = window.location.pathname.substring(1).split('/')[1];
+    const lang = window.location.pathname.substring(1).split('/')[0];
+    $('a').each(function (){
+        if ($(this).hasClass('external') && $(this).attr('href').includes('ove.readthedocs.io')) {
+            $(this).attr('href', $(this).attr('href').replace(
+                'ove.readthedocs.io/' + lang + '/stable', 'ove.readthedocs.io/' + lang + '/' + version));
+        }
+    });
     $('.icon-home').attr('href', $('.icon-home').attr('href').replace('toctrees.html', 'README.html'));
     $('.commit').text('');
 });
