@@ -72,7 +72,7 @@ Before starting up OVE you must configure the environment variables either by pr
 * `openvidu.publicurl` - `https://` + Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md)).
 * `OPENVIDU_SECRET` - The [OpenVidu](https://openvidu.io/) secret. Must match `openvidu.secret` configured below.
 * `openvidu.secret` - The [OpenVidu](https://openvidu.io/) secret. Must match `OPENVIDU_SECRET` configured above.
-* `OVE_SPACES_JSON` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts a URL for the `Spaces.json` file to be used as a replacement to the default (embedded) [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) file available with OVE.
+* `OVE_SPACES_JSON` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts a URL for the [`Spaces.json` file](SPACES_JSON.md) to be used as a replacement to the default (embedded) [`Spaces.json` file](SPACES_JSON.md) available with OVE.
 * `LOG_LEVEL` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This can have values from `0` to `6` and defaults to `5`. The values correspond to:
   * `0` - FATAL
   * `1` - ERROR
@@ -359,7 +359,7 @@ After installation, OVE will expose several resources that can be accessed throu
 * OVE home page      `http://OVE_CORE_HOST:PORT`
 * App control page   `http://OVE_APP_HOST:PORT/control.html?oveSectionId=0`
 * OVE client pages   `http://OVE_CORE_HOST:PORT/view.html?oveViewId=LocalNine-0`
-  * (check [`Spaces.json`](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) for more information)
+  * check [`Spaces.json`](SPACES_JSON.md) for more information
 * OVE JS library     `http://OVE_CORE_HOST:PORT/ove.js`
 * OVE API docs       `http://OVE_CORE_HOST:PORT/api-docs`
 

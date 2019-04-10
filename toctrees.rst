@@ -50,4 +50,5 @@
 
    ove-apps/packages/ove-app-html/docs/LIB_DISTRIBUTED
    ove-apps/packages/ove-app-html/docs/UTIL_BACKGROUND
+   docs/SPACES_JSON
    ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON
