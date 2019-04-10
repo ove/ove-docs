@@ -286,6 +286,18 @@ To clean-up processes managed by PM2 on a Windows environment run:
 pm2 delete pm2-windows.json
 ```
 
+#### Starting and stopping OVE UIs in Development
+
+The OVE UI components are developed as [React](https://reactjs.org/) web applications. These components can therefore be launched in development mode, by running:
+
+```sh
+npm run start:dev
+```
+
+Once launched, they can be stopped by killing the application using the `Ctrl+C` keyboard shortcut.
+
+Unless [OVE Core](https://github.com/ove/ove) and the OVE Apps are running on localhost on their default ports, you will also need to modify the configuration file `.env` appropriately.
+
 ### Compiling source code for a Docker environment
 
 This approach currently works only for Linux and MacOS environments. The `build.sh` script corresponding to each repository can be found under the top most directory of the cloned or downloaded repository or within a `packages/PACKAGE_NAME` directory corresponding to each package.
