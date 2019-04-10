@@ -64,9 +64,12 @@ Once the `docker-compose.setup.ove.yml` file is generated, it is important to en
 
 Please note that the references to `Hostname (or IP address)` noted below should not be replaced with `localhost`, or the Docker hostname because these services need to be accessible from the client/browser. Please replace it with the `public hostname` or `IP address` of the `host machine`. For a local installation, the `host machine` refers to your own computer. For a server installation the `host machine` refers to the server on which the Docker environment has been setup. The default `PORT` numbers for OVE core, [Tuoris](https://github.com/fvictor/tuoris), [OpenVidu](https://openvidu.io/), and other services are provided in the [Running OVE](#running-ove) section.
 
-Before starting up OVE you must configure the environment variables either by providing them during the installation process or by editing the generated `docker-compose.setup.ove.yml` file. The environment variables that can be configured are:
+Before starting up OVE you must configure the environment variables either by providing them during the installation process or by editing the generated `docker-compose.setup.ove.yml` file. The list of environment variables that are used by the OVE UI components can be modified by editing the generated `ove.ui.env` found inside the generated `config` folder. The environment variables that can be configured are:
 
 * `OVE_HOST` - Hostname (or IP address) + port of OVE core
+* `REACT_APP_OVE_HOST` - same as above. The variable name contains an additional prefix as required by the [React](https://reactjs.org/) runtime.
+* `REACT_APP_OVE_APP_<APP_NAME_IN_UPPERCASE>` - Hostname (or IP address) + port of the respective OVE application
+* `REACT_APP_OVE_UI_PREVIEW` - Hostname (or IP address) + port of the [Preview UI](../ove-ui/packages/ove-ui-launcher/README.md)
 * `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of [SVG App](../ove-apps/packages/ove-app-svg/README.md)).
 * `OPENVIDU_HOST` - Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md)).
 * `openvidu.publicurl` - `https://` + Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md)).
@@ -86,6 +89,12 @@ Before starting up OVE you must configure the environment variables either by pr
 * `OVE_MAPS_LAYERS` - This variable is optional and not defined in the `docker-compose.setup.ove.yml` by default. This accepts a URL of a file containing the [Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) in a JSON format and overrides the [default Map layers Configuration](../ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON.md) of the [Maps App](../ove-apps/packages/ove-app-maps/README.md).
 
 The [OpenVidu](https://openvidu.io/) server also accepts several other optional environment variables that are not defined in the `docker-compose.setup.ove.yml` by default. These are explained in the documentation on [OpenVidu server configuration parameters](https://openvidu.io/docs/reference-docs/openvidu-server-params/).
+
+#### Other configuration files
+
+Few other configuration files can be found inside the `config` directory that is auto generated along with the `docker-compose.setup.ove.yml` file:
+
+* [`Spaces.json`](SPACES_JSON.md) - The default (embedded) `spaces` configuration of OVE can be modified prior to the initial start-up of OVE. To learn more, please refer the [documentation on `Spaces.json`](SPACES_JSON.md).
 
 #### Using your own certificates for [OpenVidu](https://openvidu.io/)
 
