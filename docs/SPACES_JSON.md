@@ -9,7 +9,7 @@ Each `client` must have its `geometry` specified by four properties:
 * `x`: the x-coordinate of the top-left corner of the client (x-coordinate values begin at 0 and increase from left to right)
 * `y`: the y-coordinate of the top-left corner of the client (y-coordinate values begin at 0 increase downards)
 
-The order in which the `client`s are defined determines the `oveViewID` of each, and thus the URL that should be opened in each browser.
+The order in which the `client`s are defined determines the `oveViewID` of each, and thus the URL that should be opened in each browser window.
 
 By default, OVE assumes that there is a one-to-one mapping between `client` pixels and `screen` pixels. The optional `scale` property can be used to specify an alternative mapping. It accepts either a single scaling factor, or separate scaling factors for the x and y axes, similar to the [CSS `scale()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale#Syntax).
 
