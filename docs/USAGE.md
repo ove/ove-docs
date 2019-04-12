@@ -91,9 +91,9 @@ image.set_url("https://farm4.staticflickr.com/3107/2431422903_632ce51b56_o_d.jpg
 
 ### Launching OVE Apps using OVE Core APIs
 
-OVE provides a number of useful APIs that can be used to launch applications and load content. The complete list of APIs provided by [**OVE Core**](https://github.com/ove/ove) is documented at: `http://OVE_CORE_HOST:PORT/api-docs`.
+OVE provides a number of useful APIs that can be used to launch applications and load content. The complete list of APIs provided by [**OVE Core**](https://github.com/ove/ove) is documented at: `http://OVE_CORE_HOST:PORT/api-docs/`.
 
-The APIs for OVE core, all apps, and all services are documented using [Swagger](https://swagger.io/solutions/api-documentation/), and it is possible to directly invoke them from within the API documentation page (`http://OVE_CORE_HOST:PORT/api-docs`) using a web browser. Alternatively, a standalone tool such as [curl](https://curl.haxx.se/docs/manpage.html) can be used.
+The APIs for OVE core, all apps, and all services are documented using [Swagger](https://swagger.io/solutions/api-documentation/), and it is possible to directly invoke them from within the API documentation page (`http://OVE_CORE_HOST:PORT/api-docs/`) using a web browser. Alternatively, a standalone tool such as [curl](https://curl.haxx.se/docs/manpage.html) can be used.
 
 An image can be loaded into the `LocalFour` space using the OVE APIs, by running the following commands using [curl](https://curl.haxx.se/docs/manpage.html).
 
