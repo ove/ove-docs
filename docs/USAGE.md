@@ -56,7 +56,7 @@ The [Launcher UI](../ove-ui/packages/ove-ui-launcher/README.md) can be used to l
 4. Reviewing state configuration and operation details (where you can choose to delete existing sections or show the app-specific controller)
 5. Launching a new application instance
 
-The confirmation step provides a link to [Preview](../ove-ui/packages/ove-ui-preview/README.md) the space as well as a link to the app-specific usage documentation. The [Launcher UI](../ove-ui/packages/ove-ui-launcher/README.md) can be loaded into a browser window by accessing the URL `http://OVE_UI_LAUNCHER_HOST:PORT`. The user interface provides easy-to-follow instructions and validates user input. For those who wish to upload many apps at once, the [Launcher UI](../ove-ui/packages/ove-ui-launcher/README.md) also provides operating system specific [curl](https://curl.haxx.se/docs/manpage.html) commands.
+The confirmation step provides a link to [Preview](../ove-ui/packages/ove-ui-preview/README.md) the space as well as a link to the app-specific usage documentation. The [Launcher UI](../ove-ui/packages/ove-ui-launcher/README.md) can be loaded into a browser window by accessing the URL `http://OVE_CORE_HOST:PORT/ui/launcher`. The user interface provides easy-to-follow instructions and validates user input. For those who wish to upload many apps at once, the [Launcher UI](../ove-ui/packages/ove-ui-launcher/README.md) also provides operating system specific [curl](https://curl.haxx.se/docs/manpage.html) commands.
 
 To launch the [Images App](../ove-apps/packages/ove-app-images/README.md) with a sample image, in the `LocalNine` space, select `Images` as the application to launch and press `Next` to proceed.
 
@@ -101,14 +101,14 @@ Linux/Mac:
 
 ```sh
 curl --header "Content-Type: application/json" --request DELETE http://OVE_CORE_HOST:PORT/sections
-curl --header "Content-Type: application/json" --request POST --data '{"app": {"url": "http://OVE_APP_IMAGES_HOST:PORT","states": {"load": {"tileSources": "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"}}}, "space": "LocalFour", "h": 500, "w": 500, "y": 0, "x": 0}' http://OVE_CORE_HOST:PORT/section
+curl --header "Content-Type: application/json" --request POST --data '{"app": {"url": "http://OVE_CORE_HOST:PORT/app/images","states": {"load": {"tileSources": "https://openseadragon.github.io/example-images/highsmith/highsmith.dzi"}}}, "space": "LocalFour", "h": 500, "w": 500, "y": 0, "x": 0}' http://OVE_CORE_HOST:PORT/section
 ```
 
 Windows:
 
 ```sh
 curl --header "Content-Type: application/json" --request DELETE http://OVE_CORE_HOST:PORT/sections
-curl --header "Content-Type: application/json" --request POST --data "{\"app\": {\"url\": \"http://OVE_APP_IMAGES_HOST:PORT\", \"states\": {\"load\": {\"tileSources\": \"https://openseadragon.github.io/example-images/highsmith/highsmith.dzi\"}}}, \"space\": \"LocalFour\", \"h\": 500, \"w\": 500, \"y\": 0, \"x\": 0}" http://OVE_CORE_HOST:PORT/section
+curl --header "Content-Type: application/json" --request POST --data "{\"app\": {\"url\": \"http://OVE_CORE_HOST:PORT/app/images\", \"states\": {\"load\": {\"tileSources\": \"https://openseadragon.github.io/example-images/highsmith/highsmith.dzi\"}}}, \"space\": \"LocalFour\", \"h\": 500, \"w\": 500, \"y\": 0, \"x\": 0}" http://OVE_CORE_HOST:PORT/section
 ```
 
 These commands clear all sections on OVE, and create a new section containing an instance of the [Images App](../ove-apps/packages/ove-app-images/README.md). In this example we are loading a [Deep Zoom](https://docs.microsoft.com/en-us/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc645077(v=vs.95)) image.
@@ -151,13 +151,13 @@ Please note that you may need to specify a port number if you have chosen to use
 
 Once the server has started, the content will be available at the any of the URLs printed on the console, if you have chosen to use Node.js or at `http://localhost:8000` (or corresponding port number), if you have chosen to use Python.
 
-### Using the [OVE Asset Manager](https://github.com/ove/ove-asset-manager)
+### Using the OVE Asset Manager
 
 The [OVE Asset Manager](https://github.com/ove/ove-asset-manager) is still work in progress.
 
 ## Controlling OVE Apps and designing interactive visualisations
 
-Once an App has been launched in an OVE `space` it can be controlled using the corresponding controller, which provides app-specific functionality. For example, the controller of the [Images App](../ove-apps/packages/ove-app-images/README.md) supports panning and zooming of images that have been loaded. The controller can be loaded into a separate browser window by accessing the URL `http://OVE_APP_IMAGES_HOST:PORT/control.html?oveSectionId=0`. Not providing the `oveSectionId` would result in OVE printing the `Section id not provided` warning on the browser console.
+Once an App has been launched in an OVE `space` it can be controlled using the corresponding controller, which provides app-specific functionality. For example, the controller of the [Images App](../ove-apps/packages/ove-app-images/README.md) supports panning and zooming of images that have been loaded. The controller can be loaded into a separate browser window by accessing the URL `http://OVE_CORE_HOST:PORT/app/images/control.html?oveSectionId=0`. Not providing the `oveSectionId` would result in OVE printing the `Section id not provided` warning on the browser console.
 
 A common practice when designing projects with interactive visualisations is to create a custom launcher application that is capable of making API calls. Such applications are usually designed to run on web browsers and invoke the [**OVE Core**](https://github.com/ove/ove) API using JavaScript code. These applications provide a single-click (or single-touch) experience for launching and controlling OVE apps.
 

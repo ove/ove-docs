@@ -185,6 +185,7 @@ All OVE projects use a build system based on [Lerna](https://lernajs.io/). Most 
 * [NPX](https://www.npmjs.com/package/npx) (install with the command: `npm install -global npx`)
 * [PM2](http://pm2.keymetrics.io/) (install with the command: `npm install -global pm2`)
 * [Lerna](https://lernajs.io/) (install with the command: `npm install -global lerna`)
+* [nginx](https://nginx.org/en/download.html)
 
 Compiling source code for the Docker environment also requires:
 
@@ -216,6 +217,14 @@ git clone https://github.com/ove/ove
 ```
 
 Once the source code has been downloaded OVE can be installed either on a local Node.js environment (such as PM2's Node.js environment) or within a Docker environment. The two approaches are explained below.
+
+### Setting up local nginx installation
+
+The OVE core, applications, services and UIs are made up of multiple microservices running on their own ports. The OVE Docker applications use [nginx](https://nginx.org/en/) to overcome the complexity of end-users having to expose multiple ports on their systems. Therefore, for a local OVE installation, having [nginx](https://nginx.org/en/) installed with the [OVE default configuration](https://github.com/ove/ove-docs/blob/master/resources/default.conf?raw=true) is recommended. This will ensure all URLs found in the documentation would work without any modification.
+
+Replace `/etc/nginx/conf.d/default.conf` (which might be found in a different path depending on the OS) with the contents of the [OVE default configuration](https://github.com/ove/ove-docs/blob/master/resources/default.conf?raw=true). Restart [nginx](https://nginx.org/en/) if it is already running.
+
+With this configuration, by default, OVE will run on port `80`. To run OVE on its standard port `8080`, change the server `listen` port in the [nginx](https://nginx.org/en/) configuration to `8080`. This will run into a port conflict with the OVE core microservice which also runs on port `8080` by default. To change the port allocated to OVE core microservice to `9080`, modify the `pm2.json` file found inside the git clone of OVE core by replacing `8080` with `9080`. Then change the `proxy_pass http://localhost:8080` line to `proxy_pass http://localhost:9080` in the [nginx](https://nginx.org/en/) configuration.
 
 ### Compiling source code for a local Node.js environment
 
@@ -366,38 +375,17 @@ For details of how to use OVE, see the [Usage](USAGE.md) page.
 After installation, OVE will expose several resources that can be accessed through a web browser:
 
 * OVE home page      `http://OVE_CORE_HOST:PORT`
-* App control page   `http://OVE_APP_HOST:PORT/control.html?oveSectionId=0`
+* App control page   `http://OVE_CORE_HOST:PORT/app/OVE_APP_NAME/control.html?oveSectionId=0`
 * OVE client pages   `http://OVE_CORE_HOST:PORT/view.html?oveViewId=LocalNine-0`
   * check [`Spaces.json`](SPACES_JSON.md) for more information
 * OVE JS library     `http://OVE_CORE_HOST:PORT/ove.js`
 * OVE API docs       `http://OVE_CORE_HOST:PORT/api-docs`
 
-By default, OVE core, all apps, and all services run on `localhost`, which should be used in place of `OVE_CORE_HOST` and `OVE_APP_HOST` names above.
+By default, OVE core, all apps, and all services run on `localhost`, which should be used in place of `OVE_CORE_HOST` above.
 Note that the docker container might be given a different IP address to the machine on which it is running; in this case, the hostname `localhost` will not work, and you should instead use the IP address printed by the command `docker-machine ip`.
 
 The default `PORT` numbers are:
 
 * 8080 - OVE Core
-* 8081 - OVE App Maps
-* 8082 - OVE App Images
-* 8083 - OVE App HTML
-* 8084 - OVE App Videos
-* 8085 - OVE App Networks
-* 8086 - OVE App Charts
-* 8087 - OVE App Alignment
-* 8088 - OVE App Audio
-* 8089 - OVE App SVG
-* 8090 - OVE App Whiteboard
-* 8091 - OVE App PDF
-* 8092 - OVE App Controller
-* 8093 - OVE App Replicator
-* 8094 - OVE App WebRTC
-* 8180 - OVE Service Layout
-* 8190 - OVE Service Persistence (In-Memory)
-* 8281 - OVE UI Launcher
-* 8282 - OVE UI Preview
-
-The default `PORT` numbers of OVE dependencies are:
-
 * 7080 - [Tuoris](https://github.com/fvictor/tuoris)
 * 4443 - [OpenVidu](https://openvidu.io/)
