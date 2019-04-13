@@ -43,6 +43,7 @@
    Introduction <ove-ui/README>
    ove-ui/packages/ove-ui-launcher/README
    ove-ui/packages/ove-ui-preview/README
+   ove-ui/packages/ove-ui-status/README
 
 .. toctree::
    :maxdepth: 5

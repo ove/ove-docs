@@ -68,8 +68,6 @@ Before starting up OVE you must configure the environment variables either by pr
 
 * `OVE_HOST` - Hostname (or IP address) + port of OVE core
 * `REACT_APP_OVE_HOST` - same as above. The variable name contains an additional prefix as required by the [React](https://reactjs.org/) runtime.
-* `REACT_APP_OVE_APP_<APP_NAME_IN_UPPERCASE>` - Hostname (or IP address) + port of the respective OVE application
-* `REACT_APP_OVE_UI_PREVIEW` - Hostname (or IP address) + port of the [Preview UI](../ove-ui/packages/ove-ui-launcher/README.md)
 * `PUBLIC_URL` - Hostname (or IP address) + port of the respective OVE UI application. This variable is required by the [React](https://reactjs.org/) runtime.
 * `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of [SVG App](../ove-apps/packages/ove-app-svg/README.md)).
 * `OPENVIDU_HOST` - Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md)).
