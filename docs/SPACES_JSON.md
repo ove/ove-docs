@@ -9,11 +9,11 @@ Each `client` must have its `geometry` specified by four properties:
 * `x`: the x-coordinate of the top-left corner of the client (x-coordinate values begin at 0 and increase from left to right)
 * `y`: the y-coordinate of the top-left corner of the client (y-coordinate values begin at 0 increase downards)
 
-The order in which the `client`s are defined determines the `oveViewID` of each, and thus the URL that should be opened in each browser window.
+The order in which the `clients` are defined determines the `oveViewID` of each, and thus the URL that should be opened in each browser window.
 
 By default, OVE assumes that there is a one-to-one mapping between `client` pixels and `screen` pixels. The optional `scale` property can be used to specify an alternative mapping. It accepts either a single scaling factor, or separate scaling factors for the x and y axes, similar to the [CSS `scale()` function](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/scale#Syntax).
 
-The default [`Spaces.json` file](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) defines two spaces (`LocalFour` and `LocalNine`), corresponding to `2x2` and `3x3` arrangements of `clients`. Each `client` in these spaces has a size of `1440x808`, so they have a total resolution of `2880x1616` and `4320x2424` respectively.
+The default [`Spaces.json` file](https://github.com/ove/ove/blob/master/packages/ove-core/src/client/Spaces.json) defines two spaces (`LocalFour` and `LocalNine`), corresponding to `2x2` and `3x3` arrangements of `clients`. Each `client` in these spaces has a resolution of `1440x808`, so they have a total resolution of `2880x1616` and `4320x2424` respectively.
 
 OVE **must be relaunched** after any changes are made to `Spaces.json`.
 
