@@ -140,6 +140,8 @@ OVE provides separate installation scripts to help users install the necessary c
 docker-compose -f docker-compose.setup.ove.yml up -d
 ```
 
+Please note that the OVE UI components are re-built when the respective docker container is started for the first time, which may result in them take a bit longer than expected to start. [nginx](https://www.nginx.com/) will display a `502 Bad Gateway` status while the OVE UI components are built and started up for the first time. If you see this status message, please give the system 5 - 30 minutes to complete the installation. A working internet connection is also a must for this initial installation process.
+
 If you wish to install OVE without it automatically starting, use the command:
 
 ```sh
