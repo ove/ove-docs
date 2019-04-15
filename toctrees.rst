@@ -41,6 +41,7 @@
    :caption: OVE UI
 
    Introduction <ove-ui/README>
+   ove-ui/packages/ove-ui-demo/README
    ove-ui/packages/ove-ui-launcher/README
    ove-ui/packages/ove-ui-preview/README
    ove-ui/packages/ove-ui-status/README
