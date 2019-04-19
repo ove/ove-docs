@@ -28,8 +28,8 @@ The [**OVE Install**](https://github.com/ove/ove-install/) scripts are available
 * [linux-python2-v0.3.3-setup](https://github.com/ove/ove-install/releases/download/v0.3.3/linux-python2-v0.3.3-setup)
 * [osx-python3-v0.3.3-setup](https://github.com/ove/ove-install/releases/download/v0.3.3/osx-python3-v0.3.3-setup)
 * [osx-python2-v0.3.3-setup](https://github.com/ove/ove-install/releases/download/v0.3.3/osx-python2-v0.3.3-setup)
-* [windows-python3-v0.3.3-setup](https://github.com/ove/ove-install/releases/download/v0.3.3/windows-python3-v0.3.3-setup)
-* [windows-python2-v0.3.3-setup](https://github.com/ove/ove-install/releases/download/v0.3.3/windows-python2-v0.3.3-setup)
+* [windows-python3-v0.3.3-setup.exe](https://github.com/ove/ove-install/releases/download/v0.3.3/windows-python3-v0.3.3-setup.exe)
+* [windows-python2-v0.3.3-setup.exe](https://github.com/ove/ove-install/releases/download/v0.3.3/windows-python2-v0.3.3-setup.exe)
 
 ### Building installers for non-supported platforms
 
