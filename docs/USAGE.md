@@ -153,7 +153,7 @@ Once the server has started, the content will be available at the any of the URL
 
 ### Using the OVE Asset Manager
 
-The [OVE Asset Manager](https://github.com/ove/ove-asset-manager) is still work in progress.
+Please read this short [tutorial](ove-asset-manager/docs/Usage.md) on the basic functionality of the [OVE Asset Manager](https://github.com/ove/ove-asset-manager).
 
 ## Controlling OVE Apps and designing interactive visualisations
 

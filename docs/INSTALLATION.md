@@ -209,7 +209,7 @@ All OVE projects can be downloaded from their GitHub repositories:
 * OVE Apps: [master](https://github.com/ove/ove-apps) | [releases](https://github.com/ove/ove-apps/releases)
 * OVE Services: [master](https://github.com/ove/ove-services) | [releases](https://github.com/ove/ove-services/releases)
 * OVE UIs: [master](https://github.com/ove/ove-ui) | [releases](https://github.com/ove/ove-ui/releases)
-* OVE Asset Services: [master](https://github.com/ove/ove-asset-services) | [releases](https://github.com/ove/ove-asset-services/releases)
+* OVE Asset Manager: [master](https://github.com/ove/ove-asset-manager) | [releases](https://github.com/ove/ove-asset-manager/releases)
 
 The `master` branch of each repository contains the latest code, and can also be cloned if you intend to contribute code or fix issues:
 
@@ -388,5 +388,8 @@ Note that the docker container might be given a different IP address to the mach
 The default `PORT` numbers are:
 
 * 8080 - OVE Core
+* 6060 - OVE Asset Manager UI
+* 6080 - OVE Asset Manager API
+* 6081 - OVE Asset Manager Read proxy
 * 7080 - [Tuoris](https://github.com/fvictor/tuoris)
 * 4443 - [OpenVidu](https://openvidu.io/)

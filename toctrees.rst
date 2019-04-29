@@ -48,6 +48,15 @@
 
 .. toctree::
    :maxdepth: 5
+   :caption: OVE Asset Manager
+
+   Introduction <ove-asset-manager/README>
+   ove-asset-manager/docs/Usage
+   ove-asset-manager/docs/API
+   ove-asset-manager/docs/Development
+
+.. toctree::
+   :maxdepth: 5
    :caption: Reference
 
    ove-apps/packages/ove-app-html/docs/LIB_DISTRIBUTED
