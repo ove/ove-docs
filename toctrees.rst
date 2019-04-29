@@ -46,6 +46,15 @@
    ove-ui/packages/ove-ui-preview/README
    ove-ui/packages/ove-ui-status/README
 
+ .. toctree::
+   :maxdepth: 5
+   :caption: OVE Asset Manager
+
+   Introduction <ove-asset-manager/README>
+   ove-asset-manager/docs/Usage
+   ove-asset-manager/docs/API
+   ove-asset-manager/docs/Development
+
 .. toctree::
    :maxdepth: 5
    :caption: Reference

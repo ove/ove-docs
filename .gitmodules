@@ -7,3 +7,6 @@
 [submodule "ove-ui"]
 	path = ove-ui
 	url = https://github.com/ove/ove-ui
+[submodule "ove-asset-manager"]
+	path = ove-asset-manager
+	url = https://github.com/ove/ove-asset-manager
