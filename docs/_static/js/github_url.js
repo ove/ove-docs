@@ -16,9 +16,9 @@ $(document).ready(_ => {
     $('img').each(function (){
         const self = this;
         Object.entries({
-            'ove-ui-step1': '512px',
-            'ove-ui-step2': '646px',
-            'ove-ui-step3': '555px'
+            'ove-ui-step1': '676px',
+            'ove-ui-step2': '676px',
+            'ove-ui-step3': '676px'
         }).forEach(function (e) {
             if ($(self).attr('src').includes(e[0])) {
                 $(self).css('max-width', e[1]);
