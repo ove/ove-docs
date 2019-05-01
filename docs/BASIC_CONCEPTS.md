@@ -22,7 +22,6 @@ In addition to these *views*, `apps` may present a *control* page that can be ac
 
 When the `iframe` representing a `section` is created, its `margin` CSS property is used to position it correctly, and the `window.ove.geometry` object is set so that each `instance` of an `app` running within each `iframe` can determine what to display.
 
-![](images/tiling.svg)
 
 ## High availability of server-side application components
 
