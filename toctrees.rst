@@ -60,6 +60,7 @@
    :maxdepth: 5
    :caption: Reference
 
+   ove-sdks/python/README
    ove-apps/packages/ove-app-html/docs/LIB_DISTRIBUTED
    ove-apps/packages/ove-app-html/docs/UTIL_BACKGROUND
    docs/SPACES_JSON

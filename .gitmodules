@@ -10,3 +10,6 @@
 [submodule "ove-asset-manager"]
 	path = ove-asset-manager
 	url = https://github.com/ove/ove-asset-manager
+[submodule "ove-sdks"]
+	path = ove-sdks
+	url = https://github.com/ove/ove-sdks

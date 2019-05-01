@@ -74,7 +74,7 @@ Press `Next` in the fourth step and `Launch` in the fifth step.
 
 ### Launching OVE Apps using the Python Client Library
 
-The [Python Client Library](https://github.com/ove/ove-sdks/tree/master/python) is one of the SDKs provided by OVE, which can be installed separately by following the instructions available on its [GitHub repository](https://github.com/ove/ove-sdks/blob/master/python/README.md#installation).
+The [Python Client Library](../ove-sdks/python/README.md) is one of the SDKs provided by OVE, which can be installed separately by following the [installation instructions](../ove-sdks/python/README.md).
 
 To launch the [Images App](../ove-apps/packages/ove-app-images/README.md) with a sample image, in the `LocalNine` space, run:
 

@@ -22,7 +22,6 @@ In addition to these *views*, `apps` may present a *control* page that can be ac
 
 When the `iframe` representing a `section` is created, its `margin` CSS property is used to position it correctly, and the `window.ove.geometry` object is set so that each `instance` of an `app` running within each `iframe` can determine what to display.
 
-
 ## High availability of server-side application components
 
 OVE provides a [Persistence Service](../ove-services/packages/ove-service-persistence-inmemory/README.md) which can be used to replicate server-side state among peers. This service can be registered with OVE core or any OVE application as explained in the [documentation](../ove-services/packages/ove-service-persistence-inmemory/README.md). OVE core also accepts registration of `peer` nodes using the `http://OVE_CORE_HOST:PORT/peers` API method. Once registered OVE peers will cross-post messages that are broadcasted using WebSockets.
