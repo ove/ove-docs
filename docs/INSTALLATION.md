@@ -4,6 +4,8 @@ OVE needs to be installed before it can be used to control a display. OVE can be
 
 All contributors to OVE are encouraged to download and compile the source code. All users of OVE are encouraged to use the OVE installers.
 
+Please refer the [OVE Asset Manager installation guide](../ove-asset-manager/docs/Install.md) to install the OVE Asset Manager.
+
 ## Installation by running OVE installers
 
 [**OVE Install**](https://github.com/ove/ove-install/) scripts are designed to install OVE into a [Docker](https://www.docker.com/get-started) environment.
@@ -392,6 +394,3 @@ The default `PORT` numbers are:
 * 7080 - [Tuoris](https://github.com/fvictor/tuoris)
 * 4443 - [OpenVidu](https://openvidu.io/)
 
-# Installing the Asset Manager
-
-Please check the [Install Guide](../ove-asset-manager/docs/Install.md) for more details.
