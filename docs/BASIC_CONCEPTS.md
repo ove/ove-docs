@@ -26,26 +26,6 @@ When the `iframe` representing a `section` is created, its `margin` CSS property
 
 ![](images/tiling.svg)
 
-## Communication between components
-
-In these diagrams, requests labelled `GET` and `POST` are HTTP requests; other messages are sent using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
-
-### Managing sections
-
-![](images/sequence-diagrams/create-section.svg)
-
-![](images/sequence-diagrams/delete-sections.svg)
-
-![](images/sequence-diagrams/delete-section.svg)
-
-### Managing state
-
-![](images/sequence-diagrams/create-state.svg)
-
-![](images/sequence-diagrams/load-state.svg)
-
-![](images/sequence-diagrams/update-state.svg)
-
 ## High availability of server-side application components
 
 OVE provides a [Persistence Service](../ove-services/packages/ove-service-persistence-inmemory/README.md) which can be used to replicate server-side state among peers. This service can be registered with OVE core or any OVE application as explained in the [documentation](../ove-services/packages/ove-service-persistence-inmemory/README.md). OVE core also accepts registration of `peer` nodes using the `http://OVE_CORE_HOST:PORT/peers` API method. Once registered OVE peers will cross-post messages that are broadcasted using WebSockets.
