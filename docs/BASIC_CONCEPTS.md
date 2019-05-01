@@ -20,8 +20,6 @@ Each OVE `client` displays the *view* page of OVE core. When a `section` is crea
 
 In addition to these *views*, `apps` may present a *control* page that can be accessed directly through a web browser; this controller can communicate with the *views* running in `clients` using [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
 
-![](images/urls.svg)
-
 When the `iframe` representing a `section` is created, its `margin` CSS property is used to position it correctly, and the `window.ove.geometry` object is set so that each `instance` of an `app` running within each `iframe` can determine what to display.
 
 ![](images/tiling.svg)
