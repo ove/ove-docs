@@ -89,3 +89,6 @@ venv/
 # Python build files
 build/
 *.pyc
+
+# RTD build cache
+_build/ 

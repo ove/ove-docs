@@ -391,3 +391,7 @@ The default `PORT` numbers are:
 * 6081 - OVE Asset Manager Read proxy
 * 7080 - [Tuoris](https://github.com/fvictor/tuoris)
 * 4443 - [OpenVidu](https://openvidu.io/)
+
+# Installing the Asset Manager
+
+Please check the [Install Guide](../ove-asset-manager/docs/Install.md) for more details.

@@ -51,6 +51,7 @@
    :caption: OVE Asset Manager
 
    Introduction <ove-asset-manager/README>
+   ove-asset-manager/docs/Install
    ove-asset-manager/docs/Usage
    ove-asset-manager/docs/API
    ove-asset-manager/docs/Development
