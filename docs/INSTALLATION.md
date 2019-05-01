@@ -64,11 +64,9 @@ Once the `docker-compose.setup.ove.yml` file is generated, it is important to en
 
 Please note that the references to `Hostname (or IP address)` noted below should not be replaced with `localhost`, or the Docker hostname because these services need to be accessible from the client/browser. Please replace it with the `public hostname` or `IP address` of the `host machine`. For a local installation, the `host machine` refers to your own computer. For a server installation the `host machine` refers to the server on which the Docker environment has been setup. The default `PORT` numbers for OVE core, [Tuoris](https://github.com/fvictor/tuoris), [OpenVidu](https://openvidu.io/), and other services are provided in the [Running OVE](#running-ove) section.
 
-Before starting up OVE you must configure the environment variables either by providing them during the installation process or by editing the generated `docker-compose.setup.ove.yml` file. The list of environment variables that are used by the OVE UI components can be modified by editing the generated `ove.ui.env` found inside the generated `config` folder. The environment variables that can be configured are:
+Before starting up OVE you must configure the environment variables either by providing them during the installation process or by editing the generated `docker-compose.setup.ove.yml` file. The environment variables that can be configured are:
 
 * `OVE_HOST` - Hostname (or IP address) + port of OVE core
-* `REACT_APP_OVE_HOST` - same as above. The variable name contains an additional prefix as required by the [React](https://reactjs.org/) runtime.
-* `PUBLIC_URL` - Hostname (or IP address) + port of the respective OVE UI application. This variable is required by the [React](https://reactjs.org/) runtime.
 * `TUORIS_HOST` - Hostname (or IP address) + port of the [Tuoris](https://github.com/fvictor/tuoris) service (dependency of [SVG App](../ove-apps/packages/ove-app-svg/README.md)).
 * `OPENVIDU_HOST` - Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md)).
 * `openvidu.publicurl` - `https://` + Hostname (or IP address) + port of the [OpenVidu](https://openvidu.io/) service (dependency of [WebRTC App](../ove-apps/packages/ove-app-webrtc/README.md)).
