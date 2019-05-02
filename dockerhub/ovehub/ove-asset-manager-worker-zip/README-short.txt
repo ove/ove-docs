@@ -1,0 +1,1 @@
+A worker for the OVE Asset Manager (AM) to extract the contents of a standard .zip archive file.

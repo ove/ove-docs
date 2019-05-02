@@ -1,0 +1,1 @@
+The graphical user interface of the OVE Asset Manager (AM).

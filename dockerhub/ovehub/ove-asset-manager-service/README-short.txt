@@ -1,0 +1,1 @@
+Manages data corresponding to an installation of Open Visualisation Environment (OVE).

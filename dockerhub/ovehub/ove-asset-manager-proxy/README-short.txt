@@ -1,0 +1,1 @@
+A high speed proxy to provide authenticated access to data stored using the OVE Asset Manager (AM).

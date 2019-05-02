@@ -1,0 +1,1 @@
+A worker for the OVE Asset Manager (AM) to generate Deep Zoom Images.
