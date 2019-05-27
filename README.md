@@ -10,4 +10,4 @@ The main components of OVE are [**OVE Core**](https://github.com/ove/ove), which
 
 [**OVE Asset Manager**](./ove-asset-manager/README.md) provides an Asset Manager backend that manages files in an object store, a user interface for this manager, a collection of workers to asynchronously process uploaded files (e.g., to create tiles from an image, or expand a zipped archived), and a Read Proxy that can efficiently serve files from the object store. 
 
-OVE also provides [user interfaces](https://github.com/ove/ove-ui) and [software development kits](https://github.com/ove/ove-sdks) that can be used to design and develop projects.
+OVE  also provides [user interfaces](https://github.com/ove/ove-ui) and [software development kits](https://github.com/ove/ove-sdks) that can be used to design and develop projects.
