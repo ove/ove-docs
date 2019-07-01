@@ -55,6 +55,9 @@
    ove-asset-manager/docs/Usage
    ove-asset-manager/docs/API
    ove-asset-manager/docs/Development
+   ove-asset-manager/docs/workers/ZipWorker.md
+   ove-asset-manager/docs/workers/DeepZoomImageWorker.md
+   ove-asset-manager/docs/workers/Tulip.md   
 
 .. toctree::
    :maxdepth: 5
