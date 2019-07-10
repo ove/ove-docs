@@ -108,6 +108,7 @@ services:
 
   openvidu-openvidu-call:
     image: openvidu/openvidu-call:latest
+    restart: unless-stopped
     ports:
     - "4443:4443"
     environment:
