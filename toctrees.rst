@@ -68,3 +68,4 @@
    ove-apps/packages/ove-app-html/docs/UTIL_BACKGROUND
    docs/SPACES_JSON
    ove-apps/packages/ove-app-maps/docs/MAP_LAYERS_JSON
+   ove-apps/packages/ove-app-videos/docs/OTV_FILE_FORMAT
