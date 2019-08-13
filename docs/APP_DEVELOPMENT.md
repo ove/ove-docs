@@ -181,6 +181,10 @@ function onMouseEvent(event) {
 
 The OVE object (`window.ove`) provides a number of useful functions and data structures to handle state, to interpret geometry and to communicate via WebSockets. It also provides a context (`window.ove.context`) to hold the application's local variables. The `window.ove.context.uuid` property provides a unique identifier for each instance of OVE. This can be used to uniquely identify each viewer and controller in the system. The `window.ove.context.hostname` property provides the hostname of the ove.js library.
 
+OVE also ensures clocks of all clients are perfectly synchronised. The `window.ove.clock.getTime()` function can be used to obtain the synchronised system time. Clock synchronisation takes time to
+complete and the system would take at least a minimum of two minutes for the initial synchronisation
+attempt. It may take a further few more attempts before the clocks are properly synchronised.
+
 ### Handling state
 
 The `window.ove.state` object provides a `window.ove.state.current` data structure to hold the current application state. You can decide what this should contain, given the particular needs of your application.
