@@ -54,6 +54,7 @@ This mechanism allows the construction of paths for the inclusion of JavaScript 
 Messages can be logged by creating a `OVE.Utils.Logger` object, and then calling the method with the appropriate level (`fatal`, `error`, `warn`, `debug`, `info` or `trace`):
 
 ```js
+const { Constants } = require('./client/constants/<app-name>');
 const log = OVE.Utils.Logger(Constants.APP_NAME, Constants.LOG_LEVEL);
 log.debug('Starting application');
 ```
@@ -63,7 +64,7 @@ log.debug('Starting application');
 For most applications the `index.js` would look similar to:
 
 ```js
-const { Constants } = require('./client/constants/<app-nam>');
+const { Constants } = require('./client/constants/<app-name>');
 const { app, log } = require('@ove-lib/appbase')(__dirname, Constants.APP_NAME);
 const server = require('http').createServer(app);
 
@@ -72,15 +73,35 @@ server.listen(port);
 log.info(Constants.APP_NAME, 'application started, port:', port);
 ```
 
-The [`@ove-lib/appbase`](https://www.npmjs.com/package/@ove-lib/appbase) base library also exposes `express`, `nodeModules` and `config`. These can be used to register express routes, to expose nodule modules or to access application-specific configuration found in the `config.json` file.
-To expose a node module from your application:
+The [`@ove-lib/appbase`](https://www.npmjs.com/package/@ove-lib/appbase) base library also exposes `express`, `nodeModules`, `appState`, `clock` and `config`. These can be used to register express routes, to expose nodule modules, to access the application specific state, to get the time from a synchronised clock, or to access application-specific configuration found in the `config.json` file. To expose a node module from your application:
 
 ```js
+const { Constants } = require('./client/constants/<app-name>');
 const { express, app, log, nodeModules } = require('@ove-lib/appbase')(__dirname, Constants.APP_NAME);
 const path = require('path');
 
 log.debug('Using module:', '<module-name>');
 app.use('/', express.static(path.join(nodeModules, '<module-name>', '<module-directory>')));
+```
+
+### Using the synchronised clock on the server-side
+
+The clock synchronisation on OVE uses WebSockets and therefore, it must be initialised appropriately when a WebSocket connection is available. Please also note that the the synchronised time is not available at start-up. It may take up to 5 minutes for each client to perform the first clock synchronisation and it can take a further 10 minutes for the clocks to stabilise. To get the time from a synchronised clock:
+
+```js
+const { Constants } = require('./client/constants/<app-name>');
+const { clock, log, Utils } = require('@ove-lib/appbase')(__dirname, Constants.APP_NAME);
+
+let socket = new (require('ws'))('ws://' + Utils.getOVEHost());
+clock.setWS(Utils.getSafeSocket(socket));
+socket.on('open', function () {
+    clock.init();
+});
+
+log.debug('Original time is:', clock.getTime());
+setInterval(function () {
+    log.debug('Synchronised time is:', clock.getTime());
+}, 300000);
 ```
 
 ### The swagger-extensions.yaml file
@@ -92,6 +113,7 @@ The `swagger-extensions.yaml` is optional and only found in applications exposin
 OVE `Utils` provides a number of useful methods, such as `Utils.getOVEHost()`, `Utils.sendMessage(res, status, message)`, `Utils.sendEmptySuccess(res)`, `Utils.getSafeSocket(socket)`, and `Utils.isNullOrEmpty(value)`. To make use of OVE `Utils` from your application to communicate with other OVE components using WebSockets:
 
 ```js
+const { Constants } = require('./client/constants/<app-name>');
 const { log, Utils } = require('@ove-lib/appbase')(__dirname, Constants.APP_NAME);
 
 let ws;
