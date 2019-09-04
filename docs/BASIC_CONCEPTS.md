@@ -22,6 +22,12 @@ In addition to these *views*, `apps` may present a *control* page that can be ac
 
 When the `iframe` representing a `section` is created, its `margin` CSS property is used to position it correctly, and the `window.ove.geometry` object is set so that each `instance` of an `app` running within each `iframe` can determine what to display.
 
-## High availability of server-side application components
+## Peer nodes of OVE core
 
-OVE provides a [Persistence Service](../ove-services/packages/ove-service-persistence-inmemory/README.md) which can be used to replicate server-side state among peers. This service can be registered with OVE core or any OVE application as explained in the [documentation](../ove-services/packages/ove-service-persistence-inmemory/README.md). OVE core also accepts registration of `peer` nodes using the `http://OVE_CORE_HOST:PORT/peers` API method. Once registered OVE peers will cross-post messages that are broadcasted using WebSockets.
+OVE core accepts registration of `peer` nodes using the `http://OVE_CORE_HOST:PORT/peers` API method. Once registered OVE peers will cross-post messages that are broadcasted using WebSockets. Peer nodes of OVE serve two purposes, high availability (HA) or distribution of workload.
+
+For a HA deployment, OVE also provides a [Persistence Service](../ove-services/packages/ove-service-persistence-inmemory/README.md) which can be used to replicate server-side state among peers. This service can be registered with OVE core or any OVE application as explained in the [documentation](../ove-services/packages/ove-service-persistence-inmemory/README.md). In a HA deployment each peer can take up the role of being the master and therefore they can also be fronted by a load balancer.
+
+In terms of distributing workload, OVE is capable of offloading the messaging subsystem to a different peer either for a single app or a group of apps. OVE can have any number of such peers as long as they are registered and they would all be in sync with the master. Unlike in a HA deployment, these peers are slaves and cannot be fronted by a load balancer as they would be serving dedicated apps.
+
+All peer-to-peer communication use WebSockets.

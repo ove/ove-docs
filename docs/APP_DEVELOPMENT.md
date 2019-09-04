@@ -299,7 +299,7 @@ window.ove.frame.on(function (message) {
 window.ove.frame.send(target, message, appId);
 ```
 
-The `message` argument represents a JSON serializable object in both methods. The `target` argument can be one of `Constants.Frame.PEER` or `Constants.Frame.CHILD`, and the optional `appId` argument identifies the target application. If `window.ove.frame.on` has not been set, all messages would be received by `window.ove.socket.on`. These methods can be used to develop controllers that support interactive operations such as [**linking and brushing**](https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_1129), across a number of different application instances or types.
+The `message` argument represents a JSON serializable object in both methods. The `target` argument can be one of `Constants.Frame.PARENT`, `Constants.Frame.PEER` or `Constants.Frame.CHILD`, and the optional `appId` argument identifies the target application. If `window.ove.frame.on` has not been set, all messages would be received by `window.ove.socket.on`. These methods can be used to develop controllers that support interactive operations such as [**linking and brushing**](https://link.springer.com/referenceworkentry/10.1007/978-0-387-39940-9_1129), across a number of different application instances or types.
 
 ## Embedding OVE within an existing web application
 
