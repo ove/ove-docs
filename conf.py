@@ -43,7 +43,7 @@ default_role = None
 
 master_doc = 'toctrees'
 
-project = u'Open Visualisation Framework'
+project = u'Open Visualisation Environment'
 copyright = u'2018, Data Science Institute'
 author = u'Senaka Fernando'
 
