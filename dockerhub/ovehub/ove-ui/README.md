@@ -25,7 +25,7 @@ After the application starts, follow the [guide on using OVE](https://ove.readth
   [the project documentation](https://ove.readthedocs.io/en/stable/)
 
 - **Where to report issues**:<br/>
-  read [all open issues](https://data-science.doc.ic.ac.uk/ove/) and then report at [https://github.com/ove/ove-ui/issues](https://github.com/ove/ove-ui/issues)
+  read [all open issues](https://data-science.dsi.ic.ac.uk/ove/) and then report at [https://github.com/ove/ove-ui/issues](https://github.com/ove/ove-ui/issues)
 
 - **Where to find the source code**:<br/>
   visit [https://github.com/ove/ove-ui](https://github.com/ove/ove-ui)

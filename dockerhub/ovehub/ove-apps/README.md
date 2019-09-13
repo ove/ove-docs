@@ -32,7 +32,7 @@ After the application starts, follow the [guide on launching OVE Apps](https://o
   [the project documentation](https://ove.readthedocs.io/en/stable/)
 
 - **Where to report issues**:<br/>
-  read [all open issues](https://data-science.doc.ic.ac.uk/ove/) and then report at [https://github.com/ove/ove-apps/issues](https://github.com/ove/ove-apps/issues)
+  read [all open issues](https://data-science.dsi.ic.ac.uk/ove/) and then report at [https://github.com/ove/ove-apps/issues](https://github.com/ove/ove-apps/issues)
 
 - **Where to find the source code**:<br/>
   visit [https://github.com/ove/ove-apps](https://github.com/ove/ove-apps)

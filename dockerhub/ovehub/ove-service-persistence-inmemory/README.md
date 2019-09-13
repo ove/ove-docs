@@ -27,7 +27,7 @@ After the application starts, follow the [guide on high availability of server-s
   [the project documentation](https://ove.readthedocs.io/en/stable/)
 
 - **Where to report issues**:<br/>
-  read [all open issues](https://data-science.doc.ic.ac.uk/ove/) and then report at [https://github.com/ove/ove-services/issues](https://github.com/ove/ove-services/issues)
+  read [all open issues](https://data-science.dsi.ic.ac.uk/ove/) and then report at [https://github.com/ove/ove-services/issues](https://github.com/ove/ove-services/issues)
 
 - **Where to find the source code**:<br/>
   visit [https://github.com/ove/ove-services/tree/master/packages/ove-service-persistence-inmemory](https://github.com/ove/ove-services/tree/master/packages/ove-service-persistence-inmemory)
