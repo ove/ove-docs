@@ -130,9 +130,15 @@ You now can repeat the [previous step](#step-5-launching-map-configurations) to 
 
 ## Bonus Step: Previewing [Airbnb](https://www.airbnb.com/) data from Boston
 
-In this bonus step, we will learn how to work with public datasets. We will be using a sample dataset provided by [kaggle](https://www.kaggle.com/datasets). We will be looking at the [Airbnb Listings from Boston](https://www.kaggle.com/airbnb/boston#listings.csv). To start, download [listings](https://www.kaggle.com/airbnb/boston/downloads/listings.csv/1). You may need an account on [kaggle](https://www.kaggle.com) to download this file.
+In this bonus step, we will learn how to work with public datasets. We will be using a sample dataset provided by [kaggle](https://www.kaggle.com/datasets). We will be looking at the [Airbnb Listings from Boston](https://www.kaggle.com/airbnb/boston#listings.csv).
+
+### Step A: Download the CSV File
+
+To start, download [listings](https://www.kaggle.com/airbnb/boston/downloads/listings.csv/1). You may need an account on [kaggle](https://www.kaggle.com) to download this file.
 
 Extract the downloaded zip archive and copy the `listings.csv` to the `geovisualisation` directory.
+
+### Step B: Convert the CSV file into a [GeoJSON](http://geojson.org/) file
 
 Then, run the following on a command line to generate a [GeoJSON](http://geojson.org/) file for these listings:
 
@@ -148,6 +154,8 @@ python -m pip install -r requirements.txt
 python -m convert <file_path.csv>
 ```
 
+### Step C: Create the Map Configuration for Listings
+
 Make a copy of the `crime_map_config.json` as `listings_map_config.json` by running:
 
 ```sh
@@ -155,6 +163,8 @@ cp crime_map_config.json listings_map_config.json
 ```
 
 Edit the `listings_map_config.json` file using your favourite text editor. Replace `hampshireCrime.json` with `listings.json` and `["-157081.37129179656", "6606026.977066623"]` with `["-7909957.677026466", "5214901.036122"]`. This will make our map point at suburban Boston instead of Southampton and display [Airbnb](https://www.airbnb.com/) listings instead of crime data. We will only be displaying listings that are of type `Entire home/apt`. This can be changed by modifying the `convert.py` script.
+
+### Step D: Launch the Map Configuration and View Results
 
 Now you can re-run [Step 5](#step-5-launching-map-configurations) and launch the application with the **`http://YOUR_IP:8000/listings_map_config.json`** asset URL. Replace `YOUR_IP` with your IP address. You can zoom and pan the map using the controller of the [Maps App](../../ove-apps/packages/ove-app-maps/README.md) to explore the dataset. You will be able to observe interesting trends such as the areas where [Airbnb](https://www.airbnb.com/) is popular and areas where it is not.
 
