@@ -11,6 +11,12 @@
 
 .. toctree::
    :maxdepth: 5
+   :caption: Tutorials
+
+   docs/tutorials/GEOVISUALISATION
+
+.. toctree::
+   :maxdepth: 5
    :caption: OVE Applications
 
    Introduction <ove-apps/README>
