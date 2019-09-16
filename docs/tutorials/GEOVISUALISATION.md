@@ -68,7 +68,7 @@ cd geovisualisation
 
 Within this directory, you will find two [GeoJSON](http://geojson.org/) files, `hampshireCrime.json` and `hampshireRoads.json` as well as two OVE `Map Configuration` files, `crime_map_config_original.json` and `roads_map_config_original.json`. You will also find several [Python](https://www.python.org/) scripts.
 
-The IP addresses of the OVE `Map Configuration` files can be replaced by running a python script. Please replace `<IP>` with your IP address (that you identified by running the instructions above). To change the IP addresses of the OVE `Map Configuration` files run the following on a command line:
+The IP addresses of the OVE `Map Configuration` files can be replaced by running a Python script. Please replace `<IP>` with your IP address (that you identified by running the instructions above). To change the IP addresses of the OVE `Map Configuration` files run the following on a command line:
 
 ```sh
 python -m fixIP <IP>
