@@ -36,7 +36,7 @@ If you have already installed an older version of OVE and want to upgrade to a n
 docker-compose -f docker-compose.setup.ove.yml down
 ```
 
-Running the executable will start the step-by-step installation process. For unsupported platforms or to change port numbers and for additional information, please refer the [OVE installation guide](../../docs/INSTALLATION.md).
+Running the the executable installation script that you just downloaded will start the step-by-step installation process. For unsupported platforms or to change port numbers and for additional information, please refer the [OVE installation guide](../../docs/INSTALLATION.md).
 
 If you have just upgraded to a newer version of OVE, please run the following command before starting OVE:
 
