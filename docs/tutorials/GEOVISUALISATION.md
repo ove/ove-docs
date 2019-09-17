@@ -28,7 +28,21 @@ Once downloaded, the installation script may not be executable on Linux and Mac 
 chmod u+x *-setup
 ```
 
+**Important:** Before using the installer, please refer the documentation and select the version of OVE that best suits your requirements. By default, the installer will select the `stable` versions of the OVE components at the point in time it was released. But, some tutorials may not be supported on older versions. As a resolution, you can use the `latest` version, which will let you work with the latest unstable version of the code. This tutorial requires an OVE version of `0.5.0 or later`.
+
+If you have already installed an older version of OVE and want to upgrade to a newer version, please shutdown the older version (prior to installing the newer version) by running the following command:
+
+```sh
+docker-compose -f docker-compose.setup.ove.yml down
+```
+
 Running the executable will start the step-by-step installation process. For unsupported platforms or to change port numbers and for additional information, please refer the [OVE installation guide](../../docs/INSTALLATION.md).
+
+If you have just upgraded to a newer version of OVE, please run the following command before starting OVE:
+
+```sh
+docker-compose -f docker-compose.setup.ove.yml pull
+```
 
 Once installed, start OVE by running the commands suggested by the installer:
 
