@@ -59,6 +59,7 @@
    Introduction <ove-asset-manager/README>
    ove-asset-manager/docs/Install
    ove-asset-manager/docs/Usage
+   ove-asset-manager/docs/Users
    ove-asset-manager/docs/API
    ove-asset-manager/docs/Development
    ove-asset-manager/docs/workers/ZipWorker.md
