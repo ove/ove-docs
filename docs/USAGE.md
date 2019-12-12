@@ -58,19 +58,10 @@ The [Launcher UI](../ove-ui/packages/ove-ui-launcher/README.md) can be used to l
 
 The confirmation step provides a link to [Preview](../ove-ui/packages/ove-ui-preview/README.md) the space as well as a link to the app-specific usage documentation. The [Launcher UI](../ove-ui/packages/ove-ui-launcher/README.md) can be loaded into a browser window by accessing the URL `http://OVE_CORE_HOST:PORT/ui/launcher`. The user interface provides easy-to-follow instructions and validates user input. For those who wish to upload many apps at once, the [Launcher UI](../ove-ui/packages/ove-ui-launcher/README.md) also provides operating system specific [curl](https://curl.haxx.se/docs/manpage.html) commands.
 
-To launch the [Images App](../ove-apps/packages/ove-app-images/README.md) with a sample image, in the `LocalNine` space, select `Images` as the application to launch and press `Next` to proceed.
+To launch the [Images App](../ove-apps/packages/ove-app-images/README.md) with a sample image, in the `LocalNine` space, somply fill in the form then press launch.
 
-![](images/ove-ui-step1.png)
+![](images/ove-ui-launcher.png)
 
-In the second step, select `LocalNine` as the space and provide `4320` as the width and `2424` as the height and press `Next` to proceed.
-
-![](images/ove-ui-step2.png)
-
-In the third step, select `Use existing state` as the mode and `Highsmith` as the existing state and press `Next` to proceed.
-
-![](images/ove-ui-step3.png)
-
-Press `Next` in the fourth step and `Launch` in the fifth step.
 
 ### Launching OVE Apps using the Python Client Library
 
