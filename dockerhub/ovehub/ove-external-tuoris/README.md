@@ -1,6 +1,7 @@
 # Supported tags and respective `Dockerfile` links
 
-- [`v0.1`, `0.1.0`, `stable`, (*tuoris-v0.1/Dockerfile*)](https://github.com/ove/ove-external-services/blob/tuoris-v0.1/generated/Dockerfile.tuoris)
+- [`v0.1`, `0.1.1`, `stable`, (*tuoris-v0.1.1/Dockerfile*)](https://github.com/ove/ove-external-services/blob/tuoris-v0.1.1/generated/Dockerfile.tuoris)
+- [`0.1.0`, (*tuoris-v0.1/Dockerfile*)](https://github.com/ove/ove-external-services/blob/tuoris-v0.1/generated/Dockerfile.tuoris)
 
 # Installing and running Tuoris
 

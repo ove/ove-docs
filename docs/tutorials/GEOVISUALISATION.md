@@ -15,12 +15,12 @@ Docker is available in two versions: a free Community Edition (CE), and an Enter
 
 After installing the prerequisites, OVE can then installed by downloading the specific installation script from the list below:
 
-* [linux-python3-v0.4.0-setup](https://github.com/ove/ove-install/releases/download/v0.4.0/linux-python2-v0.4.0-setup)
-* [linux-python2-v0.4.0-setup](https://github.com/ove/ove-install/releases/download/v0.4.0/linux-python2-v0.4.0-setup)
-* [osx-python3-v0.4.0-setup](https://github.com/ove/ove-install/releases/download/v0.4.0/osx-python3-v0.4.0-setup)
-* [osx-python2-v0.4.0-setup](https://github.com/ove/ove-install/releases/download/v0.4.0/osx-python2-v0.4.0-setup)
-* [windows-python3-v0.4.0-setup.exe](https://github.com/ove/ove-install/releases/download/v0.4.0/windows-python3-v0.4.0-setup.exe)
-* [windows-python2-v0.4.0-setup.exe](https://github.com/ove/ove-install/releases/download/v0.4.0/windows-python2-v0.4.0-setup.exe)
+* [linux-python3-v0.5.0-setup](https://github.com/ove/ove-install/releases/download/v0.5.0/linux-python2-v0.5.0-setup)
+* [linux-python2-v0.5.0-setup](https://github.com/ove/ove-install/releases/download/v0.5.0/linux-python2-v0.5.0-setup)
+* [osx-python3-v0.5.0-setup](https://github.com/ove/ove-install/releases/download/v0.5.0/osx-python3-v0.5.0-setup)
+* [osx-python2-v0.5.0-setup](https://github.com/ove/ove-install/releases/download/v0.5.0/osx-python2-v0.5.0-setup)
+* [windows-python3-v0.5.0-setup.exe](https://github.com/ove/ove-install/releases/download/v0.5.0/windows-python3-v0.5.0-setup.exe)
+* [windows-python2-v0.5.0-setup.exe](https://github.com/ove/ove-install/releases/download/v0.5.0/windows-python2-v0.5.0-setup.exe)
 
 Once downloaded, the installation script may not be executable on Linux and Mac operating systems. As a resolution, run the following command:
 

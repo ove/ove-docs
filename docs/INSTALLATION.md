@@ -26,12 +26,12 @@ Building installers for non-supported platforms also requires:
 
 The [**OVE Install**](https://github.com/ove/ove-install/) scripts are available for Linux, Mac (OS X) and Windows operating systems either as a Python 3 or a Python 2 executable application:
 
-* [linux-python3-v0.4.0-setup](https://github.com/ove/ove-install/releases/download/v0.4.0/linux-python2-v0.4.0-setup)
-* [linux-python2-v0.4.0-setup](https://github.com/ove/ove-install/releases/download/v0.4.0/linux-python2-v0.4.0-setup)
-* [osx-python3-v0.4.0-setup](https://github.com/ove/ove-install/releases/download/v0.4.0/osx-python3-v0.4.0-setup)
-* [osx-python2-v0.4.0-setup](https://github.com/ove/ove-install/releases/download/v0.4.0/osx-python2-v0.4.0-setup)
-* [windows-python3-v0.4.0-setup.exe](https://github.com/ove/ove-install/releases/download/v0.4.0/windows-python3-v0.4.0-setup.exe)
-* [windows-python2-v0.4.0-setup.exe](https://github.com/ove/ove-install/releases/download/v0.4.0/windows-python2-v0.4.0-setup.exe)
+* [linux-python3-v0.5.0-setup](https://github.com/ove/ove-install/releases/download/v0.5.0/linux-python2-v0.5.0-setup)
+* [linux-python2-v0.5.0-setup](https://github.com/ove/ove-install/releases/download/v0.5.0/linux-python2-v0.5.0-setup)
+* [osx-python3-v0.5.0-setup](https://github.com/ove/ove-install/releases/download/v0.5.0/osx-python3-v0.5.0-setup)
+* [osx-python2-v0.5.0-setup](https://github.com/ove/ove-install/releases/download/v0.5.0/osx-python2-v0.5.0-setup)
+* [windows-python3-v0.5.0-setup.exe](https://github.com/ove/ove-install/releases/download/v0.5.0/windows-python3-v0.5.0-setup.exe)
+* [windows-python2-v0.5.0-setup.exe](https://github.com/ove/ove-install/releases/download/v0.5.0/windows-python2-v0.5.0-setup.exe)
 
 ### Building installers for non-supported platforms
 
