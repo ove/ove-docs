@@ -1,3 +1,10 @@
+🚨 This repository has been replaced and is no longer actively maintained.
+
+Please use the new repository instead:
+https://github.com/dsi-icl/vizzy-studio/
+
+Please direct all future development, issues, and contributions there.
+
 # Open Visualisation Environment
 
 Open Visualisation Environment (OVE) is an open-source software stack, designed to be used in large scale visualisation environments. OVE was developed to meet the requirements of controlling the [Data Observatory](https://www.imperial.ac.uk/data-science/data-observatory/) at the [Data Science Institute](https://www.imperial.ac.uk/data-science/) of [Imperial College London](https://www.imperial.ac.uk), but it is not specialized for that purpose.
